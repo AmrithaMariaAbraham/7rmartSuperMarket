@@ -9,13 +9,16 @@ public class LoginPageTest extends Base
   public void enterValidUsernameAndPassword() 
   {	  
 	  String useramefield="admin";
-	  String passwordfield="admin";	  
+	  String passwordfield="admin";  
 	  Login login=new Login(driver);
 	  login.enterValidUsername(useramefield);
 	  login.enterValidPassword(passwordfield);
-	  login.clicLoginbutton();	  
+	  login.clickLoginbutton();	  
 	  //Assertion
 	  boolean isDashboardLoaded=login.isDashboardDisplayed();
 	  assertTrue(isDashboardLoaded, "Dashboard not loaded");
+	  login.adminLogout();
+	  boolean loginPageDisplayed=login.isLoginPageDisplayed();
+	  assertTrue(loginPageDisplayed, "Login page not displayed"); 	  
   }
 }

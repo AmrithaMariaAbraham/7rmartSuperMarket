@@ -17,22 +17,32 @@ import org.openqa.selenium.support.PageFactory;
 	@FindBy(xpath="//input[@name='password']") WebElement password;
 	@FindBy(xpath="//button[@class='btn btn-dark btn-block']") WebElement siginButton;
 	@FindBy(xpath="//p[text()='Dashboard']") WebElement dashboard;
-
-
-	public void enterValidUsername(String username) {
+	@FindBy(xpath="//a[@data-toggle='dropdown']") WebElement adminDropdown;
+	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']") WebElement logoutClick;
+	@FindBy(xpath="//div[@class='login-box']") WebElement loginPage;
+	public void enterValidUsername(String username) 
+	{
 		userName.sendKeys(username);
-	}
-	
-	public void enterValidPassword(String passWord) {
+	}	
+	public void enterValidPassword(String passWord) 
+	{
 		password.sendKeys(passWord);
 	}
-	
-	
-	public void clicLoginbutton() {
+	public void clickLoginbutton() 
+	{
 		siginButton.click();
-	}
-	
-	public boolean isDashboardDisplayed() {
+	}	
+	public boolean isDashboardDisplayed() 
+	{
 		return dashboard.isDisplayed();
+	}
+	public void adminLogout()
+	{
+		adminDropdown.click();
+		logoutClick.click();
+	}
+	public boolean isLoginPageDisplayed()
+	{
+		return loginPage.isDisplayed();
 	}
 }
