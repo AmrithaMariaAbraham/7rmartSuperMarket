@@ -20,6 +20,8 @@ import org.openqa.selenium.support.PageFactory;
 	@FindBy(xpath="//a[@data-toggle='dropdown']") WebElement adminDropdown;
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']") WebElement logoutClick;
 	@FindBy(xpath="//div[@class='login-box']") WebElement loginPage;
+	@FindBy(xpath="//i[@class='icon fas fa-ban']") WebElement alertSymbol;
+	
 	public void enterValidUsername(String username) 
 	{
 		userName.sendKeys(username);
@@ -44,5 +46,9 @@ import org.openqa.selenium.support.PageFactory;
 	public boolean isLoginPageDisplayed()
 	{
 		return loginPage.isDisplayed();
+	}
+	public boolean isAlertforInvalidUsernameORPasswordAvailable()
+	{
+		return alertSymbol.isDisplayed();
 	}
 }
