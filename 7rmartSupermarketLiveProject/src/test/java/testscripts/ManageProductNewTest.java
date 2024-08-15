@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import pages.Login;
 import pages.ManageProductNewProductCreate;
 
-public class ManageProductTest extends Base
+public class ManageProductNewTest extends Base
 {
   @Test
   public void manageProduct() throws Exception
