@@ -1,7 +1,5 @@
 package testscripts;
-
 import org.testng.annotations.Test;
-
 import pages.Login;
 import pages.ManageProductSearch;
 
@@ -16,8 +14,8 @@ public class ManageProductSearchTest extends Base
 	  login.enterValidUsername(useramefield);
 	  login.enterValidPassword(passwordfield);
 	  login.clickLoginbutton();
-	  driver.navigate().to("https://groceryapp.uniqassosiates.com/admin/list-product");
 	  ManageProductSearch mangSearch=new ManageProductSearch(driver);
+	  mangSearch.clickManageProduct();
 	  mangSearch.clickSearchButton();
 	  String title="Curd12";
 	  mangSearch.enterTitle(title);
@@ -28,5 +26,6 @@ public class ManageProductSearchTest extends Base
 	  mangSearch.clickSearch();
 	  mangSearch.resultNotFound();
 	  mangSearch.homePage();
+	  login.adminLogout();
   	}
 }

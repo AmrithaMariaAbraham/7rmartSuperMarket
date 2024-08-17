@@ -10,16 +10,12 @@ public class ManageProductNewTest extends Base
   @Test
   public void manageProduct() throws Exception
   {
-	  //LoginPageTest loginPageTest=new LoginPageTest();
-	  //loginPageTest.enterValidUsernameAndPassword();
 	  Login login=new Login(driver);
 	  String useramefield="admin";
 	  String passwordfield="admin"; 	  
 	  login.enterValidUsername(useramefield);
 	  login.enterValidPassword(passwordfield);
 	  login.clickLoginbutton();
-	  //driver.navigate().to("https://groceryapp.uniqassosiates.com/admin/list-product");
-	  //driver.navigate().to("https://groceryapp.uniqassosiates.com/admin/Product/add");
 	  ManageProductNewProductCreate mangProd=new ManageProductNewProductCreate(driver);
 	  mangProd.manageProductClick();
 	  mangProd.clickNew();
@@ -46,10 +42,7 @@ public class ManageProductNewTest extends Base
 	  mangProd.stockAvailablityforProduct(stockAvailable);
 	  String purchasePrice="40";
 	  mangProd.enterPurchasePriceforProduct(purchasePrice);
-	  /*String descriptn="Buy Tomato";
-	  mangProd.enterDescription(descriptn);*/
 	  js.executeScript("window.scrollBy(380,380)");
-	  //mangProd.uploadMainImgforProduct();
 	  mangProd.clickSaveButtonforCreatingNewProduct();
 	  js.executeScript("window.scrollBy(0,0)");
 	  mangProd.isAlertDisplayed();

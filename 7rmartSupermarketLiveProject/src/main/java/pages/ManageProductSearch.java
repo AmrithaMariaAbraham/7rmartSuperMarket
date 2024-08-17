@@ -16,6 +16,7 @@ public class ManageProductSearch
 		PageFactory.initElements(driver,this);
 	}
 	
+	@FindBy(xpath="//p[text()='Manage Product']") WebElement clickManageProd;
 	@FindBy(xpath="//a[@class='btn btn-rounded btn-primary']") WebElement searchButton;
 	@FindBy(xpath="//input[@name='un']") WebElement Title;
 	@FindBy(xpath="//input[@name='cd']") WebElement ProductCode;
@@ -28,6 +29,10 @@ public class ManageProductSearch
 	@FindBy(xpath="//a[@data-toggle='dropdown']") WebElement adminDropdown;
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']") WebElement logoutClick;
 	
+	public void clickManageProduct()
+	{
+		clickManageProd.click();
+	}	
 	public void clickSearchButton()
 	{
 		searchButton.click();
@@ -48,7 +53,7 @@ public class ManageProductSearch
 	public void selectSubCategoryfromDropDown()
 	{
 		Select dropdown=new Select(subCategory);
-		dropdown.selectByIndex(0);
+		dropdown.selectByIndex(1);
 	}
 	public void clickSearch()
 	{
@@ -64,7 +69,5 @@ public class ManageProductSearch
 		Home.click();
 		boolean homepage=Admin.isDisplayed();
 		assertTrue(homepage,"HomePage not displayed");
-		adminDropdown.click();
-		logoutClick.click();
 	}
 }
