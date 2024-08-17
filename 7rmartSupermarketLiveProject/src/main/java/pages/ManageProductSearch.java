@@ -59,15 +59,9 @@ public class ManageProductSearch
 	{
 		search.click();
 	}
-	public void resultNotFound()
+	public void isresultFoundDisplayed()
 	{
 		boolean ResultNotFound=resultNotFound.isDisplayed();
 		assertTrue(ResultNotFound,"No such search");
-	}
-	public void homePage()
-	{
-		Home.click();
-		boolean homepage=Admin.isDisplayed();
-		assertTrue(homepage,"HomePage not displayed");
 	}
 }
