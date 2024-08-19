@@ -1,6 +1,6 @@
 package testscripts;
 import static org.testng.Assert.assertTrue;
-
+import java.awt.AWTException;
 import org.testng.annotations.Test;
 import pages.Login;
 import pages.ManageContact;
@@ -8,24 +8,27 @@ import pages.ManageContact;
 public class ManageContactTest extends Base
 {
   @Test
-  public void manageContactTest() 
-  {
+  public void manageContactTest() throws AWTException, InterruptedException 
+  {  
 	  Login login=new Login(driver);
 	  login.enterValidUsername("admin");
 	  login.enterValidPassword("admin");
 	  login.clickLoginbutton();
 	  ManageContact mangCont=new ManageContact(driver);
-	  mangCont.clickManageContent();
 	  mangCont.clickManageContact();
-	 /* mangCont.clickEditButton();
-	  String email="def@gmail.com";
-	  mangCont.editEmail(email);
-	  String time="50";
+	  mangCont.clickEditButton();
+	  String phoneNum="9876543210";
+	  mangCont.enterPhonenumber(phoneNum);
+	  String eMail="def@gmail.com";
+	  mangCont.editEmail(eMail);
+	  String address="abc houseDiv 14, Kadavanthra, Panampilly Nagar,Ernakulam";
+	  mangCont.editAddress(address);  
+	  String time="60";
 	  mangCont.editdeliverytime(time);
-	  String deliveryChargeLimit="115";
+	  String deliveryChargeLimit="100";
 	  mangCont.editDeliveryChargeLimit(deliveryChargeLimit);
-	  boolean isSuccessfullAlertdisplayed=mangCont.isAlertDisplayed();
-	  assertTrue(isSuccessfullAlertdisplayed, "Successful message not found");
-	  */
+	  mangCont.clickUpdateButton();
+	  //boolean isSuccessfullAlertdisplayed=mangCont.isAlertDisplayed();
+	  //assertTrue(isSuccessfullAlertdisplayed, "Succesfull message not displayed");	  
   }
 }

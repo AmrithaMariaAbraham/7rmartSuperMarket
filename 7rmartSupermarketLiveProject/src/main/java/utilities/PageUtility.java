@@ -1,4 +1,7 @@
 package utilities;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -11,8 +14,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class PageUtility 
 {
 	WebDriver driver;
-	//Dropdown,Select,drag,ScrollDown-->
+	//Dropdown,Select,drag,ScrollDown
 	
+	public void selectAll() throws AWTException
+	{
+		Robot robot=new Robot();
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_A);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_A);
+	}
 	public void selectIndex(WebElement elementindex)
 	{
 		Select select=new Select(elementindex);
