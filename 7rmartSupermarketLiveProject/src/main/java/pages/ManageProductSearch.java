@@ -1,6 +1,4 @@
 package pages;
-import static org.testng.Assert.assertTrue;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class ManageProductSearch
 {
@@ -29,6 +28,7 @@ public class ManageProductSearch
 	@FindBy(xpath="//center[text()='.........RESULT NOT FOUND.......']") WebElement alert;
 
 	PageUtility page=new PageUtility();
+	WaitUtility Wait=new WaitUtility();
 	
 	public void clickManageProduct()
 	{
@@ -50,14 +50,14 @@ public class ManageProductSearch
 	{
 		//Select dropdown=new Select(Category);
 		//dropdown.selectByIndex(1);
-		page.waitforCategory(Category);
+		Wait.waitforCategory(Category);
 		page.selectCategoryFromDropDown(Category);
 	}
 	public void selectSubCategoryfromDropDown()
 	{
 		/*Select dropdown=new Select(subCategory);
 		dropdown.selectByIndex(1);*/
-		page.waitforSubCategory(subCategory);
+		Wait.waitforSubCategory(subCategory);
 		page.selectsubCategory(subCategory);
 	}
 	public void clickSearch()

@@ -12,16 +12,7 @@ public class PageUtility
 {
 	WebDriver driver;
 	//Dropdown,Select,drag,ScrollDown-->
-	public void waitforCategory(WebElement element)
-	{
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.elementToBeClickable(element));
-	}
-	public void waitforSubCategory(WebElement element1)
-	{
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.elementToBeClickable(element1));
-	}
+	
 	public void selectIndex(WebElement elementindex)
 	{
 		Select select=new Select(elementindex);
