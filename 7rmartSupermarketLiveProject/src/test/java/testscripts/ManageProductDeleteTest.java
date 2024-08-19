@@ -23,7 +23,6 @@ public class ManageProductDeleteTest extends Base
 	  mangProdDel.deleteProduct();
 	  boolean isAlertdisplayed=mangProdDel.isTitledisplayed();
 	  assertTrue(isAlertdisplayed, "Element not deleted");
-	  login.adminLogout();
   }
   @Test(priority=2)
   public void manageProddelSearch() 
@@ -41,6 +40,5 @@ public class ManageProductDeleteTest extends Base
 	  mangProdDel.search();	 
 	  boolean isElementFound=mangProdDel.iselementdisplayed();
 	  assertTrue(isElementFound, "Element not found");
-	  login.adminLogout();
-  }  
+   }  
 }

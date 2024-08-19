@@ -1,6 +1,4 @@
 package pages;
-import static org.testng.Assert.assertEquals;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,7 +15,8 @@ public class ManageProductNewProductCreate
 	}
 	
 	@FindBy(xpath="//input[@id='tag']") WebElement Tag;
-	@FindBy(xpath="//p[text()='Manage Product']") WebElement manageProduct;
+	@FindBy(xpath="//i[@class='nav-icon fas fa-th-large']") WebElement DashBoard;
+	@FindBy(xpath="//p[text()='Manage product']") WebElement manageProduct;
 	@FindBy(xpath="//a[@class='btn btn-rounded btn-danger']") WebElement New;
 	@FindBy(xpath="//h3[text()='Enter Product Informations']") WebElement NewProductInfo;
 	@FindBy(xpath="//input[@placeholder='Enter the Title']") WebElement enterTitle;
@@ -45,6 +44,7 @@ public class ManageProductNewProductCreate
 	}
 	public void manageProductClick()
 	{
+		DashBoard.click();
 		manageProduct.click();
 	}
 	public void clickNew()

@@ -25,6 +25,6 @@ public class ManageProductSearchTest extends Base
 	  mangSearch.selectSubCategoryfromDropDown();
 	  mangSearch.clickSearch();
 	  mangSearch.isresultFoundDisplayed();
-	  login.adminLogout();
-  	}
+	  //add Assertion
+	  }
 }

@@ -44,7 +44,7 @@ public class ManageProductNewProductTest extends Base
 	  mangProd.enterPurchasePriceforProduct(purchasePrice);
 	  js.executeScript("window.scrollBy(380,380)");
 	  mangProd.clickSaveButtonforCreatingNewProduct();
-	  js.executeScript("window.scrollBy(0,0)");
+	  js.executeScript("window.scrollBy(0,250)");
 	  mangProd.isAlertDisplayed();
 	  mangProd.goToHomePage();
 	  mangProd.isHomePageDisplayed();

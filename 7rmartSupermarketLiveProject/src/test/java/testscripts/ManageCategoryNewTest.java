@@ -2,9 +2,10 @@ package testscripts;
 import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 import pages.Login;
-import pages.ManageCategoryAdd;
+import pages.ManageCategoryNew;
 
-public class ManageCategoryAddTest extends Base {
+public class ManageCategoryNewTest extends Base 
+{
   @Test
   public void manageCategorySearch() 
   {
@@ -12,15 +13,14 @@ public class ManageCategoryAddTest extends Base {
 	  login.enterValidUsername("admin");
 	  login.enterValidPassword("admin");
 	  login.clickLoginbutton();
-	  ManageCategoryAdd mangAdd=new ManageCategoryAdd(driver);
-	  //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	  ManageCategoryNew mangAdd=new ManageCategoryNew(driver);
 	  mangAdd.clickManageCategory();
-	  mangAdd.clickCategory();
 	  mangAdd.clickAddButton();
-	  String categoryValue="dress";
+	  String categoryValue="Discount";
 	  mangAdd.enterCategoryValue(categoryValue);
 	  mangAdd.selectAValuefromSelectGroup();
-	  mangAdd.clickSaveButton();
+	 //mangAdd.uploadDiscountImage();
+	  mangAdd.clickSaveButton();	 
 	  boolean isAlertLoaded=mangAdd.isAlertdisplayed();
 	  assertTrue(isAlertLoaded, "Alert not loaded");
   }

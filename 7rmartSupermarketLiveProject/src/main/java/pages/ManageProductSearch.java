@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.PageUtility;
+
 public class ManageProductSearch
 {
 	WebDriver driver;
@@ -47,8 +49,10 @@ public class ManageProductSearch
 	}
 	public void selectCategoryfromDropdown()
 	{
-		Select dropdown=new Select(Category);
-		dropdown.selectByIndex(1);
+		//Select dropdown=new Select(Category);
+		//dropdown.selectByIndex(1);
+		PageUtility page=new PageUtility();
+		page.selectIndex(Category);		
 	}
 	public void selectSubCategoryfromDropDown()
 	{
