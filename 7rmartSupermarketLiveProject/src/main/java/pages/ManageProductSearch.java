@@ -18,22 +18,21 @@ public class ManageProductSearch
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="//p[text()='Manage Product']") WebElement clickManageProd;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[12]") WebElement manageProduct;
 	@FindBy(xpath="//a[@class='btn btn-rounded btn-primary']") WebElement searchButton;
 	@FindBy(xpath="//input[@name='un']") WebElement Title;
 	@FindBy(xpath="//input[@name='cd']") WebElement ProductCode;
 	@FindBy(xpath="//select[@id='cat_id']") WebElement Category;
 	@FindBy(xpath="//select[@id='sb']") WebElement subCategory;
 	@FindBy(xpath="//button[@value='sr']") WebElement search;
-	@FindBy(xpath="//span[@id='res']") WebElement resultNotFound;
-	@FindBy(xpath="//a[text()='Home']") WebElement Home;
-	@FindBy(xpath="//a[@class='d-block']") WebElement Admin;
 	@FindBy(xpath="//a[@data-toggle='dropdown']") WebElement adminDropdown;
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']") WebElement logoutClick;
+	@FindBy(xpath="//center[text()='.........RESULT NOT FOUND.......']") WebElement alert;
+
+	PageUtility page=new PageUtility();
 	
 	public void clickManageProduct()
 	{
-		clickManageProd.click();
+		manageProduct.click();
 	}	
 	public void clickSearchButton()
 	{
@@ -51,21 +50,23 @@ public class ManageProductSearch
 	{
 		//Select dropdown=new Select(Category);
 		//dropdown.selectByIndex(1);
-		PageUtility page=new PageUtility();
-		page.selectIndex(Category);		
+		page.waitforCategory(Category);
+		page.selectCategoryFromDropDown(Category);
 	}
 	public void selectSubCategoryfromDropDown()
 	{
-		Select dropdown=new Select(subCategory);
-		dropdown.selectByIndex(1);
+		/*Select dropdown=new Select(subCategory);
+		dropdown.selectByIndex(1);*/
+		page.waitforSubCategory(subCategory);
+		page.selectsubCategory(subCategory);
 	}
 	public void clickSearch()
 	{
 		search.click();
 	}
-	public void isresultFoundDisplayed()
+	public boolean issearchAlertDisplayed()
 	{
-		boolean ResultNotFound=resultNotFound.isDisplayed();
-		assertTrue(ResultNotFound,"No such search");
+		return alert.isDisplayed();
+		
 	}
 }

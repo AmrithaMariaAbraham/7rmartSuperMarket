@@ -1,18 +1,48 @@
 package utilities;
+import java.time.Duration;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PageUtility 
 {
 	WebDriver driver;
 	//Dropdown,Select,drag,ScrollDown-->
-	
+	public void waitforCategory(WebElement element)
+	{
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	public void waitforSubCategory(WebElement element1)
+	{
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(element1));
+	}
 	public void selectIndex(WebElement elementindex)
 	{
 		Select select=new Select(elementindex);
 		select.selectByIndex(0);
+	}
+	public void selectfromDropDown(WebElement element)
+	{
+		Select select=new Select(element);
+		select.selectByIndex(1);
+	}
+	public void selectCategoryFromDropDown(WebElement category)
+	{
+		Select select=new Select(category);
+		//select.selectByValue("27");
+		select.selectByIndex(1);
+	}
+	public void selectsubCategory(WebElement subCategory)
+	{
+		Select select=new Select(subCategory);
+		//select.selectByVisibleText("Category1");
+		select.selectByIndex(2);
 	}
 	public void ScrollDownX250Y250()
 	{
@@ -39,19 +69,5 @@ public class PageUtility
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,0)");		
 	}
-	public void selectCategoryFromDropDown(WebElement category)
-	{
-		Select dropdown=new Select(category);
-		dropdown.selectByIndex(0);
-	}
-	public void selectSubCategoryFromDropDown(WebElement subCategory)
-	{
-		Select dropdown=new Select(subCategory);
-		dropdown.selectByIndex(0);
-	}
-	public void selectGroupIDfromDropDown(WebElement groupID)
-	{
-		Select dropdown=new Select(groupID);
-		dropdown.selectByIndex(1);
-	}
+	
 }

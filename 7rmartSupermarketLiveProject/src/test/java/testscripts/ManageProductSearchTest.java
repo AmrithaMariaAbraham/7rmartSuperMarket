@@ -1,4 +1,6 @@
 package testscripts;
+import static org.testng.Assert.assertTrue;
+
 import org.testng.annotations.Test;
 import pages.Login;
 import pages.ManageProductSearch;
@@ -24,7 +26,8 @@ public class ManageProductSearchTest extends Base
 	  mangSearch.selectCategoryfromDropdown();
 	  mangSearch.selectSubCategoryfromDropDown();
 	  mangSearch.clickSearch();
-	  mangSearch.isresultFoundDisplayed();
 	  //add Assertion
+	  boolean isAlertDisplayed=mangSearch.issearchAlertDisplayed();
+	  assertTrue(isAlertDisplayed, "Search Found");
 	  }
 }
