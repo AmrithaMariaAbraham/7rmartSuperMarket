@@ -26,7 +26,7 @@ public class ManageProductSearch
 	@FindBy(xpath="//button[@value='sr']") WebElement search;
 	@FindBy(xpath="//a[@data-toggle='dropdown']") WebElement adminDropdown;
 	@FindBy(xpath="//center[text()='.........RESULT NOT FOUND.......']") WebElement alert;
-
+	
 	PageUtility page=new PageUtility();
 	WaitUtility Wait=new WaitUtility();
 	

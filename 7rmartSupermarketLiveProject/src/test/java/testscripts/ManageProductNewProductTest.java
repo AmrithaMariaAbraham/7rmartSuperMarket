@@ -1,4 +1,6 @@
 package testscripts;
+import static org.testng.Assert.assertTrue;
+
 import org.testng.annotations.Test;
 import pages.Login;
 import pages.ManageProductNewProductCreate;
@@ -19,26 +21,20 @@ public class ManageProductNewProductTest extends Base
 	  String title="Milk";
 	  mangNew.enterTitleValue(title);
 	  mangNew.selectProductType();
-	  mangNew.enterValueforTagField(title);
 	  mangNew.selectCategoryFromDropDown();
 	  mangNew.selectSubCategoryFromDropDown();
-	  mangNew.selectGroupIDfromDropDown();
 	  mangNew.selectPriceType();
 	  mangNew.selectMinimumPrice();
 	  String qty="100";
 	  mangNew.enterMaximumQuantity(qty);
 	  String price="45";
 	  mangNew.enterPriceforProduct(price);
-	  String mrp="60";
-	  mangNew.enterMRPforProduct(mrp);
 	  String stock="150";
 	  mangNew.stockAvailablityforProduct(stock);
-	  String purchasePower="50";
-	  mangNew.enterPurchasePriceforProduct(purchasePower);
-	  String description="Milk is White in color";
-	  mangNew.enterDescription(description);
 	  PageUtility page=new PageUtility();
-	  page.scrollDownX893Y61();
+	  page.scrollDownX900Y900();
 	  mangNew.clickSaveButtonforCreatingNewProduct();
+	  boolean isAlertDisplayed= mangNew.isalertdisplayed();
+	  assertTrue(isAlertDisplayed, "Alert not displayed");
 	  }
 }

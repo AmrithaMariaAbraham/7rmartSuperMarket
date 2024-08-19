@@ -13,18 +13,13 @@ public class ManageFooter
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="//i[@class='nav-icon fas fa-edit']") WebElement ManageContent;
-	@FindBy(xpath="//p[text()='Manage Footer Text']") WebElement ManageFooterText;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[7]") WebElement ManageFooterText;
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/Footertext/edit?edit=1']") WebElement edit1;
 	@FindBy(xpath="//textarea[@name='address']") WebElement Address;
 	@FindBy(xpath="//input[@id='email']") WebElement email;
 	@FindBy(xpath="//button[@name='Update']") WebElement updatebutton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alertVisible;
 	
-	public void clickManageContent()
-	{
-		ManageContent.click();
-	}
 	public void clickManageFooterText()
 	{
 		ManageFooterText.click();

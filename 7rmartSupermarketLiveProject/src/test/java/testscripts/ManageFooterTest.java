@@ -14,7 +14,6 @@ public class ManageFooterTest extends Base {
 	  login.enterValidPassword("admin");
 	  login.clickLoginbutton();
 	  ManageFooter mangFooter=new ManageFooter(driver);
-	  mangFooter.clickManageContent();
 	  mangFooter.clickManageFooterText();
 	  mangFooter.editFooterTextValue();
 	  String address="Asiatic business center,Technopark Phase three,Trivandrum";
