@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-19T16:22:42 IST" name="Default suite" finished-at="2024-08-19T16:22:57 IST" duration-ms="14227">
+  <suite started-at="2024-08-19T22:16:30 IST" name="Default suite" finished-at="2024-08-19T22:16:35 IST" duration-ms="4176">
     <groups>
     </groups>
-    <test started-at="2024-08-19T16:22:42 IST" name="Default test" finished-at="2024-08-19T16:22:57 IST" duration-ms="14227">
-      <class name="testscripts.ManageProductDeleteTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testscripts.ManageProductDeleteTest@563f38c4]" started-at="2024-08-19T16:22:42 IST" name="beforeMethod" finished-at="2024-08-19T16:22:47 IST" duration-ms="4739" status="PASS">
+    <test started-at="2024-08-19T22:16:30 IST" name="Default test" finished-at="2024-08-19T22:16:35 IST" duration-ms="4176">
+      <class name="testscripts.ManageFooterTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testscripts.ManageFooterTest@3e8c3cb]" started-at="2024-08-19T22:16:30 IST" name="beforeMethod" finished-at="2024-08-19T22:16:33 IST" duration-ms="2340" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="manageProductDelete()[pri:1, instance:testscripts.ManageProductDeleteTest@563f38c4]" started-at="2024-08-19T16:22:47 IST" name="manageProductDelete" finished-at="2024-08-19T16:22:50 IST" duration-ms="3180" status="PASS">
+        <test-method signature="manageFooter()[pri:0, instance:testscripts.ManageFooterTest@3e8c3cb]" started-at="2024-08-19T22:16:33 IST" name="manageFooter" finished-at="2024-08-19T22:16:35 IST" duration-ms="1777" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- manageProductDelete -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscripts.ManageProductDeleteTest@563f38c4]" started-at="2024-08-19T16:22:50 IST" name="afterMethod" finished-at="2024-08-19T16:22:50 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testscripts.ManageProductDeleteTest@563f38c4]" started-at="2024-08-19T16:22:50 IST" name="beforeMethod" finished-at="2024-08-19T16:22:54 IST" duration-ms="3144" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="manageProddelSearch()[pri:2, instance:testscripts.ManageProductDeleteTest@563f38c4]" started-at="2024-08-19T16:22:54 IST" name="manageProddelSearch" finished-at="2024-08-19T16:22:57 IST" duration-ms="3031" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- manageProddelSearch -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscripts.ManageProductDeleteTest@563f38c4]" started-at="2024-08-19T16:22:57 IST" name="afterMethod" finished-at="2024-08-19T16:22:57 IST" duration-ms="5" status="PASS">
+        </test-method> <!-- manageFooter -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscripts.ManageFooterTest@3e8c3cb]" started-at="2024-08-19T22:16:35 IST" name="afterMethod" finished-at="2024-08-19T22:16:35 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- testscripts.ManageProductDeleteTest -->
+      </class> <!-- testscripts.ManageFooterTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
