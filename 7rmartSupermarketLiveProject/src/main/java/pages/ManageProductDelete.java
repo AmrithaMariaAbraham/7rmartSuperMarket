@@ -13,8 +13,8 @@ public class ManageProductDelete
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="//p[text()='Manage Product']") WebElement clickManageProd;
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/Product/delete?del=989&page_ad=1']") WebElement deleteElement;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[12]") WebElement clickManageProd;
+	@FindBy(xpath="(//i[@class='fas fa-trash-alt'])[1]") WebElement deleteElement;
 	@FindBy(xpath="//i[@class=' fa fa-search']") WebElement Searchbutton;
 	@FindBy(xpath="//input[@name='un']") WebElement title;
 	@FindBy(xpath="//button[@name='Search']") WebElement searchElement;
