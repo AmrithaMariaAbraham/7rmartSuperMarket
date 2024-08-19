@@ -14,13 +14,12 @@ public class ManageProductNewProductCreate
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="//input[@id='tag']") WebElement Tag;
-	@FindBy(xpath="//i[@class='nav-icon fas fa-th-large']") WebElement DashBoard;
-	@FindBy(xpath="//p[text()='Manage product']") WebElement manageProduct;
-	@FindBy(xpath="//a[@class='btn btn-rounded btn-danger']") WebElement New;
-	@FindBy(xpath="//h3[text()='Enter Product Informations']") WebElement NewProductInfo;
-	@FindBy(xpath="//input[@placeholder='Enter the Title']") WebElement enterTitle;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[12]") WebElement manageProduct;
+	@FindBy(xpath="//a[@onclick='click_button(1)']") WebElement New;
+	//@FindBy(xpath="//h3[text()='Enter Product Informations']") WebElement NewProductInfo;
+	@FindBy(xpath="//input[@id='title']") WebElement enterTitle;
 	@FindBy(xpath="//input[@value='Others']") WebElement productType;
+	@FindBy(xpath="//input[@id='tag']") WebElement Tag;
 	@FindBy(xpath="//select[@id='cat_id']") WebElement category;
 	@FindBy(xpath="//select[@id='sub_id']") WebElement subCategory;	
 	@FindBy(xpath="//select[@id='grp_id']") WebElement groupID;
@@ -33,27 +32,15 @@ public class ManageProductNewProductCreate
 	@FindBy(xpath="//input[@id='p_pp']") WebElement purchasePrice;
 	@FindBy(xpath="//div[@class='note-editable card-block']") WebElement description;
 	@FindBy(xpath="//*[@id='main_img']") WebElement mainImage;
-	@FindBy(xpath="//button[@name='create']") WebElement submitButton;
-	@FindBy(xpath="alert alert-danger alert-dismissible") WebElement Alert;
-	@FindBy(xpath="//a[text()='Home']") WebElement homePage;
-	@FindBy(xpath="//a[@class='d-block']") WebElement admin;
+	@FindBy(xpath="//button[@name='create']") WebElement submitButton;	
 	
-	public void enterValueforTagField(String TagField)
+	public void clickManageProduct()
 	{
-		Tag.sendKeys(TagField);
-	}
-	public void manageProductClick()
-	{
-		DashBoard.click();
 		manageProduct.click();
 	}
 	public void clickNew()
 	{
 		New.click();
-	}
-	public boolean isNewWindowDisplayed()
-	{
-		return NewProductInfo.isDisplayed();
 	}
 	public void enterTitleValue(String title)
 	{
@@ -62,6 +49,10 @@ public class ManageProductNewProductCreate
 	public void selectProductType()
 	{
 		productType.click();
+	}
+	public void enterValueforTagField(String TagField)
+	{
+		Tag.sendKeys(TagField);
 	}
 	public void selectCategoryFromDropDown()
 	{
@@ -120,18 +111,5 @@ public class ManageProductNewProductCreate
 	{
 		submitButton.click();
 	}	
-	public void isAlertDisplayed()
-	{
-		Alert.click();
-		Alert.isDisplayed();
-		driver.switchTo().alert().dismiss();
-	}
-	public void goToHomePage()
-	{
-		homePage.click();
-	}
-	public boolean isHomePageDisplayed()
-	{
-		return admin.isDisplayed();
-	}
+	
 }
