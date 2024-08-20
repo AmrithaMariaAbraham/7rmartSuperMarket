@@ -2,6 +2,8 @@ package testscripts;
 import static org.testng.Assert.assertTrue;
 import java.awt.AWTException;
 import org.testng.annotations.Test;
+
+import constants.Constants;
 import pages.Login;
 import pages.ManageContact;
 
@@ -29,6 +31,6 @@ public class ManageContactTest extends Base
 	  mangCont.editDeliveryChargeLimit(deliveryChargeLimit);
 	  mangCont.clickUpdateButton();
 	  boolean isSuccessfullAlertdisplayed=mangCont.isAlertDisplayed();
-	  assertTrue(isSuccessfullAlertdisplayed, "Succesfull message not displayed");	  
+	  assertTrue(isSuccessfullAlertdisplayed,Constants.ERRORFORMANAGECONTACT);	  
   }
 }

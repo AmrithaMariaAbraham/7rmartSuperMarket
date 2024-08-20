@@ -3,6 +3,7 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.Login;
 import pages.ManageNewsNew;
 
@@ -22,6 +23,6 @@ public class ManageNewsTestNew extends Base
 	  mangNews.enterValueforNews(news);
 	  mangNews.clickSaveButton();
 	  boolean isSuccessAlertdisplayed= mangNews.isAlertdisplayed();
-	  assertTrue(isSuccessAlertdisplayed, "Alert not displayed");
+	  assertTrue(isSuccessAlertdisplayed,Constants.ERRORFORMANAGENEWSNEW);
   }
 }

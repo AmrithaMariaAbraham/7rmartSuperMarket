@@ -2,6 +2,8 @@ package testscripts;
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
+
+import constants.Constants;
 import pages.Login;
 import pages.ManageProductSearch;
 
@@ -28,6 +30,6 @@ public class ManageProductSearchTest extends Base
 	  mangSearch.clickSearch();
 	  //add Assertion
 	  boolean isAlertDisplayed=mangSearch.issearchAlertDisplayed();
-	  assertTrue(isAlertDisplayed, "Search Found");
+	  assertTrue(isAlertDisplayed,Constants.ERRORFORMANAGEPRODUCTSEARCH);
 	  }
 }

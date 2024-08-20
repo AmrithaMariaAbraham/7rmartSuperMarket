@@ -1,6 +1,8 @@
 package testscripts;
 import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
+
+import constants.Constants;
 import pages.Login;
 import pages.ManageCategoryNew;
 
@@ -22,6 +24,6 @@ public class ManageCategoryNewTest extends Base
 	 //mangAdd.uploadDiscountImage();
 	  mangAdd.clickSaveButton();	 
 	  boolean isAlertLoaded=mangAdd.isAlertdisplayed();
-	  assertTrue(isAlertLoaded, "Alert not loaded");
+	  assertTrue(isAlertLoaded,Constants.ERRORFORMANAGECATEGORYALERT);
   }
 }

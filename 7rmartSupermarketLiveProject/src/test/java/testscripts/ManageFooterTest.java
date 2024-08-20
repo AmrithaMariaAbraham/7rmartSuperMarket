@@ -2,6 +2,8 @@ package testscripts;
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
+
+import constants.Constants;
 import pages.Login;
 import pages.ManageFooter;
 
@@ -22,6 +24,6 @@ public class ManageFooterTest extends Base {
 	  mangFooter.editEmail(email);
 	  mangFooter.clickUpdateButton();
 	  boolean isSuccessfullmesgdisplayed=mangFooter.isFooterDisplayedSuccessfullydisplayed();
-	  assertTrue(isSuccessfullmesgdisplayed,"Success message displayed");
+	  assertTrue(isSuccessfullmesgdisplayed,Constants.EERORFORMANAGEFOOTER);
   }
 }

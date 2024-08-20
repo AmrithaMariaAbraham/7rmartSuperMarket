@@ -1,6 +1,7 @@
 package testscripts;
 import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
+import constants.Constants;
 import pages.Login;
 public class LoginPageTest extends Base
 {
@@ -16,7 +17,7 @@ public class LoginPageTest extends Base
 	  login.clickLoginbutton();	  
 	  //Assertion
 	  boolean isDashboardLoaded=login.isDashboardDisplayed();
-	  assertTrue(isDashboardLoaded, "Dashboard not loaded");
+	  assertTrue(isDashboardLoaded,Constants.ERRORMESSAGEFORLOGIN);
   	}
   @Test(priority=2)
   public void adminLogout()
@@ -29,7 +30,7 @@ public class LoginPageTest extends Base
 	  login.clickLoginbutton();	  
 	  login.adminLogout();
 	  boolean loginPageDisplayed=login.isLoginPageDisplayed();
-	  assertTrue(loginPageDisplayed, "Login page not displayed");
+	  assertTrue(loginPageDisplayed,Constants.ERRORMESSAGEFORLOGOUT);
   	}
   @Test(priority=3)
   public void enterValidUsernameandinvalidUsername()
@@ -41,7 +42,7 @@ public class LoginPageTest extends Base
 	  login.enterValidPassword(passwordfield);
 	  login.clickLoginbutton();	
 	  boolean invalidPasswordAlert=login.isAlertforInvalidUsernameORPasswordAvailable();
-	  assertTrue(invalidPasswordAlert,"Enter valid Password");
+	  assertTrue(invalidPasswordAlert,Constants.ERRORMESSAGEFORINVALIDPASSWORD);
    	}
    @Test(priority=4)
    public void enterInvalidUserNameandValidPassword()
@@ -53,7 +54,7 @@ public class LoginPageTest extends Base
 		  login.enterValidPassword(passwordfield);
 		  login.clickLoginbutton();	
 		  boolean invalidPasswordAlert=login.isAlertforInvalidUsernameORPasswordAvailable();
-		  assertTrue(invalidPasswordAlert,"Enter valid UserName");
+		  assertTrue(invalidPasswordAlert,Constants.ERRORMESSAGEFORINVALIDUSERNAME);
    }
    @Test(priority=5)
    public void enteInvalidUserNameandPassword()
@@ -65,6 +66,6 @@ public class LoginPageTest extends Base
 		  login.enterValidPassword(passwordfield);
 		  login.clickLoginbutton();	
 		  boolean invalidPasswordAlert=login.isAlertforInvalidUsernameORPasswordAvailable();
-		  assertTrue(invalidPasswordAlert,"Enter valid values");
+		  assertTrue(invalidPasswordAlert,Constants.ERRORMESSAGEFORINVALIDUSER);
    }
 }

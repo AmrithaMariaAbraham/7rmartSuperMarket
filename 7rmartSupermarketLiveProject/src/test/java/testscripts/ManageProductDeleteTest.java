@@ -4,6 +4,7 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.Login;
 import pages.ManageProductDelete;
 
@@ -22,7 +23,7 @@ public class ManageProductDeleteTest extends Base
 	  mangProdDel.clickmanageProduct();
 	  mangProdDel.deleteProduct();
 	  boolean isAlertdisplayed=mangProdDel.isTitledisplayed();
-	  assertTrue(isAlertdisplayed, "Element not deleted");
+	  assertTrue(isAlertdisplayed,Constants.ERRORFORMANAGEDELETE);
   }
   @Test(priority=2)
   public void manageProddelSearch() 
@@ -39,6 +40,6 @@ public class ManageProductDeleteTest extends Base
 	  mangProdDel.SearcheletedProduct("Milk","P992");
 	  mangProdDel.search();	 
 	  boolean isElementFound=mangProdDel.iselementdisplayed();
-	  assertTrue(isElementFound, "Element not found");
+	  assertTrue(isElementFound,Constants.ERRORFORMANAGEDELETESEARCH);
    }  
 }

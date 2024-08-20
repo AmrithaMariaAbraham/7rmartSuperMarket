@@ -2,6 +2,8 @@ package testscripts;
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
+
+import constants.Constants;
 import pages.Login;
 import pages.ManageProductNewProductCreate;
 import utilities.PageUtility;
@@ -35,6 +37,6 @@ public class ManageProductNewProductTest extends Base
 	  page.scrollDownX900Y900();
 	  mangNew.clickSaveButtonforCreatingNewProduct();
 	  boolean isAlertDisplayed= mangNew.isalertdisplayed();
-	  assertTrue(isAlertDisplayed, "Alert not displayed");
+	  assertTrue(isAlertDisplayed,Constants.ERRORFORMANAGEPRODUCTNEWPRODUCT);
 	  }
 }
