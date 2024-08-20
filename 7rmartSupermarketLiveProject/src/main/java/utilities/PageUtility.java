@@ -31,6 +31,11 @@ public class PageUtility
 		//select.selectByVisibleText("Category1");
 		select.selectByIndex(2);
 	}
+	public void selectUserType(WebElement usertype)
+	{
+		Select select=new Select(usertype);
+		select.selectByIndex(2);
+	}
 	public void scrollDownX250Y250()
 	{
 	 JavascriptExecutor js=(JavascriptExecutor) driver;

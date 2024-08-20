@@ -15,4 +15,5 @@ public class Constants
 	public static final String ERRORFORMANAGEDELETESEARCH="Element not found";
 	public static final String ERRORFORMANAGEPRODUCTNEWPRODUCT="Alert not displayed";
 	public static final String ERRORFORMANAGEPRODUCTSEARCH="Search not Found";
+	public static final String ERRORFORADMINUSERNEWUSER="Admin User not availanle";
 }
