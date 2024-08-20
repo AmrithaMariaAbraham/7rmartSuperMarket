@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-20T23:04:58 IST" name="Default suite" finished-at="2024-08-20T23:05:04 IST" duration-ms="5853">
+  <suite started-at="2024-08-20T23:26:48 IST" name="Default suite" finished-at="2024-08-20T23:26:54 IST" duration-ms="5932">
     <groups>
     </groups>
-    <test started-at="2024-08-20T23:04:58 IST" name="Default test" finished-at="2024-08-20T23:05:04 IST" duration-ms="5853">
-      <class name="testscripts.AdminUsersTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testscripts.AdminUsersTest@4be29ed9]" started-at="2024-08-20T23:04:58 IST" name="beforeMethod" finished-at="2024-08-20T23:05:02 IST" duration-ms="3935" status="PASS">
+    <test started-at="2024-08-20T23:26:48 IST" name="Default test" finished-at="2024-08-20T23:26:54 IST" duration-ms="5932">
+      <class name="testscripts.AdminUserSearchTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testscripts.AdminUserSearchTest@3a7442c7]" started-at="2024-08-20T23:26:49 IST" name="beforeMethod" finished-at="2024-08-20T23:26:53 IST" duration-ms="4149" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="adminUsers()[pri:0, instance:testscripts.AdminUsersTest@4be29ed9]" started-at="2024-08-20T23:05:02 IST" name="adminUsers" finished-at="2024-08-20T23:05:04 IST" duration-ms="1883" status="PASS">
+        <test-method signature="adminusersearch()[pri:0, instance:testscripts.AdminUserSearchTest@3a7442c7]" started-at="2024-08-20T23:26:53 IST" name="adminusersearch" finished-at="2024-08-20T23:26:54 IST" duration-ms="1683" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- adminUsers -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscripts.AdminUsersTest@4be29ed9]" started-at="2024-08-20T23:05:04 IST" name="afterMethod" finished-at="2024-08-20T23:05:04 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- adminusersearch -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscripts.AdminUserSearchTest@3a7442c7]" started-at="2024-08-20T23:26:54 IST" name="afterMethod" finished-at="2024-08-20T23:26:54 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- testscripts.AdminUsersTest -->
+      </class> <!-- testscripts.AdminUserSearchTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
