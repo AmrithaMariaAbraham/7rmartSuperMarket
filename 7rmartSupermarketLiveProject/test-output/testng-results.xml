@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-20T06:57:22 IST" name="Default suite" finished-at="2024-08-20T06:57:27 IST" duration-ms="4988">
+  <suite started-at="2024-08-20T22:32:35 IST" name="Default suite" finished-at="2024-08-20T22:32:41 IST" duration-ms="6027">
     <groups>
     </groups>
-    <test started-at="2024-08-20T06:57:22 IST" name="Default test" finished-at="2024-08-20T06:57:27 IST" duration-ms="4988">
-      <class name="testscripts.ManageContactTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testscripts.ManageContactTest@563f38c4]" started-at="2024-08-20T06:57:22 IST" name="beforeMethod" finished-at="2024-08-20T06:57:25 IST" duration-ms="2576" status="PASS">
+    <test started-at="2024-08-20T22:32:35 IST" name="Default test" finished-at="2024-08-20T22:32:41 IST" duration-ms="6027">
+      <class name="testscripts.ManageNewsTestNew">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testscripts.ManageNewsTestNew@3a7442c7]" started-at="2024-08-20T22:32:35 IST" name="beforeMethod" finished-at="2024-08-20T22:32:38 IST" duration-ms="2940" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="manageContactTest()[pri:0, instance:testscripts.ManageContactTest@563f38c4]" started-at="2024-08-20T06:57:25 IST" name="manageContactTest" finished-at="2024-08-20T06:57:27 IST" duration-ms="2364" status="PASS">
+        <test-method signature="manageNews()[pri:0, instance:testscripts.ManageNewsTestNew@3a7442c7]" started-at="2024-08-20T22:32:38 IST" name="manageNews" finished-at="2024-08-20T22:32:41 IST" duration-ms="3047" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- manageContactTest -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscripts.ManageContactTest@563f38c4]" started-at="2024-08-20T06:57:27 IST" name="afterMethod" finished-at="2024-08-20T06:57:27 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- manageNews -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscripts.ManageNewsTestNew@3a7442c7]" started-at="2024-08-20T22:32:41 IST" name="afterMethod" finished-at="2024-08-20T22:32:41 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- testscripts.ManageContactTest -->
+      </class> <!-- testscripts.ManageNewsTestNew -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
