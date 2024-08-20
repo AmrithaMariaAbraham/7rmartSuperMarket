@@ -20,6 +20,7 @@ public class ManageNewsTestNew extends Base
 	  mangNews.clickNewButton();
 	  String news="Automation Today";
 	  mangNews.enterValueforNews(news);
+	  mangNews.clickSaveButton();
 	  boolean isSuccessAlertdisplayed= mangNews.isAlertdisplayed();
 	  assertTrue(isSuccessAlertdisplayed, "Alert not displayed");
   }

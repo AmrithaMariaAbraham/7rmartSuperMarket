@@ -1,5 +1,7 @@
 package pages;
 import java.awt.AWTException;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -70,8 +72,10 @@ public class ManageContact
 	}
 	public void clickUpdateButton() throws InterruptedException
 	{
-		page.ScrollDownX250Y250();
-		//Wait.Wait(clickUpdateButton);
+		//page.scrollDownX280Y280();
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(280,280)");
+		Wait.Wait(clickUpdateButton);
 		clickUpdateButton.click();
 	}
 	public boolean isAlertDisplayed() 

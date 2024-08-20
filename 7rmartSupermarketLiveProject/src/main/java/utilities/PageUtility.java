@@ -46,10 +46,20 @@ public class PageUtility
 		//select.selectByVisibleText("Category1");
 		select.selectByIndex(2);
 	}
-	public void ScrollDownX250Y250()
+	public void scrollDownX250Y250()
 	{
 	 JavascriptExecutor js=(JavascriptExecutor) driver;
 	 js.executeScript("window.scrollBy(250,250)");
+	}
+	public void scrollDownX280Y280()
+	{
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(280,280)");
+	}
+	public void scrollDownX300Y300()
+	{
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(300,300)");
 	}
 	public void scrollDownX380Y380()
 	{

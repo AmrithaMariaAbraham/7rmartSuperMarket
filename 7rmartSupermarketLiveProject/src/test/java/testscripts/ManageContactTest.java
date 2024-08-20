@@ -28,7 +28,7 @@ public class ManageContactTest extends Base
 	  String deliveryChargeLimit="100";
 	  mangCont.editDeliveryChargeLimit(deliveryChargeLimit);
 	  mangCont.clickUpdateButton();
-	  //boolean isSuccessfullAlertdisplayed=mangCont.isAlertDisplayed();
-	  //assertTrue(isSuccessfullAlertdisplayed, "Succesfull message not displayed");	  
+	  boolean isSuccessfullAlertdisplayed=mangCont.isAlertDisplayed();
+	  assertTrue(isSuccessfullAlertdisplayed, "Succesfull message not displayed");	  
   }
 }
