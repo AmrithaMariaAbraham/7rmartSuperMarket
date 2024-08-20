@@ -48,8 +48,8 @@ public class LoginPageTest extends Base
    public void enterInvalidUserNameandValidPassword()
    {
 		  Login login=new Login(driver);
-		  String useramefield="admin";
-		  String passwordfield="password"; 	  
+		  String useramefield="user";
+		  String passwordfield="admin"; 	  
 		  login.enterValidUsername(useramefield);
 		  login.enterValidPassword(passwordfield);
 		  login.clickLoginbutton();	
@@ -59,8 +59,8 @@ public class LoginPageTest extends Base
    @Test(priority=5)
    public void enteInvalidUserNameandPassword()
    {
-	   Login login=new Login(driver);
-		  String useramefield="admin";
+	      Login login=new Login(driver);
+		  String useramefield="user";
 		  String passwordfield="password"; 	  
 		  login.enterValidUsername(useramefield);
 		  login.enterValidPassword(passwordfield);

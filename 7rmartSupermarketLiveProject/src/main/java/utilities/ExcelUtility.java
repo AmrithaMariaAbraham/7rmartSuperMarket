@@ -13,18 +13,18 @@ public class ExcelUtility
 		
 	public static String getStringData(int a,int b) throws IOException
 	 {
-	   f=new FileInputStream("C:\\Users\\amrit\\git\\Inheritance\\HieratchialInheritance\\src\\main\\resources\\TestData.xlsx");
+	   f=new FileInputStream("C:\\Users\\amrit\\git\\7rmartsupermarket\\7rmartSupermarketLiveProject\\src\\main\\resources\\7rmartsupermarketLiveProject.xlsx");
 	   w=new XSSFWorkbook(f);
-	   sh=w.getSheet("IDName");
+	   sh=w.getSheet("LoginDetails");
 	   Row r=sh.getRow(a);//Interface
 	   Cell c=r.getCell(b);//Interface
 	   return c.getStringCellValue();//method for returning cell value    
 	 }
 	public static String getIntegerData(int a,int b) throws IOException
 	 {
-	  f=new FileInputStream("C:\\Users\\amrit\\git\\Inheritance\\HieratchialInheritance\\src\\main\\resources\\TestData.xlsx");
+	  f=new FileInputStream("C:\\Users\\amrit\\git\\7rmartsupermarket\\7rmartSupermarketLiveProject\\src\\main\\resources\\7rmartsupermarketLiveProject.xlsx");
 	  w=new XSSFWorkbook(f);
-	  sh=w.getSheet("IDName");
+	  sh=w.getSheet("LoginDetails");
 	  Row r=sh.getRow(a);//Interface
 	  Cell c=r.getCell(b);//Interface
 	  int x=(int) c.getNumericCellValue();//type casting String value to integer value
