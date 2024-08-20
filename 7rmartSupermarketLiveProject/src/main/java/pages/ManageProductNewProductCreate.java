@@ -1,9 +1,17 @@
 package pages;
+import java.time.Duration;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class ManageProductNewProductCreate 
 {
@@ -14,7 +22,10 @@ public class ManageProductNewProductCreate
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="(//a[@class='small-box-footer'])[12]") WebElement manageProduct;
+	PageUtility page=new PageUtility();
+	WaitUtility Wait=new WaitUtility();
+	
+	@FindBy(xpath="(//a[@class='small-box-footer'])[10]") WebElement manageProduct;
 	@FindBy(xpath="//a[@onclick='click_button(1)']") WebElement New;
 	//@FindBy(xpath="//h3[text()='Enter Product Informations']") WebElement NewProductInfo;
 	@FindBy(xpath="//input[@id='title']") WebElement enterTitle;
@@ -89,6 +100,9 @@ public class ManageProductNewProductCreate
 	}
 	public void clickSaveButtonforCreatingNewProduct()
 	{
+		//Wait.Wait(submitButton);
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.elementToBeClickable(submitButton));
 		submitButton.click();
 	}
 	public boolean isalertdisplayed()

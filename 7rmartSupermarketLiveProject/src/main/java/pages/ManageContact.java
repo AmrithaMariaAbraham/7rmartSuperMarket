@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import utilities.FileUploadUtility;
 import utilities.PageUtility;
 import utilities.WaitUtility;
 
@@ -18,7 +20,11 @@ public class ManageContact
 		PageFactory.initElements(driver,this);
 	}
 		
-	@FindBy(xpath="(//a[@class='small-box-footer'])[8]") WebElement ManageContact;
+	PageUtility page=new PageUtility();
+	WaitUtility Wait=new WaitUtility();
+	FileUploadUtility fileUpload=new FileUploadUtility();
+	
+	@FindBy(xpath="(//a[@class='small-box-footer'])[7]") WebElement ManageContact;
 	@FindBy(xpath="//i[@class='fas fa-edit']") WebElement clickEdit;
 	@FindBy(xpath="//input[@id='phone']") WebElement phoneNumber;
 	@FindBy(xpath="//input[@id='email']") WebElement editEmail;
@@ -27,9 +33,6 @@ public class ManageContact
 	@FindBy(xpath="//input[@id='del_limit']") WebElement editDeliveryChargeLimit;
 	@FindBy(xpath="//button[@name='Update']") WebElement clickUpdateButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alertDisplayed;
-	
-	PageUtility page=new PageUtility();
-	WaitUtility Wait=new WaitUtility();
 	
 	public void clickManageContact()
 	{
@@ -43,31 +46,31 @@ public class ManageContact
 	{
 		phoneNumber.click();
 		Wait.Wait(phoneNumber);
-		page.selectAll();
+		fileUpload.selectAll();
 		phoneNumber.sendKeys(number);
 	}
 	public void editEmail(String email) throws AWTException
 	{
 		editEmail.click();
-		page.selectAll();
+		fileUpload.selectAll();
 		editEmail.sendKeys(email);
 	}
 	public void editAddress(String address) throws AWTException
 	{
 		editAddress.click();
-		page.selectAll();
+		fileUpload.selectAll();
 		editAddress.sendKeys(address);
 	}
 	public void editdeliverytime(String time) throws AWTException
 	{
 		editDeliveryTime.click();
-		page.selectAll();
+		fileUpload.selectAll();
 		editDeliveryTime.sendKeys(time);
 	}
 	public void editDeliveryChargeLimit(String deliveryChargeLimit) throws AWTException
 	{
 		editDeliveryChargeLimit.click();
-		page.selectAll();
+		fileUpload.selectAll();
 		editDeliveryChargeLimit.sendKeys(deliveryChargeLimit);
 	}
 	public void clickUpdateButton() throws InterruptedException

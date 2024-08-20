@@ -17,7 +17,7 @@ public class ManageProductSearch
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="(//a[@class='small-box-footer'])[12]") WebElement manageProduct;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[10]") WebElement manageProduct;
 	@FindBy(xpath="//a[@class='btn btn-rounded btn-primary']") WebElement searchButton;
 	@FindBy(xpath="//input[@name='un']") WebElement Title;
 	@FindBy(xpath="//input[@name='cd']") WebElement ProductCode;

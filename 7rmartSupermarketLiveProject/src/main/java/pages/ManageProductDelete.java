@@ -13,7 +13,7 @@ public class ManageProductDelete
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="(//a[@class='small-box-footer'])[12]") WebElement clickManageProd;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[10]") WebElement clickManageProd;
 	@FindBy(xpath="(//i[@class='fas fa-trash-alt'])[1]") WebElement deleteElement;
 	@FindBy(xpath="//i[@class=' fa fa-search']") WebElement Searchbutton;
 	@FindBy(xpath="//input[@name='un']") WebElement title;

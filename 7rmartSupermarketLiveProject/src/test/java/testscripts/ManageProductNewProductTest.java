@@ -1,6 +1,7 @@
 package testscripts;
 import static org.testng.Assert.assertTrue;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
 import constants.Constants;
@@ -13,6 +14,7 @@ public class ManageProductNewProductTest extends Base
   @Test
   public void manageProduct()
   {
+	  PageUtility page=new PageUtility();
 	  Login login=new Login(driver);
 	  login.enterValidUsername("admin");
 	  login.enterValidPassword("admin");
@@ -33,8 +35,9 @@ public class ManageProductNewProductTest extends Base
 	  mangNew.enterPriceforProduct(price);
 	  String stock="150";
 	  mangNew.stockAvailablityforProduct(stock);
-	  PageUtility page=new PageUtility();
-	  page.scrollDownX900Y900();
+	  //page.scrollDownX380Y380();
+	  JavascriptExecutor js=(JavascriptExecutor) driver;
+	  js.executeScript("window.scrollBy(400,400)");
 	  mangNew.clickSaveButtonforCreatingNewProduct();
 	  boolean isAlertDisplayed= mangNew.isalertdisplayed();
 	  assertTrue(isAlertDisplayed,Constants.ERRORFORMANAGEPRODUCTNEWPRODUCT);

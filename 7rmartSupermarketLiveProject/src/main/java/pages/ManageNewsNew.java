@@ -13,7 +13,7 @@ public class ManageNewsNew
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="(//a[@class='small-box-footer'])[9]") WebElement manageNews;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[11]") WebElement manageNews;
 	@FindBy(xpath="//a[@onclick='click_button(1)']") WebElement New;
 	@FindBy(xpath="//textarea[@id='news']") WebElement enterNews; 
 	@FindBy(xpath="//button[@name='create']") WebElement saveButton;
