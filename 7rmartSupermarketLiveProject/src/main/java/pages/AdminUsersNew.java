@@ -30,7 +30,6 @@ public class AdminUsersNew
 	@FindBy(xpath="//select[@id='user_type']") WebElement userType;
 	@FindBy(xpath="//button[@name='Create']") WebElement clickSaveButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alert;
-	@FindBy(xpath="(//i[@class='fas fa-trash-alt'])[1]")WebElement delete;
 	
 	public void clickAdminUsers()
 	{
