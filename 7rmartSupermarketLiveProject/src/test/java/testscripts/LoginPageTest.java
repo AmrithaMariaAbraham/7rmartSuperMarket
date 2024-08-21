@@ -1,17 +1,21 @@
 package testscripts;
 import static org.testng.Assert.assertTrue;
+
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 import constants.Constants;
 import pages.Login;
+import utilities.ExcelUtility;
 public class LoginPageTest extends Base
 {
 	
   @Test(priority=1)
-  public void enterValidUsernameAndPassword() 
+  public void enterValidUsernameAndPassword() throws IOException 
   	{	  
 	  Login login=new Login(driver);
-	  String useramefield="admin";
-	  String passwordfield="admin"; 	  
+	  String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
+	  String passwordfield=ExcelUtility.getStringData(1,1,"LoginDetails"); 	  
 	  login.enterValidUsername(useramefield);
 	  login.enterValidPassword(passwordfield);
 	  login.clickLoginbutton();	  
@@ -20,11 +24,11 @@ public class LoginPageTest extends Base
 	  assertTrue(isDashboardLoaded,Constants.ERRORMESSAGEFORLOGIN);
   	}
   @Test(priority=2)
-  public void adminLogout()
+  public void adminLogout() throws IOException
   	{
 	  Login login=new Login(driver);
-	  String useramefield="admin";
-	  String passwordfield="admin"; 	  
+	  String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
+	  String passwordfield=ExcelUtility.getStringData(1,1,"LoginDetails");  	  
 	  login.enterValidUsername(useramefield);
 	  login.enterValidPassword(passwordfield);
 	  login.clickLoginbutton();	  
@@ -33,11 +37,11 @@ public class LoginPageTest extends Base
 	  assertTrue(loginPageDisplayed,Constants.ERRORMESSAGEFORLOGOUT);
   	}
   @Test(priority=3)
-  public void enterValidUsernameandinvalidUsername()
+  public void enterValidUsernameandinvalidPasword() throws IOException
    	{
 	  Login login=new Login(driver);
-	  String useramefield="admin";
-	  String passwordfield="password"; 	  
+	  String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
+	  String passwordfield=ExcelUtility.getStringData(2,1,"LoginDetails"); 	  
 	  login.enterValidUsername(useramefield);
 	  login.enterValidPassword(passwordfield);
 	  login.clickLoginbutton();	
@@ -45,11 +49,11 @@ public class LoginPageTest extends Base
 	  assertTrue(invalidPasswordAlert,Constants.ERRORMESSAGEFORINVALIDPASSWORD);
    	}
    @Test(priority=4)
-   public void enterInvalidUserNameandValidPassword()
+   public void enterInvalidUserNameandValidPassword() throws IOException
    {
 		  Login login=new Login(driver);
-		  String useramefield="user";
-		  String passwordfield="admin"; 	  
+		  String useramefield=ExcelUtility.getStringData(2,0,"LoginDetails");
+		  String passwordfield=ExcelUtility.getStringData(1,1,"LoginDetails"); 	  
 		  login.enterValidUsername(useramefield);
 		  login.enterValidPassword(passwordfield);
 		  login.clickLoginbutton();	
@@ -57,11 +61,11 @@ public class LoginPageTest extends Base
 		  assertTrue(invalidPasswordAlert,Constants.ERRORMESSAGEFORINVALIDUSERNAME);
    }
    @Test(priority=5)
-   public void enteInvalidUserNameandPassword()
+   public void enteInvalidUserNameandPassword() throws IOException
    {
 	      Login login=new Login(driver);
-		  String useramefield="user";
-		  String passwordfield="password"; 	  
+		  String useramefield=ExcelUtility.getStringData(2,0,"LoginDetails");
+		  String passwordfield=ExcelUtility.getStringData(2,1,"LoginDetails");
 		  login.enterValidUsername(useramefield);
 		  login.enterValidPassword(passwordfield);
 		  login.clickLoginbutton();	

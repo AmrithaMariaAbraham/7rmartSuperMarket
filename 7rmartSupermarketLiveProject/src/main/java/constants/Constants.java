@@ -17,4 +17,5 @@ public class Constants
 	public static final String ERRORFORMANAGEPRODUCTSEARCH="Search not Found";
 	public static final String ERRORFORADMINUSERNEWUSER="Admin User not availanle";
 	public static final String ERRORFORADMINUSERSEARCH="User not found";
+	public static final String TESTDATAFILE=System.getProperty("user.dir")+"\\src\\test\\resources\\7rmartSupermarketTestData.xlsx";
 }
