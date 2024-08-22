@@ -1,8 +1,12 @@
 package pages;
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import utilities.ExcelUtility;
 
 public class ManageNewsNew 
 {
@@ -13,7 +17,7 @@ public class ManageNewsNew
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="(//a[@class='small-box-footer'])[11]") WebElement manageNews;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[9]") WebElement manageNews;
 	@FindBy(xpath="//a[@onclick='click_button(1)']") WebElement New;
 	@FindBy(xpath="//textarea[@id='news']") WebElement enterNews; 
 	@FindBy(xpath="//button[@name='create']") WebElement saveButton;
@@ -26,9 +30,11 @@ public class ManageNewsNew
 	{
 		New.click();
 	}
-	public void enterValueforNews(String news)
+	public void enterValueforNews() throws IOException
 	{
-		enterNews.sendKeys(news);
+		enterNews.click();
+		String News=ExcelUtility.getStringData(1,0,"ManageNewsNew");
+		enterNews.sendKeys(News);
 	}
 	public void clickSaveButton()
 	{

@@ -1,23 +1,20 @@
 package testscripts;
+
 import static org.testng.Assert.assertTrue;
-
 import java.io.IOException;
-
 import org.testng.annotations.Test;
 import constants.Constants;
 import pages.Login;
-import utilities.ExcelUtility;
+
 public class LoginPageTest extends Base
 {
 //pass	
   @Test(priority=1)
   public void enterValidUsernameAndPassword() throws IOException 
   	{	  
-	  Login login=new Login(driver);
-	  String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
-	  String passwordfield=ExcelUtility.getStringData(1,1,"LoginDetails"); 	  
-	  login.enterValidUsername(useramefield);
-	  login.enterValidPassword(passwordfield);
+	  Login login=new Login(driver);	   	  
+	  login.enterValidUsername();
+	  login.enterValidPassword();
 	  login.clickLoginbutton();	  
 	  //Assertion
 	  boolean isDashboardLoaded=login.isDashboardDisplayed();
@@ -27,10 +24,8 @@ public class LoginPageTest extends Base
   public void adminLogout() throws IOException
   	{
 	  Login login=new Login(driver);
-	  String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
-	  String passwordfield=ExcelUtility.getStringData(1,1,"LoginDetails");  	  
-	  login.enterValidUsername(useramefield);
-	  login.enterValidPassword(passwordfield);
+	  login.enterValidUsername();
+	  login.enterValidPassword();
 	  login.clickLoginbutton();	  
 	  login.adminLogout();
 	  boolean loginPageDisplayed=login.isLoginPageDisplayed();
@@ -40,10 +35,8 @@ public class LoginPageTest extends Base
   public void enterValidUsernameandinvalidPasword() throws IOException
    	{
 	  Login login=new Login(driver);
-	  String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
-	  String passwordfield=ExcelUtility.getStringData(2,1,"LoginDetails"); 	  
-	  login.enterValidUsername(useramefield);
-	  login.enterValidPassword(passwordfield);
+	  login.enterValidUsername();
+	  login.invalidPassword();
 	  login.clickLoginbutton();	
 	  boolean invalidPasswordAlert=login.isAlertforInvalidUsernameORPasswordAvailable();
 	  assertTrue(invalidPasswordAlert,Constants.ERRORMESSAGEFORINVALIDPASSWORD);
@@ -52,10 +45,8 @@ public class LoginPageTest extends Base
    public void enterInvalidUserNameandValidPassword() throws IOException
    {
 		  Login login=new Login(driver);
-		  String useramefield=ExcelUtility.getStringData(2,0,"LoginDetails");
-		  String passwordfield=ExcelUtility.getStringData(1,1,"LoginDetails"); 	  
-		  login.enterValidUsername(useramefield);
-		  login.enterValidPassword(passwordfield);
+		  login.invalidUserName();
+		  login.enterValidPassword();
 		  login.clickLoginbutton();	
 		  boolean invalidPasswordAlert=login.isAlertforInvalidUsernameORPasswordAvailable();
 		  assertTrue(invalidPasswordAlert,Constants.ERRORMESSAGEFORINVALIDUSERNAME);
@@ -64,10 +55,8 @@ public class LoginPageTest extends Base
    public void enteInvalidUserNameandPassword() throws IOException
    {
 	      Login login=new Login(driver);
-		  String useramefield=ExcelUtility.getStringData(2,0,"LoginDetails");
-		  String passwordfield=ExcelUtility.getStringData(2,1,"LoginDetails");
-		  login.enterValidUsername(useramefield);
-		  login.enterValidPassword(passwordfield);
+		  login.invalidUserName();
+		  login.invalidPassword();
 		  login.clickLoginbutton();	
 		  boolean invalidPasswordAlert=login.isAlertforInvalidUsernameORPasswordAvailable();
 		  assertTrue(invalidPasswordAlert,Constants.ERRORMESSAGEFORINVALIDUSER);

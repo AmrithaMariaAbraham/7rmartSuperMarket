@@ -1,8 +1,13 @@
+
 package pages;
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import utilities.ExcelUtility;
 
 	public class Login 
 	{
@@ -22,13 +27,25 @@ import org.openqa.selenium.support.PageFactory;
 	@FindBy(xpath="//div[@class='login-box']") WebElement loginPage;
 	@FindBy(xpath="//i[@class='icon fas fa-ban']") WebElement alertSymbol;
 	
-	public void enterValidUsername(String username) 
+	public void enterValidUsername() throws IOException 
 	{
-		userName.sendKeys(username);
+		String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
+		userName.sendKeys(useramefield);
 	}	
-	public void enterValidPassword(String passWord) 
+	public void enterValidPassword() throws IOException 
 	{
-		password.sendKeys(passWord);
+		String passwordfield=ExcelUtility.getStringData(1,1,"LoginDetails");
+		password.sendKeys(passwordfield);
+	}
+	public void invalidPassword() throws IOException
+	{
+		 String passwordfield=ExcelUtility.getStringData(2,1,"LoginDetails");
+		 password.sendKeys(passwordfield);
+	}
+	public void invalidUserName() throws IOException
+	{
+		String useramefield=ExcelUtility.getStringData(2,0,"LoginDetails");
+		userName.sendKeys(useramefield);
 	}
 	public void clickLoginbutton() 
 	{

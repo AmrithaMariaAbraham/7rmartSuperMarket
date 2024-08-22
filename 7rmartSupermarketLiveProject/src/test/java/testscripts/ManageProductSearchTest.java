@@ -1,34 +1,32 @@
 package testscripts;
+
 import static org.testng.Assert.assertTrue;
-
+import java.io.IOException;
 import org.testng.annotations.Test;
-
 import constants.Constants;
 import pages.Login;
 import pages.ManageProductSearch;
+import utilities.ExcelUtility;
 
 public class ManageProductSearchTest extends Base
 {
   @Test
-  public void manageProductSerach() 
+  public void manageProductSerach() throws IOException 
   {
 	  Login login=new Login(driver);
-	  String useramefield="admin";
-	  String passwordfield="admin"; 	  
-	  login.enterValidUsername(useramefield);
-	  login.enterValidPassword(passwordfield);
+	  login.enterValidUsername();
+	  login.enterValidPassword();
 	  login.clickLoginbutton();
 	  ManageProductSearch mangSearch=new ManageProductSearch(driver);
 	  mangSearch.clickManageProduct();
 	  mangSearch.clickSearchButton();
-	  String title="Curd12";
+	  String title=ExcelUtility.getStringData(1,0,"ManageProductSearch");
 	  mangSearch.enterTitle(title);
-	  String productCode="P1015";
+	  String productCode=ExcelUtility.getStringData(1,1,"ManageProductSearch");
 	  mangSearch.enterProductCode(productCode);
 	  mangSearch.selectCategoryfromDropdown();
 	  mangSearch.selectSubCategoryfromDropDown();
 	  mangSearch.clickSearch();
-	  //add Assertion
 	  boolean isAlertDisplayed=mangSearch.issearchAlertDisplayed();
 	  assertTrue(isAlertDisplayed,Constants.ERRORFORMANAGEPRODUCTSEARCH);
 	  }

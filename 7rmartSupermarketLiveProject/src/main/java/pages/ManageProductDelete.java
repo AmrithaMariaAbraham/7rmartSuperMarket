@@ -1,8 +1,12 @@
 package pages;
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import utilities.ExcelUtility;
 
 public class ManageProductDelete 
 {
@@ -13,7 +17,7 @@ public class ManageProductDelete
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="(//a[@class='small-box-footer'])[10]") WebElement clickManageProd;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[8]") WebElement clickManageProd;
 	@FindBy(xpath="(//i[@class='fas fa-trash-alt'])[1]") WebElement deleteElement;
 	@FindBy(xpath="//i[@class=' fa fa-search']") WebElement Searchbutton;
 	@FindBy(xpath="//input[@name='un']") WebElement title;
@@ -38,10 +42,14 @@ public class ManageProductDelete
 	{
 		searchElement.click();
 	}
-	public void SearcheletedProduct(String Title,String productCode)
+	public void SearchdeletedProduct() throws IOException
 	{
-		title.sendKeys(Title);
-		ProductCode.sendKeys(productCode);
+		//title.sendKeys(Title);
+		String TitLe=ExcelUtility.getStringData(1,0,"ManageProductSearch");
+		title.sendKeys(TitLe);
+		String productcode=ExcelUtility.getStringData(1,1,"ManageProductSearch");
+		ProductCode.sendKeys(productcode);
+		//ProductCode.sendKeys(productCode);
 		Searchbutton.click();
 	}	
 	public boolean isTitledisplayed()

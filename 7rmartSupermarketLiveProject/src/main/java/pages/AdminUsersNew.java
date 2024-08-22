@@ -1,4 +1,5 @@
 package pages;
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utilities.ExcelUtility;
 import utilities.PageUtility;
 import utilities.WaitUtility;
 
@@ -39,13 +41,25 @@ public class AdminUsersNew
 	{
 		clickNew.click();
 	}
-	public void enterUsername(String userName)
+	public void enterUsername() throws IOException
 	{
-		enterUsername.sendKeys(userName);
+		enterUsername.click();		
+		String username=ExcelUtility.getStringData(1,0,"AdminUsers");
+		//Wait.Wait(enterUSername);
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.elementToBeClickable(enterUsername));
+		System.out.println(username);
+		enterUsername.sendKeys(username);
 	}
-	public void enterPassword(String password)
+	public void enterPassword() throws IOException
 	{
-		enterpassword.sendKeys(password);
+		enterpassword.click();
+		String Password=ExcelUtility.getIntegerData(1,1,"AdminUsers");
+		//Wait.Wait(enterpassword);
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.elementToBeClickable(enterpassword));		
+		System.out.println(enterpassword);
+		enterpassword.sendKeys(Password);
 	}
 	public void selectUserTypeFromDropdown()
 	{

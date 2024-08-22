@@ -1,6 +1,8 @@
 package testscripts;
 import static org.testng.Assert.assertTrue;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import pages.DashBoard;
@@ -9,11 +11,11 @@ import pages.Login;
 public class DashBoardTest extends Base
 {
   @Test
-  public void dashBoardNewfFunctions() 
+  public void dashBoardNewfFunctions() throws IOException 
   {
 	  Login login=new Login(driver);
-	  login.enterValidUsername("admin");
-	  login.enterValidPassword("admin");
+	  login.enterValidUsername();
+	  login.enterValidPassword();
 	  login.clickLoginbutton();
 	  DashBoard dashboard=new DashBoard(driver);
 	  dashboard.openingDashBoard();

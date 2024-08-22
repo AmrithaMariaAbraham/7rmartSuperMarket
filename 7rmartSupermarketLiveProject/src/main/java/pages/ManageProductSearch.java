@@ -17,13 +17,13 @@ public class ManageProductSearch
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="(//a[@class='small-box-footer'])[10]") WebElement manageProduct;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[8]") WebElement manageProduct;
 	@FindBy(xpath="//a[@class='btn btn-rounded btn-primary']") WebElement searchButton;
 	@FindBy(xpath="//input[@name='un']") WebElement Title;
 	@FindBy(xpath="//input[@name='cd']") WebElement ProductCode;
 	@FindBy(xpath="//select[@id='cat_id']") WebElement Category;
 	@FindBy(xpath="//select[@id='sb']") WebElement subCategory;
-	@FindBy(xpath="//button[@value='sr']") WebElement search;
+	@FindBy(xpath="//button[@name='Search']") WebElement search;
 	@FindBy(xpath="//a[@data-toggle='dropdown']") WebElement adminDropdown;
 	@FindBy(xpath="//center[text()='.........RESULT NOT FOUND.......']") WebElement alert;
 	

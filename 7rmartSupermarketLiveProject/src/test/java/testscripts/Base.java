@@ -1,4 +1,5 @@
 package testscripts;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -19,6 +20,6 @@ public class Base
 	  @AfterMethod
 		  public void afterMethod() 
 		  {
-			driver.quit();
+			//driver.quit();
 		  }
 }

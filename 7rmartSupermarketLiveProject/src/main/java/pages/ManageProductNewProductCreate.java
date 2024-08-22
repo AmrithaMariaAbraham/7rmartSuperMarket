@@ -1,4 +1,5 @@
 package pages;
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utilities.ExcelUtility;
 import utilities.PageUtility;
 import utilities.WaitUtility;
 
@@ -25,7 +27,7 @@ public class ManageProductNewProductCreate
 	PageUtility page=new PageUtility();
 	WaitUtility Wait=new WaitUtility();
 	
-	@FindBy(xpath="(//a[@class='small-box-footer'])[10]") WebElement manageProduct;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[8]") WebElement manageProduct;
 	@FindBy(xpath="//a[@onclick='click_button(1)']") WebElement New;
 	//@FindBy(xpath="//h3[text()='Enter Product Informations']") WebElement NewProductInfo;
 	@FindBy(xpath="//input[@id='title']") WebElement enterTitle;
@@ -50,8 +52,11 @@ public class ManageProductNewProductCreate
 	{
 		New.click();
 	}
-	public void enterTitleValue(String title)
+	public void enterTitleValue() throws IOException
 	{
+		enterTitle.click();
+		String title=ExcelUtility.getStringData(1,1,"ManageProductNew");
+		System.out.println(title);
 		enterTitle.sendKeys(title);
 	}
 	public void selectProductType()
@@ -60,38 +65,51 @@ public class ManageProductNewProductCreate
 	}	
 	public void selectCategoryFromDropDown()
 	{
+		//page.selectCategoryFromDropDown(category);
 		Select dropdown=new Select(category);
-		dropdown.selectByIndex(0);
+		dropdown.selectByIndex(1);
 	}
 	public void selectSubCategoryFromDropDown()
 	{
+		//page.selectsubCategory(subCategory);
 		Select dropdown=new Select(subCategory);
-		dropdown.selectByIndex(0);
+		dropdown.selectByIndex(1);
 	}	
-	public void selectPriceType()
+	public void selectPriceType() throws IOException
 	{
 		priceType.click();
 	}
-	public void selectMinimumPrice()
+	public void selectMinimumPiece()
 	{
-		Select dropdown=new Select(minimumPiece);
-		dropdown.selectByIndex(5);		
+		//page.selectMinimumPiece(minimumPiece);
+		Select select=new Select(minimumPiece);
+		select.selectByIndex(5);		
 	}
-	public void enterMaximumQuantity(String maxQty)
+	public void enterMaximumQuantity() throws IOException
 	{
-		maximumQuantity.sendKeys(maxQty);
+		maximumQuantity.click();
+		String qty=ExcelUtility.getIntegerData(1,2,"ManageProductNew");
+		System.out.println(qty);
+		maximumQuantity.sendKeys(qty);
+		//page.scrollDownX380Y380();
+	    JavascriptExecutor js=(JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(380,380)");
 	}
-	public void enterPriceforProduct(String Price)
+	public void enterPriceforProduct() throws IOException
 	{
+		price.click();
+		String Price=ExcelUtility.getIntegerData(1,3,"ManageProductNew");
+		System.out.println(Price);
 		price.sendKeys(Price);
 	}
-	public void stockAvailablityforProduct(String stockAvail)
+	public void stockAvailablityforProduct() throws IOException
 	{
-		stock.sendKeys(stockAvail);
-	}
-	public void enterPurchasePriceforProduct(String pp)
-	{
-		purchasePrice.sendKeys(pp);
+		stock.click();
+		String Stock=ExcelUtility.getIntegerData(1,4,"ManageProductNew");
+		stock.sendKeys(Stock);
+		//page.scrollDownX380Y380();
+	    JavascriptExecutor js=(JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(400,400)");
 	}
 	public void uploadMainImgforProduct() 
 	{

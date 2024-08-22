@@ -1,8 +1,8 @@
 package testscripts;
+
 import static org.testng.Assert.assertTrue;
-
+import java.io.IOException;
 import org.testng.annotations.Test;
-
 import constants.Constants;
 import pages.AdminUsersNew;
 import pages.Login;
@@ -10,19 +10,17 @@ import pages.Login;
 public class AdminUsersNewTest extends Base
 {
   @Test
-  public void adminUsers() throws InterruptedException 
+  public void adminUsers() throws InterruptedException, IOException 
   {
 	  Login login=new Login(driver);
-	  login.enterValidUsername("admin");
-	  login.enterValidPassword("admin");
-	  login.clickLoginbutton();
+	  login.enterValidUsername();
+	  login.enterValidPassword();
+	  login.clickLoginbutton();	  
 	  AdminUsersNew admin=new AdminUsersNew(driver);
 	  admin.clickAdminUsers();
 	  admin.clickNew();
-	  String username="Obsqura1";
-	  admin.enterUsername(username);
-	  String password="214355";
-	  admin.enterPassword(password);
+	  admin.enterUsername();
+	  admin.enterPassword();
 	  admin.selectUserTypeFromDropdown();
 	  admin.clickSaveButton();
 	  boolean isAlertdisplayed=admin.isAlertDisplayed();

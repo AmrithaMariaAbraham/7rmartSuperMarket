@@ -11,7 +11,7 @@ public class ExcelUtility
 {
 	public static FileInputStream f;
 	public static XSSFWorkbook w;
-	public static XSSFSheet sh,sh1;			
+	public static XSSFSheet sh;			
 		
 	public static String getStringData(int a,int b,String sheet) throws IOException
 	 {

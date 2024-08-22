@@ -1,10 +1,16 @@
 package pages;
 
+import java.io.IOException;
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utilities.ExcelUtility;
 import utilities.PageUtility;
 
 public class AdminUserSearch 
@@ -23,7 +29,10 @@ public class AdminUserSearch
 	@FindBy(xpath="//input[@id='un']") WebElement enterUsername;
 	@FindBy(xpath="//select[@id='ut']") WebElement userType;
 	@FindBy(xpath="(//button[@type='submit'])[1]") WebElement searchButton;
-	@FindBy(xpath="//div[@class='card-body table-responsive p-0']") WebElement alert;
+	@FindBy(xpath="(//i[@class='fas fa-trash-alt'])[1]") WebElement delete;
+	@FindBy(xpath="//div[@class='card-body table-responsive p-0']") WebElement alertSearch;
+	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement alertDelete;
+	
 	public void clickAdminUsers()
 	{
 		adminUsers.click();
@@ -32,20 +41,35 @@ public class AdminUserSearch
 	{
 		clickSearch.click();
 	}
-	public void enterUsername(String userName)
+	public void enterUsername() throws IOException
 	{
-		enterUsername.sendKeys(userName);
+		enterUsername.click();		
+		String username=ExcelUtility.getStringData(1,0,"AdminUsers");
+		//Wait.Wait(enterUSername);
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.elementToBeClickable(enterUsername));
+		System.out.println(username);
+		enterUsername.sendKeys(username);
 	}
 	public void selectUserTypeFromDropdown()
 	{
 		page.selectUserType(userType);
 	}
+	public void deleteSearchedValue()
+	{
+		delete.click();
+		driver.switchTo().alert().accept();
+	}
 	public void selectSearchButton()
 	{
 		searchButton.click();
 	}
-	public boolean isAlertDisplayed()
+	public boolean isSearchAlertDisplayed()
 	{
-		return alert.isDisplayed();
+		return alertSearch.isDisplayed();
+	}
+	public boolean isDeleteAlertDisplayed()
+	{
+		return alertDelete.isDisplayed();
 	}
 }

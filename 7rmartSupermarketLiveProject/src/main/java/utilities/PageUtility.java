@@ -36,6 +36,11 @@ public class PageUtility
 		Select select=new Select(usertype);
 		select.selectByIndex(2);
 	}
+	public void selectMinimumPiece(WebElement element3)
+	{
+		Select select=new Select(element3);
+		select.selectByIndex(5);
+	}
 	public void scrollDownX250Y250()
 	{
 	 JavascriptExecutor js=(JavascriptExecutor) driver;

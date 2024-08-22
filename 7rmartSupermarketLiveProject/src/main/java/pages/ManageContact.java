@@ -1,12 +1,16 @@
 package pages;
-import java.awt.AWTException;
 
+import java.awt.AWTException;
+import java.io.IOException;
+import java.time.Duration;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import utilities.ExcelUtility;
 import utilities.FileUploadUtility;
 import utilities.PageUtility;
 import utilities.WaitUtility;
@@ -24,7 +28,7 @@ public class ManageContact
 	WaitUtility Wait=new WaitUtility();
 	FileUploadUtility fileUpload=new FileUploadUtility();
 	
-	@FindBy(xpath="(//a[@class='small-box-footer'])[7]") WebElement ManageContact;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[5]") WebElement ManageContact;
 	@FindBy(xpath="//i[@class='fas fa-edit']") WebElement clickEdit;
 	@FindBy(xpath="//input[@id='phone']") WebElement phoneNumber;
 	@FindBy(xpath="//input[@id='email']") WebElement editEmail;
@@ -42,43 +46,49 @@ public class ManageContact
 	{
 		clickEdit.click();
 	}
-	public void enterPhonenumber(String number) throws AWTException
+	public void enterPhonenumber() throws AWTException, IOException
 	{
 		phoneNumber.click();
-		Wait.Wait(phoneNumber);
 		fileUpload.selectAll();
-		phoneNumber.sendKeys(number);
+		String phone=ExcelUtility.getIntegerData(1,0,"ManageContact");
+		System.out.println(phone);
+		phoneNumber.sendKeys(phone);
 	}
-	public void editEmail(String email) throws AWTException
+	public void editEmail() throws AWTException, IOException
 	{
 		editEmail.click();
 		fileUpload.selectAll();
+		String email=ExcelUtility.getStringData(1,1,"ManageContact");
 		editEmail.sendKeys(email);
 	}
-	public void editAddress(String address) throws AWTException
+	public void editAddress() throws AWTException, IOException
 	{
 		editAddress.click();
 		fileUpload.selectAll();
+		String address=ExcelUtility.getStringData(1,2,"ManageContact");
 		editAddress.sendKeys(address);
 	}
-	public void editdeliverytime(String time) throws AWTException
+	public void editdeliverytime() throws AWTException, IOException
 	{
 		editDeliveryTime.click();
 		fileUpload.selectAll();
+		String time=ExcelUtility.getIntegerData(1,3,"ManageContact");
 		editDeliveryTime.sendKeys(time);
 	}
-	public void editDeliveryChargeLimit(String deliveryChargeLimit) throws AWTException
+	public void editDeliveryChargeLimit() throws AWTException, IOException
 	{
 		editDeliveryChargeLimit.click();
 		fileUpload.selectAll();
-		editDeliveryChargeLimit.sendKeys(deliveryChargeLimit);
+		String deliveryCharge=ExcelUtility.getIntegerData(1,4,"ManageContact");
+		editDeliveryChargeLimit.sendKeys(deliveryCharge);
 	}
 	public void clickUpdateButton() throws InterruptedException
 	{
-		//page.scrollDownX280Y280();
+		//page.scrollDownX250Y250();
 		JavascriptExecutor js=(JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(280,280)");
-		Wait.Wait(clickUpdateButton);
+		js.executeScript("window.scrollBy(310,310)");
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(clickUpdateButton));
 		clickUpdateButton.click();
 	}
 	public boolean isAlertDisplayed() 

@@ -13,7 +13,7 @@ public class DashBoard
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin'] ") WebElement dashBoard;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[2]") WebElement dashBoard;
 	@FindBy(xpath="//a[@class='btn btn-rounded btn-danger']") WebElement New;
 	@FindBy(xpath="//h3[text()='Admin Users Informations']") WebElement adminInfoDisplayed;
 	
