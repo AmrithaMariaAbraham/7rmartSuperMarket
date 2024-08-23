@@ -70,7 +70,8 @@ public class ManageCategoryNew
 		js.executeScript("window.scrollBy(435,435)");
 		//Wait.waitforCategory(save);
 		//System.out.println("Waiting...");
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		//Thread.sleep(3000);
 		save.click();
 		System.out.println(save);
 	}
