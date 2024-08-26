@@ -8,8 +8,11 @@
   <test thread-count="5" name="parameter">
     <classes>
      <class name="testscripts.LoginPageTest">
-     
-     </class>
+     <methods>
+       <include name="Enter Values">
+       </include>
+     </methods>
+    </class>
     </classes>
   </test> <!-- 7rmartLiveProjectTest -->
 </suite> <!-- Suite -->
