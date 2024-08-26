@@ -10,7 +10,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utilities.ExcelUtility;
 import utilities.FileUploadUtility;
 import utilities.PageUtility;
 import utilities.WaitUtility;
@@ -46,40 +45,35 @@ public class ManageContact
 	{
 		clickEdit.click();
 	}
-	public void enterPhonenumber() throws AWTException, IOException
+	public void enterPhonenumber(String phone) throws IOException, AWTException
 	{
 		phoneNumber.click();
-		fileUpload.selectAll();
-		String phone=ExcelUtility.getIntegerData(1,0,"ManageContact");
+		fileUpload.selectAll();	
 		System.out.println(phone);
 		phoneNumber.sendKeys(phone);
 	}
-	public void editEmail() throws AWTException, IOException
+	public void editEmail(String email) throws IOException, AWTException
 	{
 		editEmail.click();
-		fileUpload.selectAll();
-		String email=ExcelUtility.getStringData(1,1,"ManageContact");
+		fileUpload.selectAll();		
 		editEmail.sendKeys(email);
 	}
-	public void editAddress() throws AWTException, IOException
+	public void editAddress(String address) throws AWTException, IOException
 	{
 		editAddress.click();
-		fileUpload.selectAll();
-		String address=ExcelUtility.getStringData(1,2,"ManageContact");
+		fileUpload.selectAll();		
 		editAddress.sendKeys(address);
 	}
-	public void editdeliverytime() throws AWTException, IOException
+	public void editdeliverytime(String time) throws AWTException, IOException
 	{
 		editDeliveryTime.click();
 		fileUpload.selectAll();
-		String time=ExcelUtility.getIntegerData(1,3,"ManageContact");
 		editDeliveryTime.sendKeys(time);
 	}
-	public void editDeliveryChargeLimit() throws AWTException, IOException
+	public void editDeliveryChargeLimit(String deliveryCharge) throws AWTException, IOException
 	{
 		editDeliveryChargeLimit.click();
-		fileUpload.selectAll();
-		String deliveryCharge=ExcelUtility.getIntegerData(1,4,"ManageContact");
+		fileUpload.selectAll();		
 		editDeliveryChargeLimit.sendKeys(deliveryCharge);
 	}
 	public void clickUpdateButton() throws InterruptedException

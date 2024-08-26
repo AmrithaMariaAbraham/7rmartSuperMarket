@@ -1,12 +1,10 @@
 package pages;
-import java.io.IOException;
 
+import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import utilities.ExcelUtility;
 
 public class ManageProductDelete 
 {
@@ -42,12 +40,10 @@ public class ManageProductDelete
 	{
 		searchElement.click();
 	}
-	public void SearchdeletedProduct() throws IOException
+	public void SearchdeletedProduct(String TitLe, String productcode) throws IOException
 	{
 		//title.sendKeys(Title);
-		String TitLe=ExcelUtility.getStringData(1,0,"ManageProductSearch");
 		title.sendKeys(TitLe);
-		String productcode=ExcelUtility.getStringData(1,1,"ManageProductSearch");
 		ProductCode.sendKeys(productcode);
 		//ProductCode.sendKeys(productCode);
 		Searchbutton.click();

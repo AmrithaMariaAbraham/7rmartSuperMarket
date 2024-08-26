@@ -1,12 +1,10 @@
 package pages;
-import java.io.IOException;
 
+import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import utilities.ExcelUtility;
 
 public class ManageNewsNew 
 {
@@ -30,10 +28,9 @@ public class ManageNewsNew
 	{
 		New.click();
 	}
-	public void enterValueforNews() throws IOException
+	public void enterValueforNews(String News) throws IOException
 	{
-		enterNews.click();
-		String News=ExcelUtility.getStringData(1,0,"ManageNewsNew");
+		enterNews.click();		
 		enterNews.sendKeys(News);
 	}
 	public void clickSaveButton()

@@ -7,10 +7,10 @@ import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
 import utilities.ExtendReportUtility;
 
-public class Listners implements ITestListener
+
+public class Listeners implements ITestListener 
 {
 	ExtentTest test;
 	ExtentReports extent = ExtendReportUtility.createExtentReports();
@@ -25,7 +25,7 @@ public class Listners implements ITestListener
      {
     	 ITestListener.super.onTestSuccess(result);
 
-    		extentTest.get().log(Status.PASS, "Test Passed")
+    		extentTest.get().log(Status.PASS, "Test Passed");
      }
      public void onTestFailure(ITestResult result) 
      {

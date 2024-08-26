@@ -6,20 +6,24 @@ import org.testng.annotations.Test;
 import constants.Constants;
 import pages.Login;
 import pages.ManageCategoryNew;
+import utilities.ExcelUtility;
 
 public class ManageCategoryNewTest extends Base 
 {
   @Test
   public void manageCategorySearch() throws IOException, InterruptedException 
   {
+	  String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
+	  String passwordfield=ExcelUtility.getStringData(1,1,"LoginDetails");
 	  Login login=new Login(driver);
-	  login.enterValidUsername();
-	  login.enterValidPassword();
+	  login.enterValidUsername(useramefield);
+	  login.enterValidPassword(passwordfield);
 	  login.clickLoginbutton();	  
 	  ManageCategoryNew mangAdd=new ManageCategoryNew(driver);
 	  mangAdd.clickCategory();
 	  mangAdd.clickAddButton();
-	  mangAdd.enterCategoryValue();
+	  String CateValue=ExcelUtility.getStringData(1,0,"ManageCategoryNew");
+	  mangAdd.enterCategoryValue(CateValue);
 	  mangAdd.selectAValuefromSelectGroup();
 	  mangAdd.uploadDiscountImage();
 	  mangAdd.clickSaveButton();	 

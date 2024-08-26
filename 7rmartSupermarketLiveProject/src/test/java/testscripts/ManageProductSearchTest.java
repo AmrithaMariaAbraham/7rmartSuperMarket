@@ -13,9 +13,11 @@ public class ManageProductSearchTest extends Base
   @Test
   public void manageProductSerach() throws IOException 
   {
+	  String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
+	  String passwordfield=ExcelUtility.getStringData(1,1,"LoginDetails");
 	  Login login=new Login(driver);
-	  login.enterValidUsername();
-	  login.enterValidPassword();
+	  login.enterValidUsername(useramefield);
+	  login.enterValidPassword(passwordfield);
 	  login.clickLoginbutton();
 	  ManageProductSearch mangSearch=new ManageProductSearch(driver);
 	  mangSearch.clickManageProduct();

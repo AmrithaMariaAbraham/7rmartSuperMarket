@@ -52,10 +52,9 @@ public class ManageProductNewProductCreate
 	{
 		New.click();
 	}
-	public void enterTitleValue() throws IOException
+	public void enterTitleValue(String title) throws IOException
 	{
-		enterTitle.click();
-		String title=ExcelUtility.getStringData(1,1,"ManageProductNew");
+		enterTitle.click();		
 		System.out.println(title);
 		enterTitle.sendKeys(title);
 	}
@@ -85,27 +84,24 @@ public class ManageProductNewProductCreate
 		Select select=new Select(minimumPiece);
 		select.selectByIndex(5);		
 	}
-	public void enterMaximumQuantity() throws IOException
+	public void enterMaximumQuantity(String qty) throws IOException
 	{
 		maximumQuantity.click();
-		String qty=ExcelUtility.getIntegerData(1,2,"ManageProductNew");
 		System.out.println(qty);
 		maximumQuantity.sendKeys(qty);
 		//page.scrollDownX380Y380();
 	    JavascriptExecutor js=(JavascriptExecutor) driver;
 	    js.executeScript("window.scrollBy(380,380)");
 	}
-	public void enterPriceforProduct() throws IOException
+	public void enterPriceforProduct(String Price) throws IOException
 	{
-		price.click();
-		String Price=ExcelUtility.getIntegerData(1,3,"ManageProductNew");
+		price.click();		
 		System.out.println(Price);
 		price.sendKeys(Price);
 	}
-	public void stockAvailablityforProduct() throws IOException
+	public void stockAvailablityforProduct(String Stock) throws IOException
 	{
-		stock.click();
-		String Stock=ExcelUtility.getIntegerData(1,4,"ManageProductNew");
+		stock.click();		
 		stock.sendKeys(Stock);
 		//page.scrollDownX380Y380();
 	    JavascriptExecutor js=(JavascriptExecutor) driver;

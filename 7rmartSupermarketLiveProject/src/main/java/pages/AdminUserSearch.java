@@ -41,10 +41,9 @@ public class AdminUserSearch
 	{
 		clickSearch.click();
 	}
-	public void enterUsername() throws IOException
+	public void enterUsername(String username) throws IOException
 	{
-		enterUsername.click();		
-		String username=ExcelUtility.getStringData(1,0,"AdminUsers");
+		enterUsername.click();			
 		//Wait.Wait(enterUSername);
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(enterUsername));

@@ -45,11 +45,9 @@ public class ManageCategoryNew
 	{
 		New.click();
 	}
-	public void enterCategoryValue() throws IOException
+	public void enterCategoryValue(String CateValue) throws IOException
 	{
 		enterCategoryValue.click();
-		String CateValue=ExcelUtility.getStringData(1,0,"ManageCategoryNew");
-		System.out.println(CateValue);
 		enterCategoryValue.sendKeys(CateValue);
 	}
 	public void selectAValuefromSelectGroup()

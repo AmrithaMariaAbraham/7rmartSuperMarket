@@ -39,27 +39,24 @@ public class ManageFooter
 	{
 		edit1.click();
 	}
-	public void editAddress() throws AWTException, IOException
+	public void editAddress(String address) throws AWTException, IOException
 	{
 		Address.click();
-		fileUpload.selectAll();
-		String address=ExcelUtility.getStringData(1,0,"ManageFooter");
+		fileUpload.selectAll();		
 		Address.sendKeys(address);
 	}
-	public void editEmail() throws AWTException, IOException
+	public void editEmail(String EMail) throws AWTException, IOException
 	{
 		email.click();
 		fileUpload.selectAll();
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(email));
-		String EMail=ExcelUtility.getStringData(1,1,"ManageFooter");
 		email.sendKeys(EMail);
 	}
-	public void editPhoneNumber() throws AWTException, IOException
+	public void editPhoneNumber(String Phone) throws AWTException, IOException
 	{
 		phone.click();
-		fileUpload.selectAll();
-		String Phone=ExcelUtility.getIntegerData(1,2,"ManageFooter");
+		fileUpload.selectAll();		
 		phone.sendKeys(Phone);
 	}
 	public void clickUpdateButton()

@@ -7,24 +7,32 @@ import org.testng.annotations.Test;
 import constants.Constants;
 import pages.Login;
 import pages.ManageContact;
+import utilities.ExcelUtility;
 
 public class ManageContactTest extends Base
 {
   @Test
-  public void manageContactTest() throws AWTException, InterruptedException, IOException 
+  public void manageContactTest() throws IOException, AWTException, InterruptedException  
   {  
+	  String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
+	  String passwordfield=ExcelUtility.getStringData(1,1,"LoginDetails");
 	  Login login=new Login(driver);
-	  login.enterValidUsername();
-	  login.enterValidPassword();
+	  login.enterValidUsername(useramefield);
+	  login.enterValidPassword(passwordfield);
 	  login.clickLoginbutton();	
 	  ManageContact mangCont=new ManageContact(driver);
 	  mangCont.clickManageContact();
-	  mangCont.clickEditButton();	  
-	  mangCont.enterPhonenumber();
-	  mangCont.editEmail();
-	  mangCont.editAddress();  
-	  mangCont.editdeliverytime();
-	  mangCont.editDeliveryChargeLimit();
+	  mangCont.clickEditButton();
+	  String phone=ExcelUtility.getIntegerData(1,0,"ManageContact");
+	  String email=ExcelUtility.getStringData(1,1,"ManageContact");
+	  String address=ExcelUtility.getStringData(1,2,"ManageContact");
+	  String time=ExcelUtility.getIntegerData(1,3,"ManageContact");
+	  String deliveryCharge=ExcelUtility.getIntegerData(1,4,"ManageContact");
+	  mangCont.enterPhonenumber(phone);
+	  mangCont.editEmail(email);	  
+	  mangCont.editAddress(address);  
+	  mangCont.editdeliverytime(time);
+	  mangCont.editDeliveryChargeLimit(deliveryCharge);
 	  mangCont.clickUpdateButton();
 	  boolean isSuccessfullAlertdisplayed=mangCont.isAlertDisplayed();
 	  assertTrue(isSuccessfullAlertdisplayed,Constants.ERRORFORMANAGECONTACT);	  
