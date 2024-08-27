@@ -18,8 +18,8 @@ public class LoginPageTest extends Base
 		Object[][] input = new Object[2][2];
 		input[0][0] = "admin";
 		input[0][1] = "admin";
-		//input[1][0] = "admin@123";
-		//input[1][1] = "admin123";
+		input[1][0] = "admin@123";
+		input[1][1] = "admin123";
 		return input;
 	}
 
