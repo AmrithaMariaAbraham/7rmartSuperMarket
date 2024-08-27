@@ -3,6 +3,7 @@ package testscripts;
 import static org.testng.Assert.assertTrue;
 import java.io.IOException;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import constants.Constants;
 import pages.Login;
@@ -17,19 +18,19 @@ public class LoginPageTest extends Base
 		Object[][] input = new Object[2][2];
 		input[0][0] = "admin";
 		input[0][1] = "admin";
-		input[1][0] = "admin@123";
-		input[1][1] = "admin123";
+		//input[1][0] = "admin@123";
+		//input[1][1] = "admin123";
 		return input;
 	}
 
-  @Test(priority=1)
-  public void enterValidUsernameAndPassword() throws IOException 
+  @Test(priority=1, dataProvider = "credentials")
+  public void enterValidUsernameAndPassword(String useramefield,String passwordfield) throws IOException 
   	{	  
-	  String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
-	  String passwordfield=ExcelUtility.getStringData(1,1,"LoginDetails");
+	  //String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
+	  //String passwordfield=ExcelUtility.getStringData(1,1,"LoginDetails");
 	  Login login=new Login(driver);	   	  
 	  login.enterValidUsername(useramefield);
-	  login.enterValidPassword(passwordfield);
+	  login.enterValidPassword(passwordfield);	  
 	  login.clickLoginbutton();	  
 	  //Assertion
 	  boolean isDashboardLoaded=login.isDashboardDisplayed();
@@ -61,6 +62,7 @@ public class LoginPageTest extends Base
 	  assertTrue(invalidPasswordAlert,Constants.ERRORMESSAGEFORINVALIDPASSWORD);
    	}
    @Test(priority=4)
+   @Parameters({"username","password"})
    public void enterInvalidUserNameandValidPassword() throws IOException 
    {
 	      String useramefield=ExcelUtility.getStringData(2,0,"LoginDetails");

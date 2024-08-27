@@ -6,7 +6,7 @@
       <class name="testscripts.LoginPageTest">
         <methods>
           <include name="beforeMethod"/>
-          <include name="enterValidUsernameandinvalidPasword"/>
+          <include name="enterValidUsernameAndPassword" invocation-numbers="1"/>
           <include name="afterMethod"/>
         </methods>
       </class> <!-- testscripts.LoginPageTest -->

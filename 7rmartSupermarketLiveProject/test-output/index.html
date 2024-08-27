@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\amrit\AppData\Local\Temp\testng-eclipse--1284545950\testng-customsuite.xml</span>
+                    <span>C:\Users\amrit\AppData\Local\Temp\testng-eclipse-1737511649\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">6 methods, 1 failed,   5 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testscripts.LoginPageTest" class="method navigator-link" hash-for-method="enterValidUsernameAndPassword(null, null)">enterValidUsernameAndPassword(null, null)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -118,7 +132,7 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testscripts.LoginPageTest" class="method navigator-link" hash-for-method="enterValidUsernameAndPassword">enterValidUsernameAndPassword</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="testscripts.LoginPageTest" class="method navigator-link" hash-for-method="enterValidUsernameAndPassword(admin, admin)">enterValidUsernameAndPassword(admin, admin)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -138,6 +152,62 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">testscripts.LoginPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterValidUsernameAndPassword(null, null)">
+                  </a> <!-- enterValidUsernameAndPassword(null, null) -->
+                  <span class="method-name">enterValidUsernameAndPassword</span>
+                  <span class="parameters">(null,null)</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:96)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy15.sendKeys(Unknown Source)
+	at pages.Login.enterValidUsername(Login.java:28)
+	at testscripts.LoginPageTest.enterValidUsernameAndPassword(LoginPageTest.java:32)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -167,9 +237,10 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="enterValidUsernameAndPassword">
-                  </a> <!-- enterValidUsernameAndPassword -->
+                  <a name="enterValidUsernameAndPassword(admin, admin)">
+                  </a> <!-- enterValidUsernameAndPassword(admin, admin) -->
                   <span class="method-name">enterValidUsernameAndPassword</span>
+                  <span class="parameters">(admin,admin)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -184,7 +255,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\amrit\AppData\Local\Temp\testng-eclipse--1284545950\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\amrit\AppData\Local\Temp\testng-eclipse-1737511649\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -233,32 +304,36 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(5);
+data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'enterValidUsernameAndPassword')
+data.setCell(0, 1, 'adminLogout')
 data.setCell(0, 2, 'testscripts.LoginPageTest')
-data.setCell(0, 3, 1425);
+data.setCell(0, 3, 3634);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'adminLogout')
+data.setCell(1, 1, 'enterValidUsernameAndPassword')
 data.setCell(1, 2, 'testscripts.LoginPageTest')
-data.setCell(1, 3, 958);
+data.setCell(1, 3, 1435);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'enteInvalidUserNameandPassword')
 data.setCell(2, 2, 'testscripts.LoginPageTest')
-data.setCell(2, 3, 566);
+data.setCell(2, 3, 1200);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'enterValidUsernameandinvalidPasword')
 data.setCell(3, 2, 'testscripts.LoginPageTest')
-data.setCell(3, 3, 531);
+data.setCell(3, 3, 1159);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'enterInvalidUserNameandValidPassword')
 data.setCell(4, 2, 'testscripts.LoginPageTest')
-data.setCell(4, 3, 449);
+data.setCell(4, 3, 1121);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'enterValidUsernameAndPassword')
+data.setCell(5, 2, 'testscripts.LoginPageTest')
+data.setCell(5, 3, 51);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -290,60 +365,74 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">enterValidUsernameAndPassword</span>
-                <span class="method-start">3104 ms</span>
+                <span class="method-name">enterValidUsernameAndPassword(admin, admin)</span>
+                <span class="method-start">4108 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">4532 ms</span>
+                <span class="method-start">5569 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">4717 ms</span>
+                <span class="method-start">5916 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">enterValidUsernameAndPassword(null, null)</span>
+                <span class="method-start">8967 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">9025 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">9309 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">adminLogout</span>
-                <span class="method-start">6312 ms</span>
+                <span class="method-start">11760 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">7271 ms</span>
+                <span class="method-start">15394 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">7435 ms</span>
+                <span class="method-start">15699 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">enterValidUsernameandinvalidPasword</span>
-                <span class="method-start">9035 ms</span>
+                <span class="method-start">18356 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">9567 ms</span>
+                <span class="method-start">19515 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">9704 ms</span>
+                <span class="method-start">19812 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">enterInvalidUserNameandValidPassword</span>
-                <span class="method-start">11276 ms</span>
+                <span class="method-start">22307 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">11734 ms</span>
+                <span class="method-start">23430 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">11891 ms</span>
+                <span class="method-start">23725 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">enteInvalidUserNameandPassword</span>
-                <span class="method-start">13535 ms</span>
+                <span class="method-start">26215 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">14103 ms</span>
+                <span class="method-start">27417 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
