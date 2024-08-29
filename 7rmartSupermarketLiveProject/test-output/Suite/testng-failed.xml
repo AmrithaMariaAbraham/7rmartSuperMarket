@@ -8,9 +8,13 @@
     <classes>
       <class name="testscripts.LoginPageTest">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="enterValidUsernameAndPassword" invocation-numbers="1"/>
+          <include name="enterValidUsernameandinvalidPasword"/>
+          <include name="adminLogout"/>
+          <include name="initializeMethod"/>
+          <include name="enterValidUsernameAndPassword"/>
           <include name="afterMethod"/>
+          <include name="enterInvalidUserNameandValidPassword"/>
+          <include name="enteInvalidUserNameandPassword"/>
         </methods>
       </class> <!-- testscripts.LoginPageTest -->
     </classes>

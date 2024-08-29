@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="4" passed="2" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-27T07:47:17 IST" name="CrossBrowsingTesting" finished-at="2024-08-27T07:47:34 IST" duration-ms="17832">
+  <suite started-at="2024-08-29T07:24:18 IST" name="CrossBrowsingTesting" finished-at="2024-08-29T07:24:37 IST" duration-ms="18448">
     <groups>
     </groups>
-    <test started-at="2024-08-27T07:47:17 IST" name="Chrome Test" finished-at="2024-08-27T07:47:24 IST" duration-ms="7543">
+    <test started-at="2024-08-29T07:24:18 IST" name="Chrome Test" finished-at="2024-08-29T07:24:25 IST" duration-ms="6784">
       <class name="testscripts.LoginPageTest">
-        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscripts.LoginPageTest@5a18cd76]" started-at="2024-08-27T07:47:17 IST" name="initializeMethod" finished-at="2024-08-27T07:47:19 IST" duration-ms="2919" status="PASS">
+        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscripts.LoginPageTest@3da30852]" started-at="2024-08-29T07:24:18 IST" name="initializeMethod" finished-at="2024-08-29T07:24:22 IST" duration-ms="3130" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeMethod -->
-        <test-method signature="enterValidUsernameAndPassword(java.lang.String,java.lang.String)[pri:1, instance:testscripts.LoginPageTest@5a18cd76]" started-at="2024-08-27T07:47:19 IST" name="enterValidUsernameAndPassword" data-provider="credentials" finished-at="2024-08-27T07:47:20 IST" duration-ms="980" status="PASS">
+        <test-method signature="enterValidUsernameAndPassword(java.lang.String,java.lang.String)[pri:1, instance:testscripts.LoginPageTest@3da30852]" started-at="2024-08-29T07:24:22 IST" name="enterValidUsernameAndPassword" data-provider="credentials" finished-at="2024-08-29T07:24:22 IST" duration-ms="869" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -34,11 +34,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterValidUsernameAndPassword -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscripts.LoginPageTest@5a18cd76]" started-at="2024-08-27T07:47:20 IST" name="afterMethod" finished-at="2024-08-27T07:47:21 IST" duration-ms="369" status="PASS">
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginPageTest@3da30852]" started-at="2024-08-29T07:24:22 IST" name="browserQuit" finished-at="2024-08-29T07:24:22 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=enterValidUsernameAndPassword status=SUCCESS method=LoginPageTest.enterValidUsernameAndPassword(java.lang.String,java.lang.String)[pri:1, instance:testscripts.LoginPageTest@3da30852] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscripts.LoginPageTest@5a18cd76]" started-at="2024-08-27T07:47:21 IST" name="initializeMethod" finished-at="2024-08-27T07:47:23 IST" duration-ms="2117" status="PASS">
+        </test-method> <!-- browserQuit -->
+        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscripts.LoginPageTest@3da30852]" started-at="2024-08-29T07:24:22 IST" name="initializeMethod" finished-at="2024-08-29T07:24:24 IST" duration-ms="1711" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -49,7 +56,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeMethod -->
-        <test-method signature="enterValidUsernameAndPassword(java.lang.String,java.lang.String)[pri:1, instance:testscripts.LoginPageTest@5a18cd76]" started-at="2024-08-27T07:47:23 IST" name="enterValidUsernameAndPassword" data-provider="credentials" finished-at="2024-08-27T07:47:24 IST" duration-ms="659" status="FAIL">
+        <test-method signature="enterValidUsernameAndPassword(java.lang.String,java.lang.String)[pri:1, instance:testscripts.LoginPageTest@3da30852]" started-at="2024-08-29T07:24:24 IST" name="enterValidUsernameAndPassword" data-provider="credentials" finished-at="2024-08-29T07:24:25 IST" duration-ms="613" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -70,9 +77,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.21.0', revision: '79ed462ef4'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2be35832939a8c643b9b3799f24b87b9, findElement {value=//p[text()='Dashboard'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.84, chrome: {chromedriverVersion: 128.0.6613.84 (606aa55c7d68..., userDataDir: C:\Users\amrit\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53592}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53592/devtoo..., se:cdpVersion: 128.0.6613.84, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2be35832939a8c643b9b3799f24b87b9]]>
+Command: [96a6325e50e586027dc2cfb11c432d52, findElement {using=xpath, value=//p[text()='Dashboard']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.84, chrome: {chromedriverVersion: 128.0.6613.86 (3045ed680fda..., userDataDir: C:\Users\amrit\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50796}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50796/devtoo..., se:cdpVersion: 128.0.6613.84, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 96a6325e50e586027dc2cfb11c432d52]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//p[text()='Dashboard']"}
@@ -81,9 +88,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.21.0', revision: '79ed462ef4'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2be35832939a8c643b9b3799f24b87b9, findElement {value=//p[text()='Dashboard'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.84, chrome: {chromedriverVersion: 128.0.6613.84 (606aa55c7d68..., userDataDir: C:\Users\amrit\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53592}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53592/devtoo..., se:cdpVersion: 128.0.6613.84, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2be35832939a8c643b9b3799f24b87b9
+Command: [96a6325e50e586027dc2cfb11c432d52, findElement {using=xpath, value=//p[text()='Dashboard']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.84, chrome: {chromedriverVersion: 128.0.6613.86 (3045ed680fda..., userDataDir: C:\Users\amrit\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50796}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50796/devtoo..., se:cdpVersion: 128.0.6613.84, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 96a6325e50e586027dc2cfb11c432d52
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -139,15 +146,22 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterValidUsernameAndPassword -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscripts.LoginPageTest@5a18cd76]" started-at="2024-08-27T07:47:24 IST" name="afterMethod" finished-at="2024-08-27T07:47:24 IST" duration-ms="391" status="PASS">
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginPageTest@3da30852]" started-at="2024-08-29T07:24:25 IST" name="browserQuit" finished-at="2024-08-29T07:24:25 IST" duration-ms="368" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=enterValidUsernameAndPassword status=FAILURE method=LoginPageTest.enterValidUsernameAndPassword(java.lang.String,java.lang.String)[pri:1, instance:testscripts.LoginPageTest@3da30852] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
+        </test-method> <!-- browserQuit -->
       </class> <!-- testscripts.LoginPageTest -->
     </test> <!-- Chrome Test -->
-    <test started-at="2024-08-27T07:47:25 IST" name="Edge Test" finished-at="2024-08-27T07:47:34 IST" duration-ms="9796">
+    <test started-at="2024-08-29T07:24:26 IST" name="Edge Test" finished-at="2024-08-29T07:24:37 IST" duration-ms="10972">
       <class name="testscripts.LoginPageTest">
-        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscripts.LoginPageTest@497486b3]" started-at="2024-08-27T07:47:25 IST" name="initializeMethod" finished-at="2024-08-27T07:47:28 IST" duration-ms="2963" status="PASS">
+        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscripts.LoginPageTest@63f8276e]" started-at="2024-08-29T07:24:26 IST" name="initializeMethod" finished-at="2024-08-29T07:24:28 IST" duration-ms="2177" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -158,7 +172,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeMethod -->
-        <test-method signature="enterValidUsernameAndPassword(java.lang.String,java.lang.String)[pri:1, instance:testscripts.LoginPageTest@497486b3]" started-at="2024-08-27T07:47:28 IST" name="enterValidUsernameAndPassword" data-provider="credentials" finished-at="2024-08-27T07:47:28 IST" duration-ms="873" status="PASS">
+        <test-method signature="enterValidUsernameAndPassword(java.lang.String,java.lang.String)[pri:1, instance:testscripts.LoginPageTest@63f8276e]" started-at="2024-08-29T07:24:28 IST" name="enterValidUsernameAndPassword" data-provider="credentials" finished-at="2024-08-29T07:24:29 IST" duration-ms="805" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -174,11 +188,18 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterValidUsernameAndPassword -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscripts.LoginPageTest@497486b3]" started-at="2024-08-27T07:47:28 IST" name="afterMethod" finished-at="2024-08-27T07:47:30 IST" duration-ms="1479" status="PASS">
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginPageTest@63f8276e]" started-at="2024-08-29T07:24:29 IST" name="browserQuit" finished-at="2024-08-29T07:24:29 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=enterValidUsernameAndPassword status=SUCCESS method=LoginPageTest.enterValidUsernameAndPassword(java.lang.String,java.lang.String)[pri:1, instance:testscripts.LoginPageTest@63f8276e] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscripts.LoginPageTest@497486b3]" started-at="2024-08-27T07:47:30 IST" name="initializeMethod" finished-at="2024-08-27T07:47:32 IST" duration-ms="2210" status="PASS">
+        </test-method> <!-- browserQuit -->
+        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscripts.LoginPageTest@63f8276e]" started-at="2024-08-29T07:24:29 IST" name="initializeMethod" finished-at="2024-08-29T07:24:33 IST" duration-ms="4469" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -189,7 +210,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeMethod -->
-        <test-method signature="enterValidUsernameAndPassword(java.lang.String,java.lang.String)[pri:1, instance:testscripts.LoginPageTest@497486b3]" started-at="2024-08-27T07:47:32 IST" name="enterValidUsernameAndPassword" data-provider="credentials" finished-at="2024-08-27T07:47:33 IST" duration-ms="744" status="FAIL">
+        <test-method signature="enterValidUsernameAndPassword(java.lang.String,java.lang.String)[pri:1, instance:testscripts.LoginPageTest@63f8276e]" started-at="2024-08-29T07:24:33 IST" name="enterValidUsernameAndPassword" data-provider="credentials" finished-at="2024-08-29T07:24:34 IST" duration-ms="1107" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -210,9 +231,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.21.0', revision: '79ed462ef4'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [f77a6c7980c6051be5f1afc1b69e013e, findElement {value=//p[text()='Dashboard'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.42, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:53640}, msedge: {msedgedriverVersion: 128.0.2739.42 (e015505d79c9..., userDataDir: C:\Users\amrit\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53640/devtoo..., se:cdpVersion: 128.0.2739.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f77a6c7980c6051be5f1afc1b69e013e]]>
+Command: [298ef830564c8842e9014fdfe171a9d9, findElement {using=xpath, value=//p[text()='Dashboard']}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.42, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:50853}, msedge: {msedgedriverVersion: 128.0.2739.42 (e015505d79c9..., userDataDir: C:\Users\amrit\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50853/devtoo..., se:cdpVersion: 128.0.2739.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 298ef830564c8842e9014fdfe171a9d9]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//p[text()='Dashboard']"}
@@ -221,9 +242,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.21.0', revision: '79ed462ef4'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [f77a6c7980c6051be5f1afc1b69e013e, findElement {value=//p[text()='Dashboard'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.42, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:53640}, msedge: {msedgedriverVersion: 128.0.2739.42 (e015505d79c9..., userDataDir: C:\Users\amrit\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53640/devtoo..., se:cdpVersion: 128.0.2739.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f77a6c7980c6051be5f1afc1b69e013e
+Command: [298ef830564c8842e9014fdfe171a9d9, findElement {using=xpath, value=//p[text()='Dashboard']}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.42, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:50853}, msedge: {msedgedriverVersion: 128.0.2739.42 (e015505d79c9..., userDataDir: C:\Users\amrit\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50853/devtoo..., se:cdpVersion: 128.0.2739.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 298ef830564c8842e9014fdfe171a9d9
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -279,10 +300,17 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterValidUsernameAndPassword -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscripts.LoginPageTest@497486b3]" started-at="2024-08-27T07:47:33 IST" name="afterMethod" finished-at="2024-08-27T07:47:34 IST" duration-ms="1512" status="PASS">
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginPageTest@63f8276e]" started-at="2024-08-29T07:24:34 IST" name="browserQuit" finished-at="2024-08-29T07:24:37 IST" duration-ms="2395" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=enterValidUsernameAndPassword status=FAILURE method=LoginPageTest.enterValidUsernameAndPassword(java.lang.String,java.lang.String)[pri:1, instance:testscripts.LoginPageTest@63f8276e] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
+        </test-method> <!-- browserQuit -->
       </class> <!-- testscripts.LoginPageTest -->
     </test> <!-- Edge Test -->
   </suite> <!-- CrossBrowsingTesting -->

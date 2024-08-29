@@ -11,9 +11,9 @@
     <classes>
       <class name="testscripts.LoginPageTest">
         <methods>
-          <include name="initializeMethod"/>
           <include name="enterValidUsernameAndPassword" invocation-numbers="1"/>
-          <include name="afterMethod"/>
+          <include name="initializeMethod"/>
+          <include name="browserQuit"/>
         </methods>
       </class> <!-- testscripts.LoginPageTest -->
     </classes>
@@ -25,9 +25,9 @@
     <classes>
       <class name="testscripts.LoginPageTest">
         <methods>
-          <include name="enterValidUsernameAndPassword" invocation-numbers="1"/>
           <include name="initializeMethod"/>
-          <include name="afterMethod"/>
+          <include name="enterValidUsernameAndPassword" invocation-numbers="1"/>
+          <include name="browserQuit"/>
         </methods>
       </class> <!-- testscripts.LoginPageTest -->
     </classes>
