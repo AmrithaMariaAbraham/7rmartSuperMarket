@@ -48,7 +48,6 @@ public class Base
 				scrshot = new ScreenShotUtility();
 				scrshot.captureFailureScreenShot(driver, itestresult.getName());
 				driver.quit();
-
 			}
 	  	}
 }
