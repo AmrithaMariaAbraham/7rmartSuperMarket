@@ -23,7 +23,7 @@ public class LoginPageTest extends Base
 		return input;
 	}
 
-  @Test(priority=1,retryAnalyzer = reTry.Retry.class, dataProvider = "credentials")
+  @Test(priority=1,retryAnalyzer = reTry.Retry.class, dataProvider = "credentials",groups = {"Smoke"})
   public void enterValidUsernameAndPassword(String useramefield,String passwordfield) throws IOException 
   	{	  
 	  //String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");

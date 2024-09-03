@@ -20,4 +20,5 @@ public class Constants
 	public static final String ERRORFORADMINUSERDELETE="User not deleted";
 	public static final String TESTDATAFILE=System.getProperty("user.dir")+"\\src\\test\\resources\\7rmartSupermarketTestData.xlsx";
 	public static final String DISCOUNTIMAGE=System.getProperty("user.dir")+"\\src\\test\\resources\\discount.jpg";
+	public static final String CONFIGFILE=System.getProperty("user.dir")+"\\src\\test\\resources\\config.properties";
 }

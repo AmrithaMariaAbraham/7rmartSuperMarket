@@ -1,35 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [CrossBrowsingTesting]" guice-stage="DEVELOPMENT">
+<suite name="Failed suite [Grouping]" guice-stage="DEVELOPMENT">
+  <parameter name="password" value="admin"/>
+  <parameter name="Browser" value="Chrome"/>
+  <parameter name="username" value="admin"/>
   <listeners>
     <listener class-name="generateExtendReport.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Chrome Test(failed)">
-    <parameter name="password" value="admin"/>
-    <parameter name="Browser" value="Chrome"/>
-    <parameter name="username" value="admin"/>
-    <classes>
-      <class name="testscripts.LoginPageTest">
-        <methods>
-          <include name="enterValidUsernameAndPassword" invocation-numbers="1"/>
-          <include name="initializeMethod"/>
-          <include name="browserQuit"/>
-        </methods>
-      </class> <!-- testscripts.LoginPageTest -->
-    </classes>
-  </test> <!-- Chrome Test(failed) -->
-  <test thread-count="5" name="Edge Test(failed)">
-    <parameter name="password" value="admin"/>
-    <parameter name="Browser" value="Edge"/>
-    <parameter name="username" value="admin"/>
+  <test thread-count="5" name="Grouping(failed)">
+    <groups>
+      <run>
+        <include name="Smoke"/>
+      </run>
+    </groups>
     <classes>
       <class name="testscripts.LoginPageTest">
         <methods>
           <include name="initializeMethod"/>
           <include name="enterValidUsernameAndPassword" invocation-numbers="1"/>
-          <include name="browserQuit"/>
         </methods>
       </class> <!-- testscripts.LoginPageTest -->
     </classes>
-  </test> <!-- Edge Test(failed) -->
-</suite> <!-- Failed suite [CrossBrowsingTesting] -->
+  </test> <!-- Grouping(failed) -->
+</suite> <!-- Failed suite [Grouping] -->
