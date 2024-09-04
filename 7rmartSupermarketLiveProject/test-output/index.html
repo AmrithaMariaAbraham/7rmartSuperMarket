@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,  2 skipped,  1 passed</span>
+                    <span class="method-stats">8 methods, 1 failed,  2 skipped,  5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -136,7 +136,27 @@
                     <div class="method-list-content passed suite-Grouping">
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Grouping" title="testscripts.LoginPageTest" class="method navigator-link" hash-for-method="adminLogout">adminLogout</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Grouping" title="testscripts.LoginPageTest" class="method navigator-link" hash-for-method="enteInvalidUserNameandPassword">enteInvalidUserNameandPassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Grouping" title="testscripts.LoginPageTest" class="method navigator-link" hash-for-method="enterInvalidUserNameandValidPassword">enterInvalidUserNameandValidPassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Grouping" title="testscripts.LoginPageTest" class="method navigator-link" hash-for-method="enterValidUsernameAndPassword(admin, admin)">enterValidUsernameAndPassword(admin, admin)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Grouping" title="testscripts.LoginPageTest" class="method navigator-link" hash-for-method="enterValidUsernameandinvalidPasword">enterValidUsernameandinvalidPasword</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Grouping -->
@@ -164,14 +184,14 @@
                   <span class="method-name">enterValidUsernameAndPassword</span>
                   <span class="parameters">(admin@123,admin123)</span>
                   <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[text()=&apos;Dashboard&apos;]&quot;}
-  (Session info: chrome=128.0.6613.113)
+  (Session info: chrome=128.0.6613.114)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [464ab2c2b40da350613f65dfac8ef6c6, findElement {value=//p[text()=&apos;Dashboard&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.113, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\amrit\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50549}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50549/devtoo..., se:cdpVersion: 128.0.6613.113, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 464ab2c2b40da350613f65dfac8ef6c6
+Command: [7efffe654a8bd949a91e6f462423b206, findElement {value=//p[text()=&apos;Dashboard&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.114, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\amrit\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52553}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52553/devtoo..., se:cdpVersion: 128.0.6613.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7efffe654a8bd949a91e6f462423b206
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -187,7 +207,7 @@ Session ID: 464ab2c2b40da350613f65dfac8ef6c6
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at jdk.proxy2/jdk.proxy2.$Proxy16.isDisplayed(Unknown Source)
 	at pages.Login.isDashboardDisplayed(Login.java:49)
-	at testscripts.LoginPageTest.enterValidUsernameAndPassword(LoginPageTest.java:36)
+	at testscripts.LoginPageTest.enterValidUsernameAndPassword(LoginPageTest.java:38)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 32 stack frames
 </div> <!-- stack-trace -->
@@ -208,14 +228,14 @@ Session ID: 464ab2c2b40da350613f65dfac8ef6c6
                   <span class="method-name">enterValidUsernameAndPassword</span>
                   <span class="parameters">(admin@123,admin123)</span>
                   <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[text()=&apos;Dashboard&apos;]&quot;}
-  (Session info: chrome=128.0.6613.113)
+  (Session info: chrome=128.0.6613.114)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [310470327c554495bc3cb49fed686ed2, findElement {value=//p[text()=&apos;Dashboard&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.113, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\amrit\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50507}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50507/devtoo..., se:cdpVersion: 128.0.6613.113, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 310470327c554495bc3cb49fed686ed2
+Command: [61b44dc74dae7a019d0b28927cc05ff2, findElement {value=//p[text()=&apos;Dashboard&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.114, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\amrit\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52513}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52513/devtoo..., se:cdpVersion: 128.0.6613.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 61b44dc74dae7a019d0b28927cc05ff2
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -231,7 +251,7 @@ Session ID: 310470327c554495bc3cb49fed686ed2
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at jdk.proxy2/jdk.proxy2.$Proxy16.isDisplayed(Unknown Source)
 	at pages.Login.isDashboardDisplayed(Login.java:49)
-	at testscripts.LoginPageTest.enterValidUsernameAndPassword(LoginPageTest.java:36)
+	at testscripts.LoginPageTest.enterValidUsernameAndPassword(LoginPageTest.java:38)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 32 stack frames
 </div> <!-- stack-trace -->
@@ -244,14 +264,14 @@ Session ID: 310470327c554495bc3cb49fed686ed2
                   <span class="method-name">enterValidUsernameAndPassword</span>
                   <span class="parameters">(admin@123,admin123)</span>
                   <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[text()=&apos;Dashboard&apos;]&quot;}
-  (Session info: chrome=128.0.6613.113)
+  (Session info: chrome=128.0.6613.114)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [af3eb20295ff6aadbef23db032c11ddf, findElement {value=//p[text()=&apos;Dashboard&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.113, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\amrit\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50528}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50528/devtoo..., se:cdpVersion: 128.0.6613.113, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: af3eb20295ff6aadbef23db032c11ddf
+Command: [bf874014823df1f20b8e05ad11169490, findElement {value=//p[text()=&apos;Dashboard&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.114, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\amrit\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52533}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52533/devtoo..., se:cdpVersion: 128.0.6613.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bf874014823df1f20b8e05ad11169490
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -267,7 +287,7 @@ Session ID: af3eb20295ff6aadbef23db032c11ddf
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at jdk.proxy2/jdk.proxy2.$Proxy16.isDisplayed(Unknown Source)
 	at pages.Login.isDashboardDisplayed(Login.java:49)
-	at testscripts.LoginPageTest.enterValidUsernameAndPassword(LoginPageTest.java:36)
+	at testscripts.LoginPageTest.enterValidUsernameAndPassword(LoginPageTest.java:38)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 32 stack frames
 </div> <!-- stack-trace -->
@@ -283,10 +303,38 @@ Session ID: af3eb20295ff6aadbef23db032c11ddf
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="adminLogout">
+                  </a> <!-- adminLogout -->
+                  <span class="method-name">adminLogout</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enteInvalidUserNameandPassword">
+                  </a> <!-- enteInvalidUserNameandPassword -->
+                  <span class="method-name">enteInvalidUserNameandPassword</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterInvalidUserNameandValidPassword">
+                  </a> <!-- enterInvalidUserNameandValidPassword -->
+                  <span class="method-name">enterInvalidUserNameandValidPassword</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="enterValidUsernameAndPassword(admin, admin)">
                   </a> <!-- enterValidUsernameAndPassword(admin, admin) -->
                   <span class="method-name">enterValidUsernameAndPassword</span>
                   <span class="parameters">(admin,admin)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterValidUsernameandinvalidPasword">
+                  </a> <!-- enterValidUsernameandinvalidPasword -->
+                  <span class="method-name">enterValidUsernameandinvalidPasword</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -342,7 +390,23 @@ Session ID: af3eb20295ff6aadbef23db032c11ddf
               <span class="test-group-name">Smoke</span>
               <br/>
               <div class="method-in-group">
+                <span class="method-in-group-name">adminLogout</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enteInvalidUserNameandPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterInvalidUserNameandValidPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
                 <span class="method-in-group-name">enterValidUsernameAndPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterValidUsernameandinvalidPasword</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -362,28 +426,44 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(8);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'enterValidUsernameAndPassword')
+data.setCell(0, 1, 'adminLogout')
 data.setCell(0, 2, 'testscripts.LoginPageTest')
-data.setCell(0, 3, 1059);
+data.setCell(0, 3, 3167);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'enterValidUsernameAndPassword')
+data.setCell(1, 1, 'enteInvalidUserNameandPassword')
 data.setCell(1, 2, 'testscripts.LoginPageTest')
-data.setCell(1, 3, 969);
+data.setCell(1, 3, 1758);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'enterValidUsernameAndPassword')
+data.setCell(2, 1, 'enterInvalidUserNameandValidPassword')
 data.setCell(2, 2, 'testscripts.LoginPageTest')
-data.setCell(2, 3, 919);
+data.setCell(2, 3, 934);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'enterValidUsernameAndPassword')
+data.setCell(3, 1, 'enterValidUsernameandinvalidPasword')
 data.setCell(3, 2, 'testscripts.LoginPageTest')
-data.setCell(3, 3, 727);
+data.setCell(3, 3, 814);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'enterValidUsernameAndPassword')
+data.setCell(4, 2, 'testscripts.LoginPageTest')
+data.setCell(4, 3, 665);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'enterValidUsernameAndPassword')
+data.setCell(5, 2, 'testscripts.LoginPageTest')
+data.setCell(5, 3, 492);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'enterValidUsernameAndPassword')
+data.setCell(6, 2, 'testscripts.LoginPageTest')
+data.setCell(6, 3, 473);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'enterValidUsernameAndPassword')
+data.setCell(7, 2, 'testscripts.LoginPageTest')
+data.setCell(7, 3, 453);
 window.suiteTableData['Grouping']= { tableData: data, tableDiv: 'times-div-Grouping'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
               <div id="times-div-Grouping">
               </div> <!-- times-div-Grouping -->
             </div> <!-- times-div -->
@@ -398,22 +478,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Grouping" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">4 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">testscripts.LoginPageTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">enteInvalidUserNameandPassword</span>
-                <br/>
-                <span class="ignored-method-name">enterInvalidUserNameandValidPassword</span>
-                <br/>
-                <span class="ignored-method-name">adminLogout</span>
-                <br/>
-                <span class="ignored-method-name">enterValidUsernameandinvalidPasword</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Grouping" class="panel">
@@ -429,33 +496,65 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">enterValidUsernameAndPassword(admin, admin)</span>
-                <span class="method-start">2423 ms</span>
+                <span class="method-start">2237 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">initializeMethod(Chrome)</span>
-                <span class="method-start">3400 ms</span>
+                <span class="method-start">2911 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">enterValidUsernameAndPassword(admin@123, admin123)</span>
-                <span class="method-start">5082 ms</span>
+                <span class="method-start">4466 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">initializeMethod(Chrome)</span>
-                <span class="method-start">5819 ms</span>
+                <span class="method-start">4928 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">enterValidUsernameAndPassword(admin@123, admin123)</span>
-                <span class="method-start">7777 ms</span>
+                <span class="method-start">6635 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">initializeMethod(Chrome)</span>
-                <span class="method-start">8703 ms</span>
+                <span class="method-start">7114 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">enterValidUsernameAndPassword(admin@123, admin123)</span>
-                <span class="method-start">11972 ms</span>
+                <span class="method-start">8842 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">initializeMethod(Chrome)</span>
+                <span class="method-start">9370 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">adminLogout</span>
+                <span class="method-start">10957 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">initializeMethod(Chrome)</span>
+                <span class="method-start">14141 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">enterValidUsernameandinvalidPasword</span>
+                <span class="method-start">16071 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">initializeMethod(Chrome)</span>
+                <span class="method-start">16886 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">enterInvalidUserNameandValidPassword</span>
+                <span class="method-start">20101 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">initializeMethod(Chrome)</span>
+                <span class="method-start">21035 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">enteInvalidUserNameandPassword</span>
+                <span class="method-start">25016 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

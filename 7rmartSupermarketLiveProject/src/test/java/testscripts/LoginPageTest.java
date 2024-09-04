@@ -24,6 +24,7 @@ public class LoginPageTest extends Base
 	}
 
   @Test(priority=1,retryAnalyzer = reTry.Retry.class, dataProvider = "credentials",groups = {"Smoke"})
+  @Parameters({"username","password"})
   public void enterValidUsernameAndPassword(String useramefield,String passwordfield) throws IOException 
   	{	  
 	  //String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
@@ -31,12 +32,14 @@ public class LoginPageTest extends Base
 	  Login login=new Login(driver);	   	  
 	  login.enterValidUsername(useramefield);
 	  login.enterValidPassword(passwordfield);	  
-	  login.clickLoginbutton();	  
+	  login.clickLoginbutton();	 
+	  System.out.println("Valid username password");
 	  //Assertion
 	  boolean isDashboardLoaded=login.isDashboardDisplayed();
 	  assertTrue(isDashboardLoaded,Constants.ERRORMESSAGEFORLOGIN);
   	}
-  @Test(priority=2)
+  @Test(priority=2, groups = {"Smoke"})
+  @Parameters({"username","password"})
     public void adminLogout() throws IOException 
   	{	  
 	  String usernamefield=ExcelUtility.getStringData(1,0,"LoginDetails");
@@ -46,10 +49,11 @@ public class LoginPageTest extends Base
 	  login.enterValidPassword(passwordfield);
 	  login.clickLoginbutton();	  
 	  login.adminLogout();
+	  System.out.println("Logout");
 	  boolean loginPageDisplayed=login.isLoginPageDisplayed();
 	  assertTrue(loginPageDisplayed,Constants.ERRORMESSAGEFORLOGOUT);
   	}
-  @Test(priority=3)
+  @Test(priority=3, groups= "Smoke")
    public void enterValidUsernameandinvalidPasword() throws IOException
    	{
 	  String usernamefield=ExcelUtility.getStringData(1,0,"LoginDetails");
@@ -58,10 +62,11 @@ public class LoginPageTest extends Base
 	  login.enterValidUsername(usernamefield);
 	  login.invalidPassword(passwordfield);
 	  login.clickLoginbutton();	
+	  System.out.println("Valid username Invalid password");
 	  boolean invalidPasswordAlert=login.isAlertforInvalidUsernameORPasswordAvailable();
 	  assertTrue(invalidPasswordAlert,Constants.ERRORMESSAGEFORINVALIDPASSWORD);
    	}
-   @Test(priority=4)
+   @Test(priority=4, groups = "Smoke")
    @Parameters({"username","password"})
    public void enterInvalidUserNameandValidPassword() throws IOException 
    {
@@ -71,10 +76,11 @@ public class LoginPageTest extends Base
 		  login.invalidUserName(useramefield);
 		  login.enterValidPassword(passwordfield);
 		  login.clickLoginbutton();	
+		  System.out.println("Invalid username Valid Password");
 		  boolean invalidPasswordAlert=login.isAlertforInvalidUsernameORPasswordAvailable();
 		  assertTrue(invalidPasswordAlert,Constants.ERRORMESSAGEFORINVALIDUSERNAME);
    }
-   @Test(priority=5)
+   @Test(priority=5, groups ="Smoke")
    public void enteInvalidUserNameandPassword() throws IOException
    {
 	      String useramefield=ExcelUtility.getStringData(2,0,"LoginDetails");
@@ -83,6 +89,7 @@ public class LoginPageTest extends Base
 		  login.invalidUserName(useramefield);
 		  login.invalidPassword(passwordfield);
 		  login.clickLoginbutton();	
+		  System.out.println("Invalid username password");
 		  boolean invalidPasswordAlert=login.isAlertforInvalidUsernameORPasswordAvailable();
 		  assertTrue(invalidPasswordAlert,Constants.ERRORMESSAGEFORINVALIDUSER);
    }

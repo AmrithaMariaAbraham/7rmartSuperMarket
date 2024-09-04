@@ -23,8 +23,8 @@ public class Base
 	ScreenShotUtility scrshot;
 	public Properties properties;
 	public FileInputStream fis;
+	
 	@BeforeMethod(alwaysRun = true)
-
 	@Parameters("Browser")
 	  public void initializeMethod(String browser) throws Exception 
 	   {
@@ -54,7 +54,7 @@ public class Base
 		{
 			throw new Exception("invalid browser");
 		}
-		  //driver=new ChromeDriver();
+	     //driver=new ChromeDriver();
 	    //driver.get("https://groceryapp.uniqassosiates.com/admin/login");
 		driver.get(properties.getProperty("url"));
 		driver.manage().window().maximize();
@@ -66,8 +66,7 @@ public class Base
 			if (itestresult.getStatus() == ITestResult.FAILURE) 
 			{
 				scrshot = new ScreenShotUtility();
-				scrshot.captureFailureScreenShot(driver, itestresult.getName());
-				
+				scrshot.captureFailureScreenShot(driver, itestresult.getName());				
 			}
 			driver.quit();
 	  	}
