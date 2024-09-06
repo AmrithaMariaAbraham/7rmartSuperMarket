@@ -8,7 +8,7 @@ public class PageUtility
 {
 	WebDriver driver;
 	//Dropdown,Select,drag,ScrollDown
-	
+	//reuseable code for pege package
 	public void selectIndex(WebElement elementindex)
 	{
 		Select select=new Select(elementindex);

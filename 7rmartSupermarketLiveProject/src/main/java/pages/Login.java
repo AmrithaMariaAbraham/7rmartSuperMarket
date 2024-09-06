@@ -14,10 +14,11 @@ import org.openqa.selenium.support.PageFactory;
 			this.driver=driver;
 			PageFactory.initElements(driver,this);//Page factory defined
 	}
+	//page Factory
 	@FindBy(xpath="//input[@name='username']") WebElement userName;
 	@FindBy(xpath="//input[@name='password']") WebElement password;
 	@FindBy(xpath="//button[@class='btn btn-dark btn-block']") WebElement siginButton;
-	@FindBy(xpath="//p[text()='Dashboard']") WebElement dashboard;
+	//@FindBy(xpath="//a[@data-toggle='dropdown']") WebElement homePage;
 	@FindBy(xpath="//a[@data-toggle='dropdown']") WebElement adminDropdown;
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']") WebElement logoutClick;
 	@FindBy(xpath="//div[@class='login-box']") WebElement loginPage;
@@ -36,17 +37,16 @@ import org.openqa.selenium.support.PageFactory;
 		 password.sendKeys(passwordfield);
 	}
 	public void invalidUserName(String useramefield)
-	{
-		
+	{		
 		userName.sendKeys(useramefield);
 	}
 	public void clickLoginbutton() 
 	{
 		siginButton.click();
 	}	
-	public boolean isDashboardDisplayed() 
+	public boolean isHomePageDisplayed() 
 	{
-		return dashboard.isDisplayed();
+		return adminDropdown.isDisplayed();
 	}
 	public void adminLogout()
 	{

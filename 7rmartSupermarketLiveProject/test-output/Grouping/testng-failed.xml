@@ -16,8 +16,8 @@
     <classes>
       <class name="testscripts.LoginPageTest">
         <methods>
-          <include name="initializeMethod"/>
           <include name="enterValidUsernameAndPassword" invocation-numbers="1"/>
+          <include name="initializeMethod"/>
         </methods>
       </class> <!-- testscripts.LoginPageTest -->
     </classes>

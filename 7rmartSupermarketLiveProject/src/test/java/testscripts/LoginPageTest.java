@@ -34,9 +34,8 @@ public class LoginPageTest extends Base
 	  login.enterValidPassword(passwordfield);	  
 	  login.clickLoginbutton();	 
 	  System.out.println("Valid username password");
-	  //Assertion
-	  boolean isDashboardLoaded=login.isDashboardDisplayed();
-	  assertTrue(isDashboardLoaded,Constants.ERRORMESSAGEFORLOGIN);
+	  boolean homePageLoaded=login.isHomePageDisplayed();
+	  assertTrue(homePageLoaded,Constants.ERRORMESSAGEFORLOGIN);
   	}
   @Test(priority=2, groups = {"Smoke"})
   @Parameters({"username","password"})

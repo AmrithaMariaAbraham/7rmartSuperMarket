@@ -16,3 +16,5 @@ public class ExtendReportUtility
 		return extentReports;
 	}
 }
+//customized report generation
+//aven stack 
