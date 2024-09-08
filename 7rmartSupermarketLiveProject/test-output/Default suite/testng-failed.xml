@@ -5,9 +5,9 @@
     <classes>
       <class name="testscripts.LoginPageTest">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="enterValidUsernameAndPassword" invocation-numbers="1"/>
-          <include name="afterMethod"/>
+          <include name="initializeMethod"/>
+          <include name="enterValidUsernameAndPassword"/>
+          <include name="browserQuit"/>
         </methods>
       </class> <!-- testscripts.LoginPageTest -->
     </classes>

@@ -5,10 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.WaitUtility;
+
 	public class Login 
 	{
-		WebDriver driver;
-	
+	WebDriver driver;
+	WaitUtility Wait= new WaitUtility();
 	public Login(WebDriver driver) 
 	{		
 			this.driver=driver;
@@ -18,7 +20,7 @@ import org.openqa.selenium.support.PageFactory;
 	@FindBy(xpath="//input[@name='username']") WebElement userName;
 	@FindBy(xpath="//input[@name='password']") WebElement password;
 	@FindBy(xpath="//button[@class='btn btn-dark btn-block']") WebElement siginButton;
-	//@FindBy(xpath="//a[@data-toggle='dropdown']") WebElement homePage;
+	@FindBy(xpath="//a[text()='Home']") WebElement homePage;
 	@FindBy(xpath="//a[@data-toggle='dropdown']") WebElement adminDropdown;
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']") WebElement logoutClick;
 	@FindBy(xpath="//div[@class='login-box']") WebElement loginPage;
@@ -46,7 +48,8 @@ import org.openqa.selenium.support.PageFactory;
 	}	
 	public boolean isHomePageDisplayed() 
 	{
-		return adminDropdown.isDisplayed();
+		Wait.implicitWait();
+		return homePage.isDisplayed();
 	}
 	public void adminLogout()
 	{

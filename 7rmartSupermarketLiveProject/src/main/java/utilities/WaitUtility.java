@@ -34,5 +34,9 @@ public class WaitUtility
 			WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(15));
 			wait.until(ExpectedConditions.elementToBeClickable(element4));
 		}
+		public void implicitWait()
+		{
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		}
 	}
 	
