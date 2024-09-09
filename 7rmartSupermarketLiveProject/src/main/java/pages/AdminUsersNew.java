@@ -31,15 +31,17 @@ public class AdminUsersNew
 	@FindBy(xpath="//button[@name='Create']") WebElement clickSaveButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alert;
 	
-	public void clickAdminUsers()
+	public AdminUsersNew clickAdminUsers()
 	{
 		adminUsers.click();
+		return this;
 	}
-	public void clickNew()
+	public AdminUsersNew clickNew()
 	{
 		clickNew.click();
+		return this;
 	}
-	public void enterUsername(String username) throws IOException
+	public AdminUsersNew enterUsername(String username) throws IOException
 	{
 		enterUsername.click();		
 		//Wait.Wait(enterUSername);
@@ -47,8 +49,9 @@ public class AdminUsersNew
 		wait.until(ExpectedConditions.elementToBeClickable(enterUsername));
 		System.out.println(username);
 		enterUsername.sendKeys(username);
+		return this;
 	}
-	public void enterPassword(String Password) throws IOException
+	public AdminUsersNew enterPassword(String Password) throws IOException
 	{
 		enterpassword.click();
 		//Wait.Wait(enterpassword);
@@ -56,14 +59,17 @@ public class AdminUsersNew
 		wait.until(ExpectedConditions.elementToBeClickable(enterpassword));		
 		System.out.println(enterpassword);
 		enterpassword.sendKeys(Password);
+		return this;
 	}
-	public void selectUserTypeFromDropdown()
+	public AdminUsersNew selectUserTypeFromDropdown()
 	{
 		page.selectUserType(userType);
+		return this;
 	}
-	public void clickSaveButton()
+	public AdminUserSearch clickSaveButton()
 	{
 		clickSaveButton.click();
+		return new AdminUserSearch(driver);
 	}
 	public boolean isAlertDisplayed()
 	{

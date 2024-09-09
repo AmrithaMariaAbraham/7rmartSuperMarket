@@ -16,6 +16,7 @@ import utilities.PageUtility;
 public class AdminUserSearch 
 {
 	WebDriver driver;
+	
 	public AdminUserSearch(WebDriver driver)
 	{
 		this.driver=driver;

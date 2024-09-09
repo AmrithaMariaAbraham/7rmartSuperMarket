@@ -4,31 +4,27 @@ import static org.testng.Assert.assertTrue;
 import java.io.IOException;
 import org.testng.annotations.Test;
 import constants.Constants;
+import pages.AdminUserSearch;
 import pages.AdminUsersNew;
 import pages.Login;
 import utilities.ExcelUtility;
 
 public class AdminUsersNewTest extends Base
 {
+	public Login login;
+	public AdminUsersNew adminUser;
+	public AdminUserSearch adminUserSearch;
   @Test
   public void adminUsers() throws InterruptedException, IOException 
   {
 	  String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
 	  String passwordfield=ExcelUtility.getStringData(1,1,"LoginDetails");
-	  Login login=new Login(driver);
-	  login.enterValidUsername(useramefield);
-	  login.enterValidPassword(passwordfield);
-	  login.clickLoginbutton();	  
-	  AdminUsersNew admin=new AdminUsersNew(driver);
-	  admin.clickAdminUsers();
-	  admin.clickNew();
 	  String username=ExcelUtility.getStringData(1,0,"AdminUsers");
-	  admin.enterUsername(username);
 	  String Password=ExcelUtility.getIntegerData(1,1,"AdminUsers");
-	  admin.enterPassword(Password);
-	  admin.selectUserTypeFromDropdown();
-	  admin.clickSaveButton();
-	  boolean isAlertdisplayed=admin.isAlertDisplayed();
+	  login=new Login(driver);
+	  adminUser=login.enterValidUsername(useramefield).enterValidPassword(passwordfield).clickLoginbutton();
+	  adminUserSearch=adminUser.clickAdminUsers().clickNew().enterUsername(username).enterPassword(Password).selectUserTypeFromDropdown().clickSaveButton();
+	  boolean isAlertdisplayed=adminUser.isAlertDisplayed();
 	  assertTrue(isAlertdisplayed,Constants.ERRORFORADMINUSERNEWUSER);
   }
 }

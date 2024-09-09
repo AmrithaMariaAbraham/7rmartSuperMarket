@@ -4,9 +4,14 @@
 	<listeners>
 		<listener class-name="generateExtendReport.Listeners"></listener>
 	</listeners>
+	<test name="Chrome Test">
+	<parameter name="Browser" value="Chrome"></parameter>
+		<parameter name="username" value="admin"></parameter>
+		<parameter name="password" value="admin"></parameter>
+		</test>
 	<test thread-count="5" name="Extent_Report">
 		<classes>
-			<class name="testscripts.LoginPageTest"></class>
+			<class name="testscripts.AdminUsersNewTest"></class>
 		</classes>
 	</test> <!-- 7rmartLiveProjectTest -->
 </suite> <!-- Suite -->

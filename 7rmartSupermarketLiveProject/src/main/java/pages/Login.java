@@ -26,13 +26,15 @@ import utilities.WaitUtility;
 	@FindBy(xpath="//div[@class='login-box']") WebElement loginPage;
 	@FindBy(xpath="//i[@class='icon fas fa-ban']") WebElement alertSymbol;
 	
-	public void enterValidUsername(String useramefield) 
+	public Login enterValidUsername(String useramefield) 
 	{
 		userName.sendKeys(useramefield);
+		return this;
 	}	
-	public void enterValidPassword(String passwordfield)
+	public Login enterValidPassword(String passwordfield)
 	{
 		password.sendKeys(passwordfield);
+		return this;
 	}
 	public void invalidPassword(String passwordfield) 
 	{
@@ -42,9 +44,10 @@ import utilities.WaitUtility;
 	{		
 		userName.sendKeys(useramefield);
 	}
-	public void clickLoginbutton() 
+	public AdminUsersNew clickLoginbutton() 
 	{
 		siginButton.click();
+		return new AdminUsersNew(driver);
 	}	
 	public boolean isHomePageDisplayed() 
 	{
