@@ -6,17 +6,13 @@
   </listeners>
   <test thread-count="5" name="Extent_Report(failed)">
     <classes>
-      <class name="testscripts.LoginPageTest">
+      <class name="testscripts.AdminUsersNewTest">
         <methods>
-          <include name="enterValidUsernameandinvalidPasword"/>
-          <include name="adminLogout"/>
+          <include name="adminUsers"/>
           <include name="initializeMethod"/>
-          <include name="enterValidUsernameAndPassword"/>
-          <include name="afterMethod"/>
-          <include name="enterInvalidUserNameandValidPassword"/>
-          <include name="enteInvalidUserNameandPassword"/>
+          <include name="browserQuit"/>
         </methods>
-      </class> <!-- testscripts.LoginPageTest -->
+      </class> <!-- testscripts.AdminUsersNewTest -->
     </classes>
   </test> <!-- Extent_Report(failed) -->
 </suite> <!-- Failed suite [Suite] -->
