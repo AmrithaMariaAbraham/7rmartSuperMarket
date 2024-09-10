@@ -44,7 +44,7 @@ public class AdminUsersNew
 	public AdminUsersNew enterUsername(String username) throws IOException
 	{
 		enterUsername.click();		
-		//Wait.Wait(enterUSername);
+		//Wait.Wait(enterUsername);
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(enterUsername));
 		System.out.println(username);

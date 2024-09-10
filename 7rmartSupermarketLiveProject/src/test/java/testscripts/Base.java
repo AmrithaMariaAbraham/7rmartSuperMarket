@@ -54,9 +54,7 @@ public class Base
 		{
 			throw new Exception("invalid browser");
 		}
-	     //driver=new ChromeDriver();
-	    //driver.get("https://groceryapp.uniqassosiates.com/admin/login");
-		driver.get(properties.getProperty("url"));
+	    driver.get(properties.getProperty("url"));
 		driver.manage().window().maximize();
 	   }
 	 

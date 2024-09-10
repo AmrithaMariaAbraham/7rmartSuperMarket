@@ -23,30 +23,36 @@ public class ManageProductDelete
 	@FindBy(xpath="//input[@name='cd']") WebElement ProductCode;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement Alert;
 	@FindBy(xpath="//span[@id='res']") WebElement elementNotFound;
-	public void clickmanageProduct()
+	
+	public ManageProductDelete clickmanageProduct()
 	{
 		clickManageProd.click();
+		return this;
 	}
-	public void deleteProduct()
+	public ManageProductDelete deleteProduct()
 	{
 		deleteElement.click();
 		driver.switchTo().alert().accept();
+		return this;
 	}
-	public void clickSearchButton()
+	public ManageProductDelete clickSearchButton()
 	{
 		Searchbutton.click();
+		return this;
 	}
-	public void search()
+	public ManageProductDelete search()
 	{
 		searchElement.click();
+		return this;
 	}
-	public void SearchdeletedProduct(String TitLe, String productcode) throws IOException
+	public ManageProductDelete SearchdeletedProduct(String TitLe, String productcode) throws IOException
 	{
 		//title.sendKeys(Title);
 		title.sendKeys(TitLe);
 		ProductCode.sendKeys(productcode);
 		//ProductCode.sendKeys(productCode);
 		Searchbutton.click();
+		return this;
 	}	
 	public boolean isTitledisplayed()
 	{

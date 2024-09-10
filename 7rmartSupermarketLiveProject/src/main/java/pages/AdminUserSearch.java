@@ -2,7 +2,6 @@ package pages;
 
 import java.io.IOException;
 import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,8 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import utilities.ExcelUtility;
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class AdminUserSearch 
 {
@@ -24,6 +23,7 @@ public class AdminUserSearch
 	}
 	
 	PageUtility page=new PageUtility();
+	WaitUtility Wait=new WaitUtility();
 	
 	@FindBy(xpath="(//a[@class='small-box-footer'])[1]") WebElement adminUsers;
 	@FindBy(xpath="//a[@onclick='click_button(2)']") WebElement clickSearch;
@@ -34,35 +34,41 @@ public class AdminUserSearch
 	@FindBy(xpath="//div[@class='card-body table-responsive p-0']") WebElement alertSearch;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement alertDelete;
 	
-	public void clickAdminUsers()
+	public AdminUserSearch clickAdminUsers()
 	{
 		adminUsers.click();
+		return this;
 	}	
-	public void clickSearch()
+	public AdminUserSearch clickSearch()
 	{
 		clickSearch.click();
+		return this;
 	}
-	public void enterUsername(String username) throws IOException
+	public AdminUserSearch enterUsername(String username) throws IOException
 	{
 		enterUsername.click();			
-		//Wait.Wait(enterUSername);
+		//Wait.Wait(enterUsername);
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(enterUsername));
 		System.out.println(username);
 		enterUsername.sendKeys(username);
+		return this;
 	}
-	public void selectUserTypeFromDropdown()
+	public AdminUserSearch selectUserTypeFromDropdown()
 	{
 		page.selectUserType(userType);
+		return this;
 	}
-	public void deleteSearchedValue()
+	public AdminUserSearch selectSearchButton()
+	{
+		searchButton.click();
+		return this;
+	}
+	public ManageCategoryNew deleteSearchedValue()
 	{
 		delete.click();
 		driver.switchTo().alert().accept();
-	}
-	public void selectSearchButton()
-	{
-		searchButton.click();
+		return new ManageCategoryNew(driver);
 	}
 	public boolean isSearchAlertDisplayed()
 	{

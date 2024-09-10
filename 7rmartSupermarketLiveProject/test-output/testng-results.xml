@@ -1,111 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-09T08:07:01 IST" name="Suite" finished-at="2024-09-09T08:07:01 IST" duration-ms="432">
+  <suite started-at="2024-09-10T21:49:37 IST" name="Chaining" finished-at="2024-09-10T21:49:50 IST" duration-ms="12387">
     <groups>
+      <group name="Smoke">
+        <method signature="LoginPageTest.enterValidUsernameAndPassword(java.lang.String,java.lang.String)[pri:1, instance:testscripts.LoginPageTest@4b86805d]" name="enterValidUsernameAndPassword" class="testscripts.LoginPageTest"/>
+        <method signature="LoginPageTest.enterValidUsernameandinvalidPasword()[pri:2, instance:testscripts.LoginPageTest@4b86805d]" name="enterValidUsernameandinvalidPasword" class="testscripts.LoginPageTest"/>
+        <method signature="LoginPageTest.enterInvalidUserNameandValidPassword()[pri:3, instance:testscripts.LoginPageTest@4b86805d]" name="enterInvalidUserNameandValidPassword" class="testscripts.LoginPageTest"/>
+        <method signature="LoginPageTest.enteInvalidUserNameandPassword()[pri:4, instance:testscripts.LoginPageTest@4b86805d]" name="enteInvalidUserNameandPassword" class="testscripts.LoginPageTest"/>
+      </group> <!-- Smoke -->
     </groups>
-    <test started-at="2024-09-09T08:07:01 IST" name="Chrome Test" finished-at="2024-09-09T08:07:01 IST" duration-ms="21">
-    </test> <!-- Chrome Test -->
-    <test started-at="2024-09-09T08:07:01 IST" name="Extent_Report" finished-at="2024-09-09T08:07:01 IST" duration-ms="71">
-      <class name="testscripts.AdminUsersNewTest">
-        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscripts.AdminUsersNewTest@638ef7ed]" started-at="2024-09-09T08:07:01 IST" name="initializeMethod" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1725849421650" status="FAIL">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Parameter 'Browser' is required by BeforeMethod on method initializeMethod but has not been marked @Optional or defined
-in C:\Users\amrit\git\7rmartsupermarket\7rmartSupermarketLiveProject\ExtendReport.xml]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Parameter 'Browser' is required by BeforeMethod on method initializeMethod but has not been marked @Optional or defined
-in C:\Users\amrit\git\7rmartsupermarket\7rmartSupermarketLiveProject\ExtendReport.xml
-at org.testng.internal.Parameters.createParams(Parameters.java:264)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
-at org.testng.internal.Parameters.createParameters(Parameters.java:690)
-at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+    <test started-at="2024-09-10T21:49:37 IST" name="Chaining Implemented" finished-at="2024-09-10T21:49:50 IST" duration-ms="12387">
+      <class name="testscripts.LoginPageTest">
+        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscripts.LoginPageTest@4b86805d]" started-at="2024-09-10T21:49:37 IST" name="initializeMethod" finished-at="2024-09-10T21:49:40 IST" duration-ms="2390" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeMethod -->
-        <test-method signature="adminUsers()[pri:0, instance:testscripts.AdminUsersNewTest@638ef7ed]" started-at="2024-09-09T08:07:01 IST" name="adminUsers" finished-at="2024-09-09T08:07:01 IST" duration-ms="0" status="SKIP">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Parameter 'Browser' is required by BeforeMethod on method initializeMethod but has not been marked @Optional or defined
-in C:\Users\amrit\git\7rmartsupermarket\7rmartSupermarketLiveProject\ExtendReport.xml]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Parameter 'Browser' is required by BeforeMethod on method initializeMethod but has not been marked @Optional or defined
-in C:\Users\amrit\git\7rmartsupermarket\7rmartSupermarketLiveProject\ExtendReport.xml
-at org.testng.internal.Parameters.createParams(Parameters.java:264)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
-at org.testng.internal.Parameters.createParameters(Parameters.java:690)
-at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        <test-method signature="enterValidUsernameAndPassword(java.lang.String,java.lang.String)[pri:1, instance:testscripts.LoginPageTest@4b86805d]" started-at="2024-09-10T21:49:40 IST" name="enterValidUsernameAndPassword" finished-at="2024-09-10T21:49:41 IST" duration-ms="1350" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- adminUsers -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscripts.AdminUsersNewTest@638ef7ed]" started-at="2024-09-09T08:07:01 IST" name="browserQuit" finished-at="2024-09-09T08:07:01 IST" duration-ms="0" status="SKIP">
+        </test-method> <!-- enterValidUsernameAndPassword -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginPageTest@4b86805d]" started-at="2024-09-10T21:49:41 IST" name="browserQuit" finished-at="2024-09-10T21:49:41 IST" duration-ms="207" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=enterValidUsernameAndPassword status=SUCCESS method=LoginPageTest.enterValidUsernameAndPassword(java.lang.String,java.lang.String)[pri:1, instance:testscripts.LoginPageTest@4b86805d] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserQuit -->
-      </class> <!-- testscripts.AdminUsersNewTest -->
-    </test> <!-- Extent_Report -->
-  </suite> <!-- Suite -->
+        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscripts.LoginPageTest@4b86805d]" started-at="2024-09-10T21:49:41 IST" name="initializeMethod" finished-at="2024-09-10T21:49:44 IST" duration-ms="2323" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeMethod -->
+        <test-method signature="enterValidUsernameandinvalidPasword()[pri:2, instance:testscripts.LoginPageTest@4b86805d]" started-at="2024-09-10T21:49:44 IST" name="enterValidUsernameandinvalidPasword" finished-at="2024-09-10T21:49:45 IST" duration-ms="1023" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterValidUsernameandinvalidPasword -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginPageTest@4b86805d]" started-at="2024-09-10T21:49:45 IST" name="browserQuit" finished-at="2024-09-10T21:49:45 IST" duration-ms="171" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=enterValidUsernameandinvalidPasword status=SUCCESS method=LoginPageTest.enterValidUsernameandinvalidPasword()[pri:2, instance:testscripts.LoginPageTest@4b86805d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscripts.LoginPageTest@4b86805d]" started-at="2024-09-10T21:49:45 IST" name="initializeMethod" finished-at="2024-09-10T21:49:47 IST" duration-ms="1814" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeMethod -->
+        <test-method signature="enterInvalidUserNameandValidPassword()[pri:3, instance:testscripts.LoginPageTest@4b86805d]" started-at="2024-09-10T21:49:47 IST" name="enterInvalidUserNameandValidPassword" finished-at="2024-09-10T21:49:47 IST" duration-ms="487" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterInvalidUserNameandValidPassword -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginPageTest@4b86805d]" started-at="2024-09-10T21:49:47 IST" name="browserQuit" finished-at="2024-09-10T21:49:47 IST" duration-ms="154" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=enterInvalidUserNameandValidPassword status=SUCCESS method=LoginPageTest.enterInvalidUserNameandValidPassword()[pri:3, instance:testscripts.LoginPageTest@4b86805d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscripts.LoginPageTest@4b86805d]" started-at="2024-09-10T21:49:47 IST" name="initializeMethod" finished-at="2024-09-10T21:49:49 IST" duration-ms="1690" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeMethod -->
+        <test-method signature="enteInvalidUserNameandPassword()[pri:4, instance:testscripts.LoginPageTest@4b86805d]" started-at="2024-09-10T21:49:49 IST" name="enteInvalidUserNameandPassword" finished-at="2024-09-10T21:49:49 IST" duration-ms="512" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enteInvalidUserNameandPassword -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginPageTest@4b86805d]" started-at="2024-09-10T21:49:49 IST" name="browserQuit" finished-at="2024-09-10T21:49:50 IST" duration-ms="198" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=enteInvalidUserNameandPassword status=SUCCESS method=LoginPageTest.enteInvalidUserNameandPassword()[pri:4, instance:testscripts.LoginPageTest@4b86805d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+      </class> <!-- testscripts.LoginPageTest -->
+    </test> <!-- Chaining Implemented -->
+  </suite> <!-- Chaining -->
 </testng-results>

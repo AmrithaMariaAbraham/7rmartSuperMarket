@@ -10,6 +10,8 @@ import utilities.ExcelUtility;
 
 public class ManageProductDeleteTest extends Base 
 {
+	public ManageProductDelete manageProductDelete;
+	
   @Test(priority=1)
   public void manageProductDelete() throws IOException 
   {

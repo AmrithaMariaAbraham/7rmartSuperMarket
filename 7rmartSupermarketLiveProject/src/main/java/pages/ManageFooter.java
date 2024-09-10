@@ -1,21 +1,21 @@
 package pages;
+
 import java.awt.AWTException;
 import java.io.IOException;
 import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import utilities.ExcelUtility;
 import utilities.FileUploadUtility;
+import utilities.WaitUtility;
 
 public class ManageFooter 
 {
 	WebDriver driver;
+	WaitUtility Wait=new WaitUtility();
 	public ManageFooter(WebDriver driver)
 	{
 		this.driver=driver;
@@ -31,37 +31,44 @@ public class ManageFooter
 	@FindBy(xpath="//button[@name='Update']") WebElement updatebutton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alertVisible;
 	
-	public void clickManageFooterText()
+	public ManageFooter clickManageFooterText()
 	{
 		ManageFooterText.click();
+		return this;
 	}
-	public void editFooterTextValue() 
+	public ManageFooter editFooterTextValue() 
 	{
 		edit1.click();
+		return this;
 	}
-	public void editAddress(String address) throws AWTException, IOException
+	public ManageFooter editAddress(String address) throws AWTException, IOException
 	{
 		Address.click();
 		fileUpload.selectAll();		
 		Address.sendKeys(address);
+		return this;
 	}
-	public void editEmail(String EMail) throws AWTException, IOException
+	public ManageFooter editEmail(String EMail) throws AWTException, IOException
 	{
 		email.click();
 		fileUpload.selectAll();
+		//Wait.waitforCategory(email);
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(email));
 		email.sendKeys(EMail);
+		return this;
 	}
-	public void editPhoneNumber(String Phone) throws AWTException, IOException
+	public ManageFooter editPhoneNumber(String Phone) throws AWTException, IOException
 	{
 		phone.click();
 		fileUpload.selectAll();		
 		phone.sendKeys(Phone);
+		return this;
 	}
-	public void clickUpdateButton()
+	public ManageNewsNew clickUpdateButton()
 	{
 		updatebutton.click();
+		return new ManageNewsNew(driver);
 	}
 	public boolean isFooterDisplayedSuccessfullydisplayed()
 	{

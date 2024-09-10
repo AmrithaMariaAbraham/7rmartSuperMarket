@@ -1,7 +1,6 @@
 package pages;
-import java.io.IOException;
-import java.time.Duration;
 
+import java.time.Duration;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import utilities.ExcelUtility;
+import constants.Constants;
+import utilities.FileUploadUtility;
 import utilities.PageUtility;
 import utilities.WaitUtility;
 
@@ -26,6 +26,7 @@ public class ManageProductNewProductCreate
 	
 	PageUtility page=new PageUtility();
 	WaitUtility Wait=new WaitUtility();
+	FileUploadUtility fileupload=new FileUploadUtility();
 	
 	@FindBy(xpath="(//a[@class='small-box-footer'])[8]") WebElement manageProduct;
 	@FindBy(xpath="//a[@onclick='click_button(1)']") WebElement New;
@@ -44,47 +45,55 @@ public class ManageProductNewProductCreate
 	@FindBy(xpath="//button[@name='create']") WebElement submitButton;	
 	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']") WebElement alert;
 	
-	public void clickManageProduct()
+	public ManageProductNewProductCreate clickManageProduct()
 	{
 		manageProduct.click();
+		return this;
 	}
-	public void clickNew()
+	public ManageProductNewProductCreate clickNew()
 	{
 		New.click();
+		return this;
 	}
-	public void enterTitleValue(String title) throws IOException
+	public ManageProductNewProductCreate enterTitleValue(String title) 
 	{
 		enterTitle.click();		
 		System.out.println(title);
 		enterTitle.sendKeys(title);
+		return this;
 	}
-	public void selectProductType()
+	public ManageProductNewProductCreate selectProductType()
 	{
 		productType.click();
+		return this;
 	}	
-	public void selectCategoryFromDropDown()
+	public ManageProductNewProductCreate selectCategoryFromDropDown()
 	{
 		//page.selectCategoryFromDropDown(category);
 		Select dropdown=new Select(category);
 		dropdown.selectByIndex(1);
+		return this;
 	}
-	public void selectSubCategoryFromDropDown()
+	public ManageProductNewProductCreate selectSubCategoryFromDropDown()
 	{
 		//page.selectsubCategory(subCategory);
 		Select dropdown=new Select(subCategory);
 		dropdown.selectByIndex(1);
+		return this;
 	}	
-	public void selectPriceType() throws IOException
+	public ManageProductNewProductCreate selectPriceType() 
 	{
 		priceType.click();
+		return this;
 	}
-	public void selectMinimumPiece()
+	public ManageProductNewProductCreate selectMinimumPiece()
 	{
 		//page.selectMinimumPiece(minimumPiece);
 		Select select=new Select(minimumPiece);
-		select.selectByIndex(5);		
+		select.selectByIndex(5);
+		return this;		
 	}
-	public void enterMaximumQuantity(String qty) throws IOException
+	public ManageProductNewProductCreate enterMaximumQuantity(String qty) 
 	{
 		maximumQuantity.click();
 		System.out.println(qty);
@@ -92,32 +101,37 @@ public class ManageProductNewProductCreate
 		//page.scrollDownX380Y380();
 	    JavascriptExecutor js=(JavascriptExecutor) driver;
 	    js.executeScript("window.scrollBy(380,380)");
+		return this;
 	}
-	public void enterPriceforProduct(String Price) throws IOException
+	public ManageProductNewProductCreate enterPriceforProduct(String Price) 
 	{
 		price.click();		
 		System.out.println(Price);
 		price.sendKeys(Price);
+		return this;
 	}
-	public void stockAvailablityforProduct(String Stock) throws IOException
+	public ManageProductNewProductCreate stockAvailablityforProduct(String Stock) 
 	{
 		stock.click();		
 		stock.sendKeys(Stock);
 		//page.scrollDownX380Y380();
 	    JavascriptExecutor js=(JavascriptExecutor) driver;
 	    js.executeScript("window.scrollBy(400,400)");
+		return this;
 	}
-	public void uploadMainImgforProduct() 
+	public ManageProductNewProductCreate uploadMainImgforProduct() 
 	{
 		mainImage.click();
-		mainImage.sendKeys("C:\\Users\\amrit\\Downloads\\tomaato.jpg");
+		mainImage.sendKeys(Constants.TOMATOIMAGE);
+		return this;
 	}
-	public void clickSaveButtonforCreatingNewProduct()
+	public ManageProductSearch clickSaveButtonforCreatingNewProduct()
 	{
 		//Wait.Wait(submitButton);
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(submitButton));
 		submitButton.click();
+		return new ManageProductSearch(driver);
 	}
 	public boolean isalertdisplayed()
 	{

@@ -23,5 +23,4 @@ public class FileUploadUtility
 	{
 		element.sendKeys(FilePath);
 	}
-	
 }

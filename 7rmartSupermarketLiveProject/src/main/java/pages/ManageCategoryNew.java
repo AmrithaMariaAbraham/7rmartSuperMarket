@@ -1,17 +1,13 @@
 package pages;
+
 import java.io.IOException;
 import java.time.Duration;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import constants.Constants;
-import utilities.ExcelUtility;
 import utilities.FileUploadUtility;
 import utilities.PageUtility;
 import utilities.WaitUtility;
@@ -37,45 +33,48 @@ public class ManageCategoryNew
 	@FindBy(xpath="//button[text()='Save']") WebElement save;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement alert;
 	
-	public void clickCategory()
+	public ManageCategoryNew clickCategory()
 	{
 		clickCategory.click();
+		return this;
 	}
-	public void clickAddButton()
+	public ManageCategoryNew clickAddButton()
 	{
 		New.click();
+		return this;
 	}
-	public void enterCategoryValue(String CateValue) throws IOException
+	public ManageCategoryNew enterCategoryValue(String CateValue) throws IOException
 	{
 		enterCategoryValue.click();
 		enterCategoryValue.sendKeys(CateValue);
+		return this;
 	}
-	public void selectAValuefromSelectGroup()
+	public ManageCategoryNew selectAValuefromSelectGroup()
 	{
 		selectGroup.click();
+		return this;
 	}
-	public void uploadDiscountImage()
+	public ManageCategoryNew uploadDiscountImage()
 	{
 		//page.scrollDownX250Y250();
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(250,250)");
 		fileupload.uploadDiscountImageForManageCategory(uploadImage,Constants.DISCOUNTIMAGE);
+		return this;
 	}
-	public void clickSaveButton() throws InterruptedException
+	public ManageContact clickSaveButton() throws InterruptedException
 	{
 		//page.scrollDownX280Y280();
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(435,435)");
 		//Wait.waitforCategory(save);
-		//System.out.println("Waiting...");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		//Thread.sleep(3000);
 		save.click();
 		System.out.println(save);
+		return new ManageContact(driver);
 	}
 	public boolean isAlertdisplayed()
 	{
 		return alert.isDisplayed();
-	}
-	
+	}	
 }

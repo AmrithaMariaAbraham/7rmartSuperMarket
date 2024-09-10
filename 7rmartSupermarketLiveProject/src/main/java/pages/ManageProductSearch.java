@@ -1,10 +1,9 @@
 package pages;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-
 import utilities.PageUtility;
 import utilities.WaitUtility;
 
@@ -30,39 +29,46 @@ public class ManageProductSearch
 	PageUtility page=new PageUtility();
 	WaitUtility Wait=new WaitUtility();
 	
-	public void clickManageProduct()
+	public ManageProductSearch clickManageProduct()
 	{
 		manageProduct.click();
+		return this;
 	}	
-	public void clickSearchButton()
+	public ManageProductSearch clickSearchButton()
 	{
 		searchButton.click();
+		return this;
 	}
-	public void enterTitle(String title)
+	public ManageProductSearch enterTitle(String title)
 	{
 		Title.sendKeys(title);
+		return this;
 	}
-	public void enterProductCode(String productCode)
+	public ManageProductSearch enterProductCode(String productCode)
 	{
 		ProductCode.sendKeys(productCode);
+		return this;
 	}
-	public void selectCategoryfromDropdown()
+	public ManageProductSearch selectCategoryfromDropdown()
 	{
 		//Select dropdown=new Select(Category);
 		//dropdown.selectByIndex(1);
 		Wait.waitforCategory(Category);
 		page.selectCategoryFromDropDown(Category);
+		return this;
 	}
-	public void selectSubCategoryfromDropDown()
+	public ManageProductSearch selectSubCategoryfromDropDown()
 	{
 		/*Select dropdown=new Select(subCategory);
 		dropdown.selectByIndex(1);*/
 		Wait.waitforSubCategory(subCategory);
 		page.selectsubCategory(subCategory);
+		return this;
 	}
-	public void clickSearch()
+	public ManageProductDelete clickSearch()
 	{
 		search.click();
+		return new ManageProductDelete(driver);
 	}
 	public boolean issearchAlertDisplayed()
 	{

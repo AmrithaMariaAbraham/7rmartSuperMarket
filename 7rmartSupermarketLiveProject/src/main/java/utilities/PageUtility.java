@@ -22,13 +22,11 @@ public class PageUtility
 	public void selectCategoryFromDropDown(WebElement category)
 	{
 		Select select=new Select(category);
-		//select.selectByValue("27");
 		select.selectByIndex(1);
 	}
 	public void selectsubCategory(WebElement subCategory)
 	{
 		Select select=new Select(subCategory);
-		//select.selectByVisibleText("Category1");
 		select.selectByIndex(2);
 	}
 	public void selectUserType(WebElement usertype)

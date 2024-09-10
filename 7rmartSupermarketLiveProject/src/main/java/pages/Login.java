@@ -11,6 +11,7 @@ import utilities.WaitUtility;
 	{
 	WebDriver driver;
 	WaitUtility Wait= new WaitUtility();
+	
 	public Login(WebDriver driver) 
 	{		
 			this.driver=driver;
@@ -36,13 +37,15 @@ import utilities.WaitUtility;
 		password.sendKeys(passwordfield);
 		return this;
 	}
-	public void invalidPassword(String passwordfield) 
+	public Login invalidPassword(String passwordfield) 
 	{
 		 password.sendKeys(passwordfield);
+		return this;
 	}
-	public void invalidUserName(String useramefield)
+	public Login invalidUserName(String useramefield)
 	{		
 		userName.sendKeys(useramefield);
+		return this;
 	}
 	public AdminUsersNew clickLoginbutton() 
 	{
@@ -54,10 +57,12 @@ import utilities.WaitUtility;
 		Wait.implicitWait();
 		return homePage.isDisplayed();
 	}
-	public void adminLogout()
+	public Login adminLogout()
 	{
+		homePage.click();
 		adminDropdown.click();
 		logoutClick.click();
+		return this;
 	}
 	public boolean isLoginPageDisplayed()
 	{

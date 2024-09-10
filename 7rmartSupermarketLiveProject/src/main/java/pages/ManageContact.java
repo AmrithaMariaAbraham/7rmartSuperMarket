@@ -37,46 +37,53 @@ public class ManageContact
 	@FindBy(xpath="//button[@name='Update']") WebElement clickUpdateButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alertDisplayed;
 	
-	public void clickManageContact()
+	public ManageContact clickManageContact()
 	{
 		ManageContact.click();
+		return this;
 	}
-	public void clickEditButton()
+	public ManageContact clickEditButton()
 	{
 		clickEdit.click();
+		return this;
 	}
-	public void enterPhonenumber(String phone) throws IOException, AWTException
+	public ManageContact enterPhonenumber(String phone) throws IOException, AWTException
 	{
 		phoneNumber.click();
 		fileUpload.selectAll();	
 		System.out.println(phone);
 		phoneNumber.sendKeys(phone);
+		return this;
 	}
-	public void editEmail(String email) throws IOException, AWTException
+	public ManageContact editEmail(String email) throws IOException, AWTException
 	{
 		editEmail.click();
 		fileUpload.selectAll();		
 		editEmail.sendKeys(email);
+		return this;
 	}
-	public void editAddress(String address) throws AWTException, IOException
+	public ManageContact editAddress(String address) throws AWTException, IOException
 	{
 		editAddress.click();
 		fileUpload.selectAll();		
 		editAddress.sendKeys(address);
+		return this;
 	}
-	public void editdeliverytime(String time) throws AWTException, IOException
+	public ManageContact editdeliverytime(String time) throws AWTException, IOException
 	{
 		editDeliveryTime.click();
 		fileUpload.selectAll();
 		editDeliveryTime.sendKeys(time);
+		return this;
 	}
-	public void editDeliveryChargeLimit(String deliveryCharge) throws AWTException, IOException
+	public ManageContact editDeliveryChargeLimit(String deliveryCharge) throws AWTException, IOException
 	{
 		editDeliveryChargeLimit.click();
 		fileUpload.selectAll();		
 		editDeliveryChargeLimit.sendKeys(deliveryCharge);
+		return this;
 	}
-	public void clickUpdateButton() throws InterruptedException
+	public ManageFooter clickUpdateButton() throws InterruptedException
 	{
 		//page.scrollDownX250Y250();
 		JavascriptExecutor js=(JavascriptExecutor) driver;
@@ -84,6 +91,7 @@ public class ManageContact
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(clickUpdateButton));
 		clickUpdateButton.click();
+		return new ManageFooter(driver);
 	}
 	public boolean isAlertDisplayed() 
 	{

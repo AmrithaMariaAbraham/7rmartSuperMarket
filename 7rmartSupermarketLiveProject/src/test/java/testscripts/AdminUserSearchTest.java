@@ -5,49 +5,27 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 import constants.Constants;
 import pages.AdminUserSearch;
-import pages.Login;
+import pages.ManageCategoryNew;
 import utilities.ExcelUtility;
 
 public class AdminUserSearchTest extends Base
 {
-  
-  @Test(priority=1)
+	public AdminUserSearch adminUserSearch;
+	public ManageCategoryNew manageCategoryNew;
+	
+  @Test
   public void adminusersearch() throws IOException 
   {
-	  String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
+	  /*String usernamefield=ExcelUtility.getStringData(1,0,"LoginDetails");
 	  String passwordfield=ExcelUtility.getStringData(1,1,"LoginDetails");
 	  Login login=new Login(driver);
 	  login.enterValidUsername(useramefield);
 	  login.enterValidPassword(passwordfield);
-	  login.clickLoginbutton();
-	  AdminUserSearch admin=new AdminUserSearch(driver);
-	  admin.clickAdminUsers();
-	  admin.clickSearch();
+	  login.clickLoginbutton();*/
 	  String username=ExcelUtility.getStringData(1,0,"AdminUsers");
-	  admin.enterUsername(username);
-	  admin.selectUserTypeFromDropdown();
-	  admin.selectSearchButton();
-	  boolean isalertdisplayed=admin.isSearchAlertDisplayed();
+	  manageCategoryNew=adminUserSearch.clickAdminUsers().clickSearch().enterUsername(username).selectUserTypeFromDropdown().selectSearchButton().deleteSearchedValue();
+	   /*admin.deleteSearchedValue();*/
+	  boolean isalertdisplayed=adminUserSearch.isSearchAlertDisplayed();
 	  assertTrue(isalertdisplayed,Constants.ERRORFORADMINUSERSEARCH);
-  }
-  @Test(priority=2)
-  public void adminuserdelete() throws IOException 
-  {
-	  String useramefield=ExcelUtility.getStringData(1,0,"LoginDetails");
-	  String passwordfield=ExcelUtility.getStringData(1,1,"LoginDetails");
-	  Login login=new Login(driver);
-	  login.enterValidUsername(useramefield);
-	  login.enterValidPassword(passwordfield);
-	  login.clickLoginbutton();
-	  AdminUserSearch admin=new AdminUserSearch(driver);
-	  admin.clickAdminUsers();
-	  admin.clickSearch();
-	  String username=ExcelUtility.getStringData(1,0,"AdminUsers");
-	  admin.enterUsername(username);
-	  admin.selectUserTypeFromDropdown();
-	  admin.selectSearchButton();
-	  admin.deleteSearchedValue();
-	  boolean isdeletealertdisplayed=admin.isSearchAlertDisplayed();
-	  assertTrue(isdeletealertdisplayed,Constants.ERRORFORADMINUSERDELETE);
   }
 }

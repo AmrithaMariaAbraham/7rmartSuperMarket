@@ -20,22 +20,27 @@ public class ManageNewsNew
 	@FindBy(xpath="//textarea[@id='news']") WebElement enterNews; 
 	@FindBy(xpath="//button[@name='create']") WebElement saveButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alert;
-	public void clickManageNews()
+	
+	public ManageNewsNew clickManageNews()
 	{
 		manageNews.click();
+		return this;
 	}
-	public void clickNewButton()
+	public ManageNewsNew clickNewButton()
 	{
 		New.click();
+		return this;
 	}
-	public void enterValueforNews(String News) throws IOException
+	public ManageNewsNew enterValueforNews(String News) throws IOException
 	{
 		enterNews.click();		
 		enterNews.sendKeys(News);
+		return this;
 	}
-	public void clickSaveButton()
+	public ManageProductNewProductCreate clickSaveButton()
 	{
 		saveButton.click();
+		return new ManageProductNewProductCreate(driver);
 	}
 	public boolean isAlertdisplayed()
 	{
