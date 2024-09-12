@@ -11,9 +11,7 @@ import org.openqa.selenium.io.FileHandler;
 
 public class ScreenShotUtility 
 {
-	//browser related
-	//to capture current situation of a driver.
-	   public void captureFailureScreenShot(WebDriver driver, String name) throws IOException 
+	  public void captureFailureScreenShot(WebDriver driver, String name) throws IOException 
 	   {
 		TakesScreenshot scrShot = (TakesScreenshot) driver;
 		File screenShot = scrShot.getScreenshotAs(OutputType.FILE); 

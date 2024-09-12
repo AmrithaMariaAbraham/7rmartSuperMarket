@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 
 public class FileUploadUtility 
 {
-//add Robot class, Sendkeys codes here.
 	WebDriver driver;
 	
 	public void selectAll() throws AWTException

@@ -7,8 +7,6 @@ import org.openqa.selenium.support.ui.Select;
 public class PageUtility 
 {
 	WebDriver driver;
-	//Dropdown,Select,drag,ScrollDown
-	//reuseable code for page package
 	public void selectIndex(WebElement elementindex)
 	{
 		Select select=new Select(elementindex);

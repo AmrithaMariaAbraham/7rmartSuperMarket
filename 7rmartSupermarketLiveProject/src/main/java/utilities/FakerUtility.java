@@ -3,7 +3,6 @@ package utilities;
 import com.github.javafaker.Address;
 import com.github.javafaker.Faker;
 
-//to give fake data in our script
 public class FakerUtility 
 {
 	public String getFakeFirstName() 
