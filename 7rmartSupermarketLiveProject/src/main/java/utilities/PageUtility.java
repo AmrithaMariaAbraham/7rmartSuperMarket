@@ -54,10 +54,30 @@ public class PageUtility
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(300,300)");
 	}
+	public void scrollDownX320Y320()
+	{
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(320,320)");
+	}
 	public void scrollDownX380Y380()
 	{
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(380,380)");
+	}
+	public void scrollDownX430Y430()
+	{
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(450,450)");
+	}
+	public void scrollDownX500Y500()
+	{
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(500,500)");
+	}
+	public void scrollDownX700Y700()
+	{
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(700,700)");
 	}
 	public void scrollDownX893Y61()
 	{

@@ -26,6 +26,8 @@ import utilities.WaitUtility;
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']") WebElement logoutClick;
 	@FindBy(xpath="//div[@class='login-box']") WebElement loginPage;
 	@FindBy(xpath="//i[@class='icon fas fa-ban']") WebElement alertSymbol;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[1]") WebElement adminUsers;
+	@FindBy(xpath="(//a[@class='small-box-footer'])[3]") WebElement clickCategory;
 	
 	public Login enterValidUsername(String useramefield) 
 	{
@@ -39,7 +41,7 @@ import utilities.WaitUtility;
 	}
 	public Login invalidPassword(String passwordfield) 
 	{
-		 password.sendKeys(passwordfield);
+		password.sendKeys(passwordfield);
 		return this;
 	}
 	public Login invalidUserName(String useramefield)
@@ -47,15 +49,25 @@ import utilities.WaitUtility;
 		userName.sendKeys(useramefield);
 		return this;
 	}
-	public AdminUsersNew clickLoginbutton() 
+	public AdminUsers clickLoginbutton() 
 	{
 		siginButton.click();
-		return new AdminUsersNew(driver);
+		return new AdminUsers(driver);
 	}	
 	public boolean isHomePageDisplayed() 
 	{
 		Wait.implicitWait();
 		return homePage.isDisplayed();
+	}
+	public AdminUsers clickAdminUsers() 
+	{
+		adminUsers.click();
+		return new AdminUsers(driver);
+	}
+	public ManageCategoryNew clickCategory()
+	{
+		clickCategory.click();
+		return new ManageCategoryNew(driver);
 	}
 	public Login adminLogout()
 	{

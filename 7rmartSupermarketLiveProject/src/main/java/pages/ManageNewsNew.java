@@ -1,6 +1,5 @@
 package pages;
 
-import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,7 +19,13 @@ public class ManageNewsNew
 	@FindBy(xpath="//textarea[@id='news']") WebElement enterNews; 
 	@FindBy(xpath="//button[@name='create']") WebElement saveButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alert;
+	@FindBy(xpath="//a[text()='Home']") WebElement homePage;
 	
+	public ManageNewsNew homepageClick()
+	{
+		homePage.click();
+		return this;
+	}
 	public ManageNewsNew clickManageNews()
 	{
 		manageNews.click();
@@ -31,16 +36,16 @@ public class ManageNewsNew
 		New.click();
 		return this;
 	}
-	public ManageNewsNew enterValueforNews(String News) throws IOException
+	public ManageNewsNew enterValueforNews(String News)
 	{
 		enterNews.click();		
 		enterNews.sendKeys(News);
 		return this;
 	}
-	public ManageProductNewProductCreate clickSaveButton()
+	public ManageNewsNew clickSaveButton()
 	{
 		saveButton.click();
-		return new ManageProductNewProductCreate(driver);
+		return this;
 	}
 	public boolean isAlertdisplayed()
 	{

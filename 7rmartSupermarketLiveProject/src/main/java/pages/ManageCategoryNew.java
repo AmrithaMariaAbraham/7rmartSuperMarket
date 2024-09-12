@@ -32,6 +32,7 @@ public class ManageCategoryNew
 	@FindBy(xpath="//input[@id='main_img']") WebElement uploadImage;	
 	@FindBy(xpath="//button[text()='Save']") WebElement save;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement alert;
+	@FindBy(xpath="//a[text()='Home']") WebElement homePage;
 	
 	public ManageCategoryNew clickCategory()
 	{
@@ -62,15 +63,19 @@ public class ManageCategoryNew
 		fileupload.uploadDiscountImageForManageCategory(uploadImage,Constants.DISCOUNTIMAGE);
 		return this;
 	}
+	public ManageCategoryNew hompageclick()
+	{
+		homePage.click();
+		return this;
+	}
 	public ManageContact clickSaveButton() throws InterruptedException
 	{
-		//page.scrollDownX280Y280();
+		//page.scrollDownX430Y430();
 		JavascriptExecutor js=(JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(435,435)");
+		js.executeScript("window.scrollBy(430,430)");
 		//Wait.waitforCategory(save);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		save.click();
-		System.out.println(save);
 		return new ManageContact(driver);
 	}
 	public boolean isAlertdisplayed()

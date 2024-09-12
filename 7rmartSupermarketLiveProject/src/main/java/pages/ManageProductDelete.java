@@ -1,6 +1,5 @@
 package pages;
 
-import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -45,15 +44,7 @@ public class ManageProductDelete
 		searchElement.click();
 		return this;
 	}
-	public ManageProductDelete SearchdeletedProduct(String TitLe, String productcode) throws IOException
-	{
-		//title.sendKeys(Title);
-		title.sendKeys(TitLe);
-		ProductCode.sendKeys(productcode);
-		//ProductCode.sendKeys(productCode);
-		Searchbutton.click();
-		return this;
-	}	
+	
 	public boolean isTitledisplayed()
 	{
 	  return Alert.isDisplayed();

@@ -11,10 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.PageUtility;
 import utilities.WaitUtility;
 
-public class AdminUsersNew
+public class AdminUsers
 {
 	WebDriver driver;
-	public AdminUsersNew(WebDriver driver)
+	public AdminUsers(WebDriver driver)
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
@@ -30,18 +30,20 @@ public class AdminUsersNew
 	@FindBy(xpath="//select[@id='user_type']") WebElement userType;
 	@FindBy(xpath="//button[@name='Create']") WebElement clickSaveButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alert;
+	@FindBy(xpath="//a[@class='btn btn-rounded btn-primary']") WebElement searchButton;
+	@FindBy(xpath="(//i[@class='fas fa-trash-alt'])[1]") WebElement delete;
 	
-	public AdminUsersNew clickAdminUsers()
-	{
+	public AdminUsers clickAdminUsers() 
+	{	
 		adminUsers.click();
 		return this;
 	}
-	public AdminUsersNew clickNew()
+	public AdminUsers clickNew()
 	{
 		clickNew.click();
 		return this;
 	}
-	public AdminUsersNew enterUsername(String username) throws IOException
+	public AdminUsers enterUsername(String username) throws IOException
 	{
 		enterUsername.click();		
 		//Wait.Wait(enterUsername);
@@ -51,25 +53,36 @@ public class AdminUsersNew
 		enterUsername.sendKeys(username);
 		return this;
 	}
-	public AdminUsersNew enterPassword(String Password) throws IOException
+	public AdminUsers enterPassword(String Password) throws IOException
 	{
 		enterpassword.click();
 		//Wait.Wait(enterpassword);
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(enterpassword));		
-		System.out.println(enterpassword);
+		System.out.println(Password);
 		enterpassword.sendKeys(Password);
 		return this;
 	}
-	public AdminUsersNew selectUserTypeFromDropdown()
+	public AdminUsers selectUserTypeFromDropdown()
 	{
 		page.selectUserType(userType);
 		return this;
 	}
-	public AdminUserSearch clickSaveButton()
+	public AdminUsers clickSaveButton()
 	{
 		clickSaveButton.click();
-		return new AdminUserSearch(driver);
+		return this;
+	}
+	public AdminUsers selectSearchButton()
+	{
+		searchButton.click();		
+		return this;
+	}
+	public ManageCategoryNew deleteSearchedValue()
+	{
+		delete.click();
+		driver.switchTo().alert().accept();
+		return new ManageCategoryNew(driver);
 	}
 	public boolean isAlertDisplayed()
 	{

@@ -17,6 +17,7 @@ import utilities.WaitUtility;
 public class ManageContact 
 {
 	WebDriver driver;
+	
 	public ManageContact(WebDriver driver)
 	{
 		this.driver=driver;
@@ -36,7 +37,7 @@ public class ManageContact
 	@FindBy(xpath="//input[@id='del_limit']") WebElement editDeliveryChargeLimit;
 	@FindBy(xpath="//button[@name='Update']") WebElement clickUpdateButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alertDisplayed;
-	
+	@FindBy(xpath="//a[text()='Home']") WebElement homePage;
 	public ManageContact clickManageContact()
 	{
 		ManageContact.click();
@@ -83,11 +84,16 @@ public class ManageContact
 		editDeliveryChargeLimit.sendKeys(deliveryCharge);
 		return this;
 	}
+	public ManageContact homepageClick()
+	{
+		homePage.click();
+		return this;
+	}
 	public ManageFooter clickUpdateButton() throws InterruptedException
 	{
-		//page.scrollDownX250Y250();
+		//page.scrollDownX330Y330();
 		JavascriptExecutor js=(JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(310,310)");
+		js.executeScript("window.scrollBy(330,330,320)");
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(clickUpdateButton));
 		clickUpdateButton.click();

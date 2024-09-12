@@ -30,6 +30,7 @@ public class ManageFooter
 	@FindBy(xpath="//input[@id='phone']") WebElement phone;
 	@FindBy(xpath="//button[@name='Update']") WebElement updatebutton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alertVisible;
+	@FindBy(xpath="//a[text()='Home']") WebElement homePage;
 	
 	public ManageFooter clickManageFooterText()
 	{
@@ -65,10 +66,15 @@ public class ManageFooter
 		phone.sendKeys(Phone);
 		return this;
 	}
-	public ManageNewsNew clickUpdateButton()
+	public ManageFooter hompepageclick()
+	{
+		homePage.click();
+		return this;
+	}
+	public ManageProductNewProductCreate clickUpdateButton()
 	{
 		updatebutton.click();
-		return new ManageNewsNew(driver);
+		return new ManageProductNewProductCreate(driver);
 	}
 	public boolean isFooterDisplayedSuccessfullydisplayed()
 	{
