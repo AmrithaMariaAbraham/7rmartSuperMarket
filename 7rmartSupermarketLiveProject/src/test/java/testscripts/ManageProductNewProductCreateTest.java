@@ -56,7 +56,7 @@ public class ManageProductNewProductCreateTest extends Base
 	  manageContact=manageCategoryNew.hompageclick().clickCategory().clickAddButton().enterCategoryValue(CateValue).selectAValuefromSelectGroup().clickSaveButton();
 	  manageFooter=manageContact.homepageClick().clickManageContact().clickEditButton().enterPhonenumber(phone).editEmail(email).editAddress(Address).editdeliverytime(time).editDeliveryChargeLimit(deliveryCharge).clickUpdateButton();
 	  manageProductNewproduct=manageFooter.hompepageclick().clickManageFooterText().editFooterTextValue().editAddress(address).editEmail(EMail).editPhoneNumber(Phone).clickUpdateButton();
-	  manageNewsNew=manageProductNewproduct.homepageClick().clickManageProduct().clickNew().enterTitleValue(title).selectCategoryFromDropDown().selectSubCategoryFromDropDown().selectPriceType().selectMinimumPiece().enterMaximumQuantity(qty).enterPriceforProduct(Price).stockAvailablityforProduct(Stock).clickSaveButtonforCreatingNewProduct().homepageClick().clickManageProduct().deleteProduct().SearchdeletedProduct(TitLe, productcode);
+	  manageNewsNew=manageProductNewproduct.homepageClick().clickManageProduct().clickNew().enterTitleValue(title).selectCategoryFromDropDown().selectSubCategoryFromDropDown().selectPriceType().selectMinimumPiece().enterMaximumQuantity(qty).enterPriceforProduct(Price).stockAvailablityforProduct(Stock).clickSaveButtonforCreatingNewProduct().homepageClick().clickManageProduct().deleteProduct().SearchdeletedProduct(TitLe, productcode).clickManageNews().clickNewButton().enterValueforNews(News).clickSaveButton();
 	  boolean isAlertDisplayed= manageProductNewproduct.isalertdisplayed();
 	  assertTrue(isAlertDisplayed,Constants.ERRORFORMANAGEPRODUCTNEWPRODUCT);
 	  }

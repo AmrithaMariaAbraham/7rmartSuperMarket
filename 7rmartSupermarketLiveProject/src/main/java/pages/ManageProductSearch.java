@@ -51,16 +51,12 @@ public class ManageProductSearch
 	}
 	public ManageProductSearch selectCategoryfromDropdown()
 	{
-		//Select dropdown=new Select(Category);
-		//dropdown.selectByIndex(1);
 		Wait.waitforCategory(Category);
 		page.selectCategoryFromDropDown(Category);
 		return this;
 	}
 	public ManageProductSearch selectSubCategoryfromDropDown()
 	{
-		/*Select dropdown=new Select(subCategory);
-		dropdown.selectByIndex(1);*/
 		Wait.waitforSubCategory(subCategory);
 		page.selectsubCategory(subCategory);
 		return this;
@@ -72,7 +68,6 @@ public class ManageProductSearch
 	}
 	public boolean issearchAlertDisplayed()
 	{
-		return alert.isDisplayed();
-		
+		return alert.isDisplayed();		
 	}
 }

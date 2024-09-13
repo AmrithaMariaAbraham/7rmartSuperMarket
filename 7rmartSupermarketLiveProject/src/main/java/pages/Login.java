@@ -17,7 +17,7 @@ import utilities.WaitUtility;
 			this.driver=driver;
 			PageFactory.initElements(driver,this);//Page factory defined
 	}
-	//page Factory
+	
 	@FindBy(xpath="//input[@name='username']") WebElement userName;
 	@FindBy(xpath="//input[@name='password']") WebElement password;
 	@FindBy(xpath="//button[@class='btn btn-dark btn-block']") WebElement siginButton;

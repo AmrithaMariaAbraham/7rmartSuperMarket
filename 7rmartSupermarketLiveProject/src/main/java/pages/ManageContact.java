@@ -2,14 +2,10 @@ package pages;
 
 import java.awt.AWTException;
 import java.io.IOException;
-import java.time.Duration;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.FileUploadUtility;
 import utilities.PageUtility;
 import utilities.WaitUtility;
@@ -38,6 +34,7 @@ public class ManageContact
 	@FindBy(xpath="//button[@name='Update']") WebElement clickUpdateButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alertDisplayed;
 	@FindBy(xpath="//a[text()='Home']") WebElement homePage;
+	
 	public ManageContact clickManageContact()
 	{
 		ManageContact.click();
@@ -70,14 +67,14 @@ public class ManageContact
 		editAddress.sendKeys(address);
 		return this;
 	}
-	public ManageContact editdeliverytime(String time) throws AWTException, IOException
+	public ManageContact editdeliverytime(String time) throws AWTException
 	{
 		editDeliveryTime.click();
 		fileUpload.selectAll();
 		editDeliveryTime.sendKeys(time);
 		return this;
 	}
-	public ManageContact editDeliveryChargeLimit(String deliveryCharge) throws AWTException, IOException
+	public ManageContact editDeliveryChargeLimit(String deliveryCharge) throws AWTException 
 	{
 		editDeliveryChargeLimit.click();
 		fileUpload.selectAll();		
@@ -91,11 +88,8 @@ public class ManageContact
 	}
 	public ManageFooter clickUpdateButton() throws InterruptedException
 	{
-		//page.scrollDownX330Y330();
-		JavascriptExecutor js=(JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(330,330,320)");
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.elementToBeClickable(clickUpdateButton));
+		page.scrollDownX320Y320();
+		Wait.Wait(clickUpdateButton);
 		clickUpdateButton.click();
 		return new ManageFooter(driver);
 	}
@@ -103,5 +97,4 @@ public class ManageContact
 	{
 		return alertDisplayed.isDisplayed();
 	}
-
 }

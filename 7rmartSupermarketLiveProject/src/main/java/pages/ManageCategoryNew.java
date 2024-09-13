@@ -1,8 +1,6 @@
 package pages;
 
 import java.io.IOException;
-import java.time.Duration;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -57,10 +55,8 @@ public class ManageCategoryNew
 	}
 	public ManageCategoryNew uploadDiscountImage()
 	{
-		//page.scrollDownX250Y250();
-		JavascriptExecutor js=(JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(250,250)");
-		fileupload.uploadDiscountImageForManageCategory(uploadImage,Constants.DISCOUNTIMAGE);
+		page.scrollDownX250Y250();
+		fileupload.uploadimage(uploadImage,Constants.DISCOUNTIMAGE);
 		return this;
 	}
 	public ManageCategoryNew hompageclick()
@@ -70,11 +66,8 @@ public class ManageCategoryNew
 	}
 	public ManageContact clickSaveButton() throws InterruptedException
 	{
-		//page.scrollDownX430Y430();
-		JavascriptExecutor js=(JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(430,430)");
-		//Wait.waitforCategory(save);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		page.scrollDownX430Y430();
+		Wait.waitforCategory(save);
 		save.click();
 		return new ManageContact(driver);
 	}

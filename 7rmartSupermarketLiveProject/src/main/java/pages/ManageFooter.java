@@ -1,14 +1,10 @@
 package pages;
 
 import java.awt.AWTException;
-import java.io.IOException;
-import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.FileUploadUtility;
 import utilities.WaitUtility;
 
@@ -42,24 +38,22 @@ public class ManageFooter
 		edit1.click();
 		return this;
 	}
-	public ManageFooter editAddress(String address) throws AWTException, IOException
+	public ManageFooter editAddress(String address) throws AWTException
 	{
 		Address.click();
 		fileUpload.selectAll();		
 		Address.sendKeys(address);
 		return this;
 	}
-	public ManageFooter editEmail(String EMail) throws AWTException, IOException
+	public ManageFooter editEmail(String EMail) throws AWTException
 	{
 		email.click();
 		fileUpload.selectAll();
-		//Wait.waitforCategory(email);
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.elementToBeClickable(email));
+		Wait.waitforCategory(email);
 		email.sendKeys(EMail);
 		return this;
 	}
-	public ManageFooter editPhoneNumber(String Phone) throws AWTException, IOException
+	public ManageFooter editPhoneNumber(String Phone) throws AWTException
 	{
 		phone.click();
 		fileUpload.selectAll();		

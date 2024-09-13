@@ -1,14 +1,9 @@
 package pages;
 
-import java.time.Duration;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import constants.Constants;
 import utilities.FileUploadUtility;
 import utilities.PageUtility;
@@ -78,16 +73,12 @@ public class ManageProductNewProductCreate
 	}	
 	public ManageProductNewProductCreate selectCategoryFromDropDown()
 	{
-		//page.selectCategoryFromDropDown(category);
-		Select dropdown=new Select(category);
-		dropdown.selectByIndex(0);
+		page.selectCategoryFromDropDown(category);
 		return this;
 	}
 	public ManageProductNewProductCreate selectSubCategoryFromDropDown()
 	{
-		//page.selectsubCategory(subCategory);
-		Select dropdown=new Select(subCategory);
-		dropdown.selectByIndex(0);
+		page.selectsubCategory(subCategory);
 		return this;
 	}	
 	public ManageProductNewProductCreate selectPriceType() 
@@ -97,9 +88,7 @@ public class ManageProductNewProductCreate
 	}
 	public ManageProductNewProductCreate selectMinimumPiece()
 	{
-		//page.selectMinimumPiece(minimumPiece);
-		Select select=new Select(minimumPiece);
-		select.selectByIndex(5);
+		page.selectMinimumPiece(minimumPiece);
 		return this;		
 	}
 	public ManageProductNewProductCreate enterMaximumQuantity(String qty) 
@@ -107,10 +96,8 @@ public class ManageProductNewProductCreate
 		maximumQuantity.click();
 		System.out.println(qty);
 		maximumQuantity.sendKeys(qty);
-		//page.scrollDownX380Y380();
-	    JavascriptExecutor js=(JavascriptExecutor) driver;
-	    js.executeScript("window.scrollBy(380,380)");
-		return this;
+		page.scrollDownX380Y380();
+	    return this;
 	}
 	public ManageProductNewProductCreate enterPriceforProduct(String Price) 
 	{
@@ -123,10 +110,8 @@ public class ManageProductNewProductCreate
 	{
 		stock.click();		
 		stock.sendKeys(Stock);
-		//page.scrollDownX1300Y1300();
-	    JavascriptExecutor js=(JavascriptExecutor) driver;
-	    js.executeScript("window.scrollBy(1300,1300)");
-		return this;
+		page.scrollDownX1300Y1300();
+	    return this;
 	}
 	public ManageProductNewProductCreate uploadMainImgforProduct() 
 	{
@@ -136,9 +121,7 @@ public class ManageProductNewProductCreate
 	}
 	public ManageProductNewProductCreate clickSaveButtonforCreatingNewProduct()
 	{
-		//Wait.Wait(submitButton);
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.elementToBeClickable(submitButton));
+		Wait.Wait(submitButton);
 		submitButton.click();
 		return this;
 	}
@@ -146,8 +129,7 @@ public class ManageProductNewProductCreate
 	{
 		search.click();
 		return this;
-	}
-	
+	}	
 	public ManageProductNewProductCreate deleteProduct()
 	{
 		deleteElement.click();
@@ -156,10 +138,8 @@ public class ManageProductNewProductCreate
 	}
 	public ManageNewsNew SearchdeletedProduct(String TitLe, String productcode) 
 	{
-		//title.sendKeys(Title);
 		title.sendKeys(TitLe);
 		ProductCode.sendKeys(productcode);
-		//ProductCode.sendKeys(productCode);
 		Searchbutton.click();
 		return new ManageNewsNew(driver);
 	}	

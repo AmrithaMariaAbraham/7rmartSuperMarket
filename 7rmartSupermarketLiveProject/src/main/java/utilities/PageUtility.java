@@ -1,4 +1,5 @@
 package utilities;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -87,10 +88,14 @@ public class PageUtility
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(900,900)");
 	}
+	public void scrollDownX1300Y1300() 
+	{
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(1300,1300)");
+	}
 	public void scrollBackToTop()
 	{
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,0)");		
-	}
-	
+	}	
 }

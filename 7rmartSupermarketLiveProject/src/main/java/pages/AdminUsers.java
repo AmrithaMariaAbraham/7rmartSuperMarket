@@ -1,13 +1,10 @@
 package pages;
 
 import java.io.IOException;
-import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.PageUtility;
 import utilities.WaitUtility;
 
@@ -46,9 +43,7 @@ public class AdminUsers
 	public AdminUsers enterUsername(String username) throws IOException
 	{
 		enterUsername.click();		
-		//Wait.Wait(enterUsername);
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.elementToBeClickable(enterUsername));
+		Wait.Wait(enterUsername);
 		System.out.println(username);
 		enterUsername.sendKeys(username);
 		return this;
@@ -56,9 +51,7 @@ public class AdminUsers
 	public AdminUsers enterPassword(String Password) throws IOException
 	{
 		enterpassword.click();
-		//Wait.Wait(enterpassword);
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.elementToBeClickable(enterpassword));		
+		Wait.Wait(enterpassword);
 		System.out.println(Password);
 		enterpassword.sendKeys(Password);
 		return this;

@@ -18,7 +18,7 @@ public class FileUploadUtility
 		robot.keyRelease(KeyEvent.VK_CONTROL);
 		robot.keyRelease(KeyEvent.VK_A);
 	}
-	public void uploadDiscountImageForManageCategory(WebElement element,String FilePath)
+	public void uploadimage(WebElement element,String FilePath)
 	{
 		element.sendKeys(FilePath);
 	}
