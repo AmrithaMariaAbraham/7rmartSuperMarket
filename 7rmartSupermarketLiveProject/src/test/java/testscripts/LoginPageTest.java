@@ -23,7 +23,7 @@ public class LoginPageTest extends Base
 		return input;
 	}
 
-  @Test(priority=1,retryAnalyzer = reTry.Retry.class,groups = {"Smoke"})
+  @Test(priority=1,retryAnalyzer = reTry.Retry.class,dataProvider="credentials",groups = {"Smoke"})
   @Parameters({"username","password"})
   public void enterValidUsernameAndPassword(String useramefield,String passwordfield) throws IOException, InterruptedException 
   	{	  
